@@ -38,7 +38,8 @@
         .tag-video { background: #243d3d; color: #7bffff; }
         .tag-avatars { background: #2d243d; color: #b37bff; }
         .tag-api { background: #243d2d; color: #7bff9e; }
-        .tag-upscale { background: #24383d; color: #7be3ff; } /* Новий колір для Апскейлерів */
+        .tag-upscale { background: #24383d; color: #7be3ff; }
+        .tag-textai { background: #3d242c; color: #ff7ba4; } /* Новий колір для Текстових AI */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -102,6 +103,12 @@
         <div class="cat-card" onclick="renderList('upscale')">
             <div class="icon-box" style="background: #7be3ff33;">✨</div>
             <div style="flex-grow:1"><b>Апскейлери</b><br><small style="color:#888">AI-програми для покращення якості відео та зображень</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">5</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('textai')">
+            <div class="icon-box" style="background: #ff7ba433;">💬</div>
+            <div style="flex-grow:1"><b>Текстові AI</b><br><small style="color:#888">Чат-боти для сценаріїв, текстів та креативу</small></div>
             <div style="color:#6e6eff; font-weight:bold;">5</div>
         </div>
     </div>
@@ -183,13 +190,20 @@
                 { name: "Together AI", stars: "★★★★☆", desc: "Швидкий та дешевий агрегатор з фокусом на open-source моделі. Llama, Mistral, FLUX — все летить. Є безкоштовні кредити на старт", tags: ["Open Source", "Швидкий", "Дешевий"], price: "Безкоштовний старт / pay-per-token", url: "https://www.together.ai", icon: "⚡" },
                 { name: "Suno API (unofficial)", stars: "★★★★☆", desc: "Open-source API для генерації музики через Suno. Деплоїш на Vercel — отримуєш свій ендпоінт для автоматизації створення треків", tags: ["Suno", "Self-hosted", "Open Source", "Vercel"], price: "Безкоштовно (потрібен Suno акаунт)", url: "https://github.com/gcui-art/suno-api", icon: "🎵" }
             ]},
-            // НОВИЙ БЛОК: Апскейлери
             upscale: { title: "Апскейлери", tagClass: "tag-upscale", items: [
                 { name: "Krea AI", stars: "★★★★★", desc: "Онлайн AI-апскейлер з генеративним покращенням. Збільшує зображення до 22К та відео до 8К із інтерполяцією до 120fps. Має 7 моделей апскейлу включно з Magnific AI", tags: ["Онлайн", "Зображення", "Відео", "Генеративний"], price: "Безкоштовно / від $8/міс", url: "https://www.krea.ai", icon: "✨" },
                 { name: "LetsEnhance", stars: "★★★★☆", desc: "Хмарний AI-апскейлер з підтримкою збільшення до 16x без втрати якості. Має спеціальні моделі для портретів, старих фото, діджитал-арту та тексту. Пакетна обробка", tags: ["Онлайн", "Фото", "Пакетна обробка"], price: "10 кредитів безкоштовно / від $9/міс", url: "https://letsenhance.io", icon: "🔍" },
                 { name: "Upscayl", stars: "★★★★☆", desc: "Безкоштовний open-source AI-апскейлер для Windows, Mac та Linux. Працює локально на GPU — твої фото не відправляються в хмару. Апскейл до 16x з моделями Real-ESRGAN та UltraSharp", tags: ["Безкоштовно", "Локальний", "Open Source"], price: "Безкоштовно назавжди", url: "https://upscayl.org", icon: "🆓" },
-                { name: "Topaz Video AI 7.0.3", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Windows", "Апскейл", "Стабілізація"], price: "Windows | 195 MB", url: "https://www.topazlabs.com/topaz-video-ai", icon: "🪟" },
-                { name: "Topaz Video AI 7.0.0", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Mac", "Апскейл", "Стабілізація"], price: "Mac | 605.2 MB", url: "https://www.topazlabs.com/topaz-video-ai", icon: "🍎" }
+                { name: "Topaz Video AI 7.0.3", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Windows", "Апскейл", "Стабілізація"], price: "Windows | 195 MB", url: "https://mega.nz/file/qpgWjJ5R#623DVjxHoEfu1VefSyWZ8f8CLy_Jj4kjZ6x5IbIiv0Y", icon: "🪟" },
+                { name: "Topaz Video AI 7.0.0", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Mac", "Апскейл", "Стабілізація"], price: "Mac | 605.2 MB", url: "https://mega.nz/file/KgoxiAKT#nQBvFd1BObzz5TBCoduHnefXEgYUZeRM6eyEsGyTFC4", icon: "🍎" }
+            ]},
+            // НОВИЙ БЛОК: Текстові AI
+            textai: { title: "Текстові AI", tagClass: "tag-textai", items: [
+                { name: "Claude", stars: "★★★★★", desc: "Від Anthropic. Найкращий для довгих текстів і сценаріїв — тримає контекст як ніхто інший. Пишеш сценарій на 20 хвилин — він не забуде що було на першій. Для YouTube-сценаріїв це must-have", tags: ["Сценарії", "Довгі тексти", "Контекст"], price: "Безкоштовно / Pro $20/міс / Max $100/міс", url: "https://claude.ai", icon: "🧠" },
+                { name: "ChatGPT", stars: "★★★★★", desc: "Від OpenAI. Найкреативніший з усіх — добре генерує ідеї, заголовки, гачки для відео. Має DALL-E, Codex, пошук в інтернеті і купу плагінів всередині", tags: ["Креатив", "Ідеї", "Все-в-одному"], price: "Безкоштовно / Plus $20/міс / Pro $200/міс", url: "https://chatgpt.com", icon: "🤖" },
+                { name: "Gemini", stars: "★★★★☆", desc: "Від Google. Має доступ до свіжої інфи з пошуку, розуміє відео та картинки. Безкоштовний і досить потужний — для ресьорчу тем під відео саме те", tags: ["Google", "Пошук", "Безкоштовно"], price: "Безкоштовно / AI Pro $19.99/міс", url: "https://gemini.google.com", icon: "💎" },
+                { name: "Grok", stars: "★★★★☆", desc: "Від xAI (Ілон Маск). Без цензури, з гумором і доступом до X/Twitter в реальному часі. Для трендів та вірального контенту — непоганий варіант", tags: ["Без цензури", "Тренди", "X/Twitter"], price: "Безкоштовно / Premium в X", url: "https://grok.com", icon: "🚀" },
+                { name: "Sudowrite", stars: "★★★★☆", desc: "AI-модель створена спеціально для художньої літератури. Допомагає писати романи, сценарії та оповідання — розуміє структуру сюжету, персонажів, діалоги та наратив краще за загальні чат-боти", tags: ["Книги", "Сценарії", "Fiction"], price: "Hobby $19/міс / Pro $29/міс", url: "https://www.sudowrite.com", icon: "✍️" }
             ]}
         };
 
