@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tools</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body { font-family: sans-serif; background-color: #1c1c27; color: white; margin: 0; padding: 15px; }
+        .header { display: flex; align-items: center; margin-bottom: 20px; }
+        .category-card { 
+            background: #252538; border-radius: 12px; padding: 15px; 
+            margin-bottom: 10px; display: flex; align-items: center; 
+            text-decoration: none; color: white; border: 1px solid #333;
+        }
+        .icon { width: 40px; height: 40px; border-radius: 8px; margin-right: 15px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+        .info { flex-grow: 1; }
+        .title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+        .desc { font-size: 12px; color: #888; }
+        .badge { background: #333; padding: 2px 8px; border-radius: 10px; font-size: 12px; color: #6e6eff; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h2>Привет! 👋</h2>
+    </div>
+
+    <a href="ТВОЯ_ССЫЛКА_НА_ПОСТ_ИЛИ_САЙТ" class="category-card">
+        <div class="icon" style="background: #e0e0ff;">🤖</div>
+        <div class="info">
+            <div class="title">AI Инструменты</div>
+            <div class="desc">Лучшие сервисы для работы</div>
+        </div>
+        <div class="badge">75</div>
+    </a>
+
+    <a href="ДРУГАЯ_ССЫЛКА" class="category-card">
+        <div class="icon" style="background: #ffede0;">🎬</div>
+        <div class="info">
+            <div class="title">Для YouTube</div>
+            <div class="desc">Аналитика и рост канала</div>
+        </div>
+        <div class="badge">13</div>
+    </a>
+
+    <script>
+        const tele = window.Telegram.WebApp;
+        tele.ready(); // Уведомляет Telegram, что приложение готово
+    </script>
+</body>
+</html>
