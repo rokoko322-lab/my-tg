@@ -42,7 +42,8 @@
         .tag-textai { background: #3d242c; color: #ff7ba4; }
         .tag-blender { background: #3d2a1f; color: #ff9d2e; }
         .tag-videoprompt { background: #243d35; color: #7bffc4; }
-        .tag-aimontage { background: #2b1f3d; color: #d97bff; } /* Колір для AI Монтаж */
+        .tag-aimontage { background: #2b1f3d; color: #d97bff; }
+        .tag-nsfw { background: #3d1f1f; color: #ff5c5c; } /* Колір для 18+ AI */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -131,6 +132,12 @@
             <div class="icon-box" style="background: #d97bff33;">✂️</div>
             <div style="flex-grow:1"><b>AI Монтаж</b><br><small style="color:#888">AI-інструменти для відеомонтажу — аналіз, субтитри, автомонтаж</small></div>
             <div style="color:#6e6eff; font-weight:bold;">1</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('nsfw')">
+            <div class="icon-box" style="background: #ff4b4b33;">🔞</div>
+            <div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту, вдруг уйдём на онли фанс и нам понадобится создать девчёнку))</small></div>
+            <div style="color:#ff5c5c; font-weight:bold;">4</div>
         </div>
     </div>
 
@@ -239,9 +246,15 @@
                 { name: "Short.ai Video to Prompt", stars: "★★★★☆", desc: "Вставляєш YouTube або TikTok лінк (до 5 хвилин) — отримуєш покадрові промпти. Швидко і просто, без реєстрації", tags: ["Швидкий", "YouTube", "TikTok"], price: "Безкоштовно", url: "https://short.ai", icon: "⚡" },
                 { name: "PromptAI Videos", stars: "★★★★☆", desc: "Аналізує композицію, освітлення та стиль відео. Генерує промпти оптимізовані спеціально під Sora, Runway, Kling та Veo. 5 безкоштовних аналізів", tags: ["Sora", "Kling", "Runway"], price: "5 безкоштовних аналізів", url: "https://promptai.co", icon: "🎯" }
             ]},
-            // НОВИЙ БЛОК: AI Монтаж
             aimontage: { title: "AI Монтаж", tagClass: "tag-aimontage", items: [
                 { name: "Molmo 2", stars: "★★★★☆", desc: "Open-source vision-language модель від Allen AI. Розуміє відео та зображення, аналізує сцени, допомагає з монтажем", tags: ["Open Source", "Vision", "Аналіз відео"], price: "Безкоштовно (Open Source)", url: "https://playground.allenai.org/", icon: "👁️" }
+            ]},
+            // НОВИЙ БЛОК: 18+ AI
+            nsfw: { title: "18+ AI", tagClass: "tag-nsfw", items: [
+                { name: "SeaArt.ai", stars: "★★★★★", desc: "Онлайн-генератор зображень з NSFW-режимом. Величезна бібліотека моделей Stable Diffusion, є безкоштовні кредити щодня. Реалістик, аніме, фентезі — будь-який стиль.", tags: ["Зображення", "NSFW", "Stable Diffusion", "Безкоштовні кредити"], price: "Безкоштовно / від $9.90/міс", url: "https://seaart.ai", icon: "🌊" },
+                { name: "PixAI.art", stars: "★★★★☆", desc: "AI-генератор з фокусом на аніме та реалістичні зображення. Вбудований NSFW-режим, багато моделей та LoRA, простий інтерфейс для новачків.", tags: ["Зображення", "Аніме", "NSFW", "LoRA"], price: "Безкоштовно / від $9.99/міс", url: "https://pixai.art", icon: "🎨" },
+                { name: "Candy AI", stars: "★★★★☆", desc: "AI-компаньйон з генерацією фото та чатом без цензури. Створюєш віртуального персонажа, спілкуєшся та генеруєш зображення. Реалістик та аніме стилі.", tags: ["AI Компаньйон", "Чат", "Фото", "NSFW"], price: "Від $12.99/міс", url: "https://candy.ai", icon: "🍬" },
+                { name: "DreamGF.ai", stars: "★★★★☆", desc: "Платформа для створення AI-подруги з генерацією фото та голосовими повідомленнями. Повна кастомізація зовнішності, NSFW-чат та фото-генерація.", tags: ["AI Подруга", "Фото", "Голос", "NSFW"], price: "Від $9.99/міс", url: "https://dreamgf.ai", icon: "💕" }
             ]}
         };
 
