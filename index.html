@@ -31,9 +31,11 @@
         .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
         .tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; }
         
+        /* Кольори тегів для різних розділів */
         .tag-music { background: #3d2424; color: #ff7b7b; }
         .tag-voice { background: #242d3d; color: #7bafff; }
         .tag-image { background: #3d2438; color: #ff7be3; }
+        .tag-video { background: #243d3d; color: #7bffff; } /* Новий колір для відео */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -74,6 +76,12 @@
             <div class="icon-box" style="background: #ff7bea33;">🎨</div>
             <div style="flex-grow:1"><b>Зображення</b><br><small style="color:#888">Генерація та редагування</small></div>
             <div style="color:#6e6eff; font-weight:bold;">16</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('video')">
+            <div class="icon-box" style="background: #7bffff33;">🎬</div>
+            <div style="flex-grow:1"><b>Відео</b><br><small style="color:#888">AI для створення та редагування</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">7</div>
         </div>
     </div>
 
@@ -122,6 +130,16 @@
                 { name: "Ideogram", stars: "★★★★★", desc: "Найкращий AI для тексту на фото. Логотипи", tags: ["Текст", "Логотипи", "Типографіка"], price: "Безкоштовно / від $8/міс", url: "https://ideogram.ai", icon: "🔡" },
                 { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
                 { name: "Nana Banana", stars: "★★★★☆", desc: "Google AI Studio. Генерація через Gemini", tags: ["Google", "Gemini", "Безкоштовно"], price: "Безкоштовно", url: "https://aistudio.google.com", icon: "🍌" }
+            ]},
+            // НОВА БАЗА ДАНИХ ДЛЯ ВІДЕО
+            video: { title: "Відео", tagClass: "tag-video", items: [
+                { name: "Grok", stars: "★★★★★", desc: "Генерація відео з тексту та зображень, генерація зображень.", tags: ["X (Twitter)", "Мультимодальний", "Швидкий"], price: "30$/міс", url: "https://x.com/", icon: "🚀" },
+                { name: "Sora", stars: "★★★★★", desc: "Від OpenAI. Створення реалістичних та складних сцен з тексту", tags: ["Фотореалізм", "OpenAI", "Текст у відео"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
+                { name: "Kling AI", stars: "★★★★★", desc: "Китайський аналог Sora. Генерація кінематографічного відео", tags: ["Кіноякість", "Швидкий", "Текст у відео"], price: "Безкоштовно / від $0.007 за ген", url: "https://klingai.com", icon: "🎯" },
+                { name: "Luma Dream Machine", stars: "★★★★★", desc: "Створення реалістичних відео з тексту та статичних зображень", tags: ["Реалізм", "Текст/Фото у відео", "3D"], price: "Безкоштовно / від $10/міс", url: "https://lumalabs.ai/dream-machine", icon: "💡" },
+                { name: "RunWay Gen-3 Alpha", stars: "★★★★★", desc: "Професійний інструмент для генерації та редагування відео", tags: ["Професійний", "Багато інструментів", "Контроль"], price: "від $12/міс", url: "https://runwayml.com/", icon: "🚀" },
+                { name: "Hedra", stars: "★★★★☆", desc: "Створення говорячих голів та lip-sync анімації", tags: ["Lip-sync", "Аватари", "Швидко"], price: "Безкоштовно / платні плани", url: "https://www.hedra.com/", icon: "👤" },
+                { name: "Higgsfield", stars: "★★★★☆", desc: "Генерація реалістичних людей та персонажів у русі", tags: ["Персонажі", "Рух", "Геймдев"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai/", icon: "🧬" }
             ]}
         };
 
