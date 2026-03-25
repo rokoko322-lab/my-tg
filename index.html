@@ -3,119 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Моя База</title>
+    <title>База Знань</title>
     <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        body { font-family: sans-serif; background-color: #121217; color: white; margin: 0; padding: 15px; -webkit-tap-highlight-color: transparent; }
+        body { font-family: 'Segoe UI', sans-serif; background-color: #121217; color: white; margin: 0; padding: 15px; }
         .hidden { display: none !important; }
         
-        /* Заголовок */
-        .header { display: flex; align-items: center; margin-bottom: 20px; padding-top: 10px; }
-        .header h2 { margin: 0; font-size: 22px; }
-        .back-btn { background: none; border: none; color: #6e6eff; font-size: 16px; cursor: pointer; padding: 0; margin-right: 15px; }
+        /* Шапка */
+        .header { display: flex; align-items: center; margin-bottom: 20px; }
+        .back-btn { background: none; border: none; color: #6e6eff; font-size: 18px; cursor: pointer; margin-right: 15; padding: 0; }
+        h2 { margin: 0; font-size: 20px; }
 
-        /* Стили карточек */
-        .card { 
-            background: #1f1f26; border-radius: 12px; padding: 12px 15px; 
-            margin-bottom: 10px; display: flex; align-items: center; 
-            cursor: pointer; border: 1px solid #2d2d3a; transition: background 0.2s;
-        }
-        .card:active { background: #2d2d3a; }
+        /* Стили главной карточки (категории) */
+        .cat-card { background: #1f1f26; border-radius: 12px; padding: 15px; margin-bottom: 10px; display: flex; align-items: center; border: 1px solid #2d2d3a; cursor: pointer; }
+        .icon-box { width: 45px; height: 45px; border-radius: 10px; margin-right: 15px; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+
+        /* Стили карточки СЕРВИСА (как на скрине) */
+        .service-card { background: #1a1a23; border: 1px solid #2d2d3a; border-radius: 12px; padding: 15px; margin-bottom: 12px; position: relative; cursor: pointer; transition: 0.2s; }
+        .service-card:active { background: #252530; }
         
-        .icon-box { width: 42px; height: 42px; border-radius: 10px; margin-right: 15px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
-        .info { flex-grow: 1; }
-        .title { font-weight: bold; font-size: 15px; margin-bottom: 3px; }
-        .desc { font-size: 11px; color: #888; line-height: 1.2; }
-        .badge { background: #2d2d3a; padding: 4px 10px; border-radius: 12px; font-size: 11px; color: #6e6eff; font-weight: bold; margin-left: 10px; }
+        .service-header { display: flex; align-items: center; margin-bottom: 8px; }
+        .service-icon { width: 32px; height: 32px; border-radius: 8px; background: #2d2d3a; margin-right: 10px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
+        .service-name { font-weight: bold; font-size: 16px; margin-right: 8px; }
+        .stars { color: #ff9d2e; font-size: 12px; }
+        
+        .service-desc { font-size: 13px; color: #b0b0bc; line-height: 1.4; margin-bottom: 12px; }
+        
+        /* Теги (плашки) */
+        .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .tag { background: #3d2424; color: #ff7b7b; font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; }
+        
+        /* Цена */
+        .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
+        .price-info::before { content: '💳'; margin-right: 6px; font-size: 12px; }
 
-        /* Кнопка ссылки внутри категории */
-        .link-item { background: #252533; padding: 15px; border-radius: 10px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: white; border-left: 4px solid #6e6eff; }
+        .arrow { position: absolute; right: 15px; top: 15px; color: #444; font-size: 14px; }
     </style>
 </head>
 <body>
 
     <div id="screen-main">
-        <div class="header"><h2>Привет, Роман! 👋</h2></div>
-        
-        <div class="card" onclick="showScreen('screen-ai-tools')">
-            <div class="icon-box" style="background: #e6e6ff;">🤖</div>
-            <div class="info">
-                <div class="title">AI Інструменти</div>
-                <div class="desc">Найкращі AI-сервіси по категоріях</div>
-            </div>
-            <div class="badge">75</div>
-        </div>
-
-        </div>
-
-    <div id="screen-ai-tools" class="hidden">
-        <div class="header">
-            <button class="back-btn" onclick="showScreen('screen-main')">← Назад</button>
-            <h2>AI Інструменти</h2>
-        </div>
-
-        <div class="card" onclick="showLinks('Музика', 'AI для створення музики та звуку')">
-            <div class="icon-box" style="background: #ff7b7b33;">🎵</div>
-            <div class="info"><div class="title">Музика</div><div class="desc">AI для створення музики та звуку</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Озвучка', 'AI для озвучки та клонування голосу')">
-            <div class="icon-box" style="background: #ffd37b33;">🗣️</div>
-            <div class="info"><div class="title">Озвучка</div><div class="desc">AI для озвучки та клонування голосу</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Зображення', 'AI для генерації та редагування зображень')">
-            <div class="icon-box" style="background: #ff7bea33;">🎨</div>
-            <div class="info"><div class="title">Зображення</div><div class="desc">AI для генерації та редагування зображень</div></div>
-            <div class="badge">16</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Відео', 'AI для створення та редагування відео')">
-            <div class="icon-box" style="background: #7b99ff33;">🎬</div>
-            <div class="info"><div class="title">Відео</div><div class="desc">AI для створення та редагування відео</div></div>
-            <div class="badge">14</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Аватари', 'AI-аватари, lip-sync та говорячі голови')">
-            <div class="icon-box" style="background: #e07bff33;">👤</div>
-            <div class="info"><div class="title">Аватари</div><div class="desc">AI-аватари, lip-sync та говорячі голови</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('API-агрегатори', 'Доступ до всіх AI-моделей через один кабінет')">
-            <div class="icon-box" style="background: #7fff7b33;">🔌</div>
-            <div class="info"><div class="title">API-агрегатори</div><div class="desc">Доступ до всіх AI-моделей через один кабінет</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Апскейлери', 'AI-програми для покращення якості')">
-            <div class="icon-box" style="background: #7bdfff33;">💎</div>
-            <div class="info"><div class="title">Апскейлери</div><div class="desc">AI-програми для покращення якості відео та зображень</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('Текстові AI', 'Чат-боти для сценаріїв та текстів')">
-            <div class="icon-box" style="background: #ff7ba433;">💬</div>
-            <div class="info"><div class="title">Текстові AI</div><div class="desc">Чат-боти для сценаріїв, текстів та креативу</div></div>
-            <div class="badge">5</div>
-        </div>
-
-        <div class="card" onclick="showLinks('18+ AI', 'AI-сервіси для генерації дорослого контенту')">
-            <div class="icon-box" style="background: #ff4b4b33;">🔞</div>
-            <div class="info"><div class="title">18+ AI</div><div class="desc">AI-сервіси для генерації дорослого контенту</div></div>
-            <div class="badge">4</div>
+        <div class="header"><h2>База Знань 🛠️</h2></div>
+        <div class="cat-card" onclick="showScreen('screen-ai-tools')">
+            <div class="icon-box" style="background: #e6e6ff33;">🤖</div>
+            <div style="flex-grow:1"><b>AI Інструменти</b><br><small style="color:#888">Найкращі сервіси</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">75</div>
         </div>
     </div>
 
-    <div id="screen-links" class="hidden">
+    <div id="screen-ai-tools" class="hidden">
         <div class="header">
-            <button class="back-btn" onclick="showScreen('screen-ai-tools')">← Назад</button>
-            <h2 id="cat-title">Категория</h2>
+            <button class="back-btn" onclick="showScreen('screen-main')">←</button>
+            <h2>AI Інструменти</h2>
         </div>
-        <div id="links-container">
-            </div>
+        <div class="cat-card" onclick="openMusic()">
+            <div class="icon-box" style="background: #ff7b7b33;">🎵</div>
+            <div style="flex-grow:1"><b>Музика</b><br><small style="color:#888">AI для звуку та треків</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">5</div>
+        </div>
+        </div>
+
+    <div id="screen-music" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-ai-tools')">←</button>
+            <h2>Музика</h2>
+        </div>
+        <div id="music-list"></div>
     </div>
 
     <script>
@@ -123,37 +76,83 @@
         tg.ready();
         tg.expand();
 
-        function showScreen(screenId) {
-            document.getElementById('screen-main').classList.add('hidden');
-            document.getElementById('screen-ai-tools').classList.add('hidden');
-            document.getElementById('screen-links').classList.add('hidden');
-            document.getElementById(screenId).classList.remove('hidden');
-        }
-
-        function showLinks(title, desc) {
-            document.getElementById('cat-title').innerText = title;
-            const container = document.getElementById('links-container');
-            container.innerHTML = ''; // Очищаем старое
-
-            // ПРИМЕР: Здесь ты будешь добавлять свои ссылки для каждой категории
-            if (title === 'Музика') {
-                addLink(container, 'Suno AI', 'Генерация песен с вокалом', 'https://suno.com');
-                addLink(container, 'Udio', 'Конкурент Suno с высоким качеством', 'https://udio.com');
-            } else if (title === 'Зображення') {
-                addLink(container, 'Midjourney', 'Лучшая генерация артов', 'https://midjourney.com');
-            } else {
-                container.innerHTML = '<p style="color:#888; text-align:center;">Тут пока пусто, добавь ссылки в коде!</p>';
+        const musicData = [
+            {
+                name: "Suno",
+                stars: "★★★★★",
+                desc: "Генерація повноцінних треків з вокалом по текстовому опису",
+                tags: ["Вокал", "Інструментал", "Будь-який жанр"],
+                price: "Безкоштовно / від $10/міс",
+                url: "https://suno.com",
+                icon: "🎵"
+            },
+            {
+                name: "Udio",
+                stars: "★★★★☆",
+                desc: "Конкурент Suno з фокусом на якість звучання та інструментали",
+                tags: ["Висока якість", "Інструментали"],
+                price: "Безкоштовно / від $10/міс",
+                url: "https://udio.com",
+                icon: "🎧"
+            },
+            {
+                name: "Epidemic Sound",
+                stars: "★★★★★",
+                desc: "Преміум бібліотека музики без копірайту для YouTube",
+                tags: ["Без копірайту", "YouTube-safe", "30-день тріал"],
+                price: "від $15/міс",
+                url: "https://www.epidemicsound.com",
+                icon: "🔊"
+            },
+            {
+                name: "iLoveSong",
+                stars: "★★★★☆",
+                desc: "AI-генератор музики з чоловічим та жіночим вокалом. Створює MP3 та MP4",
+                tags: ["Вокал", "MP3/MP4", "Недорого"],
+                price: "Безкоштовно / від $7/міс",
+                url: "https://ilovesong.ai",
+                icon: "💖"
+            },
+            {
+                name: "Sonauto",
+                stars: "★★★★☆",
+                desc: "Безлімітний безкоштовний AI-генератор музики. Створює треки до 4.5 хвилин",
+                tags: ["Безкоштовно", "API", "4.5 хв треки"],
+                price: "Безкоштовно (безлім) / API",
+                url: "https://sonauto.ai",
+                icon: "🎹"
             }
+        ];
 
-            showScreen('screen-links');
+        function showScreen(id) {
+            document.querySelectorAll('body > div').forEach(div => div.classList.add('hidden'));
+            document.getElementById(id).classList.remove('hidden');
         }
 
-        function addLink(container, name, desc, url) {
-            const div = document.createElement('div');
-            div.className = 'link-item';
-            div.innerHTML = `<div><b>${name}</b><br><small style="color:#888">${desc}</small></div> <span>→</span>`;
-            div.onclick = () => tg.openLink(url);
-            container.appendChild(div);
+        function openMusic() {
+            const list = document.getElementById('music-list');
+            list.innerHTML = '';
+            musicData.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'service-card';
+                card.onclick = () => tg.openLink(item.url);
+                
+                let tagsHTML = item.tags.map(t => `<span class="tag">${t}</span>`).join('');
+                
+                card.innerHTML = `
+                    <div class="arrow">›</div>
+                    <div class="service-header">
+                        <div class="service-icon">${item.icon}</div>
+                        <div class="service-name">${item.name}</div>
+                        <div class="stars">${item.stars}</div>
+                    </div>
+                    <div class="service-desc">${item.desc}</div>
+                    <div class="tags">${tagsHTML}</div>
+                    <div class="price-info">${item.price}</div>
+                `;
+                list.appendChild(card);
+            });
+            showScreen('screen-music');
         }
     </script>
 </body>
