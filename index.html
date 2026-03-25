@@ -31,7 +31,6 @@
         .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
         .tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; }
         
-        /* Кольори тегів для різних розділів */
         .tag-music { background: #3d2424; color: #ff7b7b; }
         .tag-voice { background: #242d3d; color: #7bafff; }
         .tag-image { background: #3d2438; color: #ff7be3; }
@@ -108,20 +107,20 @@
             ]},
             images: { title: "Зображення", tagClass: "tag-image", items: [
                 { name: "Midjourney", stars: "★★★★★", desc: "Найкращий генератор зображень. Фотореалізм та арт", tags: ["Фотореалізм", "Арт", "Стилі"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
-                { name: "DALL-E 3", stars: "★★★★☆", desc: "Від OpenAI. Вбудований в ChatGPT, розуміє текст", tags: ["Текст в зображенні", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/dall-e-3", icon: "🤖" },
-                { name: "Flux", stars: "★★★★★", desc: "Новий генератор від авторів Stable Diffusion. Швидкий", tags: ["Безкоштовно", "Швидкий", "Open Source"], price: "Безкоштовно / від $10/міс", url: "https://fal.ai/models/flux", icon: "⚡" },
+                { name: "DALL-E 3", stars: "★★★★☆", desc: "Від OpenAI. Вбудований в ChatGPT", tags: ["Текст в зображенні", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/dall-e-3", icon: "🤖" },
+                { name: "Flux", stars: "★★★★★", desc: "Новий генератор від авторів Stable Diffusion. Швидкий", tags: ["Безкоштовно", "Швидкий", "Open Source"], price: "Безкоштовно / від $10/міс", url: "https://www.flux.ai/p", icon: "⚡" },
                 { name: "Krea", stars: "★★★★★", desc: "Генерація в реальному часі. 64+ моделей, апскейл", tags: ["Real-time", "64+ моделей", "Апскейл"], price: "Безкоштовно / платні плани", url: "https://www.krea.ai", icon: "🎭" },
                 { name: "Sora", stars: "★★★★★", desc: "Від OpenAI. Фотореалістичні зображення та відео", tags: ["Фотореалізм", "ChatGPT", "Кінематограф"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
                 { name: "Kling AI", stars: "★★★★★", desc: "Кінематографічна якість. Генерація з тексту", tags: ["60+ стилів", "Кіно-якість", "Доступно"], price: "Безкоштовно / від $0.007 за ген", url: "https://klingai.com", icon: "🎯" },
                 { name: "Recraft", stars: "★★★★☆", desc: "AI для дизайнерів. Ілюстрації, іконки та брендинг", tags: ["Дизайн", "Ілюстрації", "Брендинг"], price: "Безкоштовно / платні плани", url: "https://www.recraft.ai", icon: "🖋️" },
-                { name: "Whisk", stars: "★★★★★", desc: "Від Google. Генерація зображень через картинки", tags: ["Google", "Imagen 4", "Без промптів"], price: "180 кредитів/міс безкоштовно", url: "https://whisk.com", icon: "🪄" },
+                { name: "Whisk", stars: "★★★★★", desc: "Від Google. Генерація зображень через картинки", tags: ["Google", "Imagen 4", "Без промптів"], price: "180 кредитів/міс безкоштовно", url: "https://labs.google/fx/tools/whisk", icon: "🪄" },
                 { name: "Flow", stars: "★★★★★", desc: "AI-кінематограф від Google на базі Veo 3.1", tags: ["Google", "Veo 3.1", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://flow.google", icon: "🎬" },
                 { name: "Higgsfield", stars: "★★★★☆", desc: "Анімація персонажів та людей з одного фото", tags: ["Персонажі", "Анімація", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
                 { name: "Leonardo", stars: "★★★★★", desc: "Потужна платформа, Canvas-редактор, контроль стилю", tags: ["Canvas", "Контроль стилю", "Безкоштовно"], price: "150 кредитів/день безкоштовно", url: "https://leonardo.ai", icon: "🎨" },
-                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні плани", url: "https://reve.ai", icon: "💎" },
+                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні плани", url: "https://app.reve.com/", icon: "💎" },
                 { name: "Dreamina", stars: "★★★★★", desc: "AI-генератор від CapCut. Інтеграція з відео", tags: ["CapCut", "Безкоштовно", "Відеомонтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
                 { name: "Ideogram", stars: "★★★★★", desc: "Найкращий AI для тексту на фото. Логотипи", tags: ["Текст", "Логотипи", "Типографіка"], price: "Безкоштовно / від $8/міс", url: "https://ideogram.ai", icon: "🔡" },
-                { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек, батч до 9 картинок", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
+                { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
                 { name: "Nana Banana", stars: "★★★★☆", desc: "Google AI Studio. Генерація через Gemini", tags: ["Google", "Gemini", "Безкоштовно"], price: "Безкоштовно", url: "https://aistudio.google.com", icon: "🍌" }
             ]}
         };
