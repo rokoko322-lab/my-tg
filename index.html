@@ -36,6 +36,7 @@
         .tag-voice { background: #242d3d; color: #7bafff; }
         .tag-image { background: #3d2438; color: #ff7be3; }
         .tag-video { background: #243d3d; color: #7bffff; }
+        .tag-avatars { background: #2d243d; color: #b37bff; } /* Новий колір для Аватарів */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -82,6 +83,12 @@
             <div class="icon-box" style="background: #7bffff33;">🎬</div>
             <div style="flex-grow:1"><b>Відео</b><br><small style="color:#888">AI для створення та редагування</small></div>
             <div style="color:#6e6eff; font-weight:bold;">15</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('avatars')">
+            <div class="icon-box" style="background: #e07bff33;">👤</div>
+            <div style="flex-grow:1"><b>Аватари</b><br><small style="color:#888">АІ-аватари, липсинг та говорячі голови</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">5</div>
         </div>
     </div>
 
@@ -144,9 +151,17 @@
                 { name: "Higgsfield", stars: "★★★★☆", desc: "Реалістична анімація людей з одного фото. Соціальні відео за секунди", tags: ["Персонажі", "Соцмережі", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
                 { name: "Midjourney", stars: "★★★★★", desc: "Midjourney тепер і для відео. Той самий фотореалізм, але в русі", tags: ["Фотореалізм", "Нове", "Преміум"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
                 { name: "Luma Dream Machine", stars: "★★★★★", desc: "Швидка генерація відео від Luma AI. Реалістичні сцени з тексту та фото", tags: ["Швидкий", "Реалізм", "Dream Machine"], price: "Безкоштовно / від $9.99/міс", url: "https://lumalabs.ai/dream-machine", icon: "🌙" },
-                { name: "Wan 2.2", stars: "★★★★☆", desc: "Open-source відеомодель від Alibaba. Високоякісне відео, доступне локально", tags: ["Open Source", "Безкоштовно", "Локально"], price: "Безкоштовно", url: "https://github.com/Wan-Video/Wan2.1", icon: "🌊" },
+                { name: "Wan 2.2", stars: "★★★★☆", desc: "Open-source відеомодель від Alibaba. Високоякісне відео, доступне локально", tags: ["Open Source", "Безкоштовно", "Локально"], price: "Безкоштовно", url: "https://create.wan.video/generate", icon: "🌊" },
                 { name: "Dreamina", stars: "★★★★☆", desc: "AI-відео від CapCut/ByteDance. Пряма інтеграція з відеоредактором", tags: ["CapCut", "Безкоштовно", "Монтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
                 { name: "Pika", stars: "★★★★☆", desc: "Креативний AI-відеогенератор. Унікальні ефекти, зміна стилю, 3D-трансформації", tags: ["Ефекти", "Креатив", "3D"], price: "Безкоштовно / від $10/міс", url: "https://pika.art", icon: "⚡" }
+            ]},
+            // НОВИЙ БЛОК: АВАТАРИ
+            avatars: { title: "Аватари", tagClass: "tag-avatars", items: [
+                { name: "Hedra", stars: "★★★★★", desc: "AI-лабораторія для генеративного медіа. Від концепту до продакшну за хвилини", tags: ["Аватар", "Відео", "Fortune 500"], price: "Безкоштовно / платні плани", url: "https://www.hedra.com", icon: "🎭" },
+                { name: "HeyGen", stars: "★★★★★", desc: "AI-аватари для відео. Реалістичні цифрові люди, переклад та дублювання", tags: ["Аватар", "Переклад", "Дублювання"], price: "Безкоштовно / від $24/міс", url: "https://www.heygen.com", icon: "🗣️" },
+                { name: "Dreamina Lip Sync", stars: "★★★★☆", desc: "Lip-sync від CapCut. Синхронізація губ з аудіо, безкоштовно та просто", tags: ["Lip-sync", "CapCut", "Безкоштовно"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "👄" },
+                { name: "Synthesia", stars: "★★★★★", desc: "Платформа #1 для AI-відео з аватарами. 230+ аватарів, 140+ мов, без камери та студії", tags: ["Аватар", "Відео", "Бізнес"], price: "Від $22/міс", url: "https://www.synthesia.io", icon: "🎬" },
+                { name: "Vozo AI", stars: "★★★★★", desc: "AI-платформа для говорячих аватарів, lip-sync та дубляжу. LipREAL™ технологія, 60+ мов", tags: ["Аватар", "Lip-sync", "Дубляж"], price: "Безкоштовно / від $15/міс", url: "https://www.vozo.ai", icon: "🎙️" }
             ]}
         };
 
