@@ -3,111 +3,130 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Tools</title>
-    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <title>База знаний | Лисий Prime</title>
     <style>
-        body { font-family: sans-serif; background-color: #1c1c27; color: white; margin: 0; padding: 15px; }
-        .hidden { display: none !important; }
-        
-        /* Шапка */
-        .header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; }
-        .back-btn { background: #333; border: none; color: #6e6eff; padding: 8px 12px; border-radius: 8px; cursor: pointer; }
-
-        /* Карточки категорий */
-        .card { 
-            background: #252538; border-radius: 12px; padding: 15px; 
-            margin-bottom: 10px; display: flex; align-items: center; 
-            cursor: pointer; border: 1px solid #333;
+        /* Глобальные стили для темной темы приложения */
+        body {
+            font-family: sans-serif;
+            background-color: #121217; /* Очень темный фон приложения */
+            color: #ffffff; /* Белый текст */
+            margin: 0;
+            padding: 20px;
         }
-        .icon { width: 40px; height: 40px; border-radius: 8px; margin-right: 15px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
-        .info { flex-grow: 1; }
-        .title { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
-        .desc { font-size: 12px; color: #888; }
-        
-        /* Кнопка перехода на сервис */
-        .go-btn { 
-            background: #6e6eff; color: white; text-decoration: none; 
-            padding: 8px 15px; border-radius: 8px; font-size: 14px; font-weight: bold;
+
+        /* Стиль для каждой карточки категории */
+        .category-card {
+            background-color: #1f1f26; /* Более светлый фон карточки */
+            border-radius: 12px; /* Скругленные углы */
+            padding: 15px;
+            margin-bottom: 10px; /* Отступ между карточками */
+            display: flex; /* Flexbox для выравнивания */
+            align-items: center; /* Вертикальное выравнивание */
+            border: 1px solid #2d2d3a; /* Тонкая рамка для четкости */
+        }
+
+        /* Стиль для круглой иконки слева */
+        .icon-container {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%; /* Сделать иконку круглой */
+            display: flex;
+            justify-content: center; /* Горизонтальное выравнивание эмодзи */
+            align-items: center; /* Вертикальное выравнивание эмодзи */
+            margin-right: 15px; /* Отступ от иконки до текста */
+            font-size: 22px; /* Размер эмодзи */
+        }
+
+        /* Стиль для текстовой части (заголовок и описание) */
+        .text-container {
+            flex-grow: 1; /* Занимает все доступное пространство */
+        }
+
+        .category-title {
+            font-weight: bold; /* Жирный заголовок */
+            font-size: 16px;
+            margin: 0 0 4px 0; /* Убираем отступы, оставляем небольшой снизу */
+        }
+
+        .category-description {
+            font-size: 13px;
+            color: #b0b0bc; /* Светло-серый цвет для описания */
+            margin: 0; /* Убираем все отступы */
+        }
+
+        /* Стиль для круглого счетчика справа */
+        .counter-badge {
+            width: 28px;
+            height: 28px;
+            border-radius: 50%; /* Сделать счетчик круглым */
+            background-color: #2d2d3a; /* Более темный фон для счетчика */
+            color: #9a9aff; /* Фиолетовый цвет текста, как на скриншоте */
+            font-size: 12px;
+            font-weight: bold;
+            display: flex;
+            justify-content: center; /* Горизонтальное выравнивание числа */
+            align-items: center; /* Вертикальное выравнивание числа */
+            margin-left: auto; /* Выравнивание по правому краю карточки */
         }
     </style>
 </head>
 <body>
 
-    <div id="main-screen">
-        <div class="header">
-            <h2>Привет, Роман! 👋</h2>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #e6e6ff;">🤖</div> <div class="text-container">
+            <p class="category-title">AI Інструменты</p>
+            <p class="category-description">Найкращі AI-сервіси по категоріях</p>
         </div>
+        <div class="counter-badge">75</div> </div>
 
-        <div class="card" onclick="showSection('music-section')">
-            <div class="icon" style="background: #e0f7ff;">🎵</div>
-            <div class="info">
-                <div class="title">Музыкальные сервисы</div>
-                <div class="desc">Нейросети для музыки и плееры</div>
-            </div>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #e0f7ff;">⚡</div> <div class="text-container">
+            <p class="category-title">Вайбкодинг</p>
+            <p class="category-description">Пишеш що хочеш — AI кодить за тебе. Без досвіду, без болі</p>
         </div>
+        <div class="counter-badge">14</div> </div>
 
-        <div class="card" onclick="showSection('ai-section')">
-            <div class="icon" style="background: #e0e0ff;">🤖</div>
-            <div class="info">
-                <div class="title">AI Инструменты</div>
-                <div class="desc">Текст, фото и генерация контента</div>
-            </div>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #fff2e0;">🛠️</div> <div class="text-container">
+            <p class="category-title">Софти</p>
+            <p class="category-description">Інструменты для масштабування та абузу сервісів</p>
         </div>
-    </div>
+        <div class="counter-badge">32</div> </div>
 
-    <div id="music-section" class="hidden">
-        <div class="header">
-            <button class="back-btn" onclick="showMain()">← Назад</button>
-            <h3>Музыка</h3>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #e0f9f0;">🛒</div> <div class="text-container">
+            <p class="category-title">Магазини</p>
+            <p class="category-description">Маркетплейси акаунтів, підписок та цифрових товарів</p>
         </div>
+        <div class="counter-badge">5</div> </div>
 
-        <div class="card">
-            <div class="info">
-                <div class="title">Suno AI</div>
-                <div class="desc">Лучшая нейросеть для создания песен</div>
-            </div>
-            <a href="#" onclick="openExternal('https://suno.com')" class="go-btn">Открыть</a>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #ffeaea;">📹</div> <div class="text-container">
+            <p class="category-title">Для YouTube</p>
+            <p class="category-description">Аналітика, пошук ніш та інструменти для росту каналу</p>
         </div>
+        <div class="counter-badge">13</div> </div>
 
-        <div class="card">
-            <div class="info">
-                <div class="title">YouTube Music</div>
-                <div class="desc">Твой основной плеер</div>
-            </div>
-            <a href="#" onclick="openExternal('https://music.youtube.com')" class="go-btn">Открыть</a>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #fff9e0;">🎁</div> <div class="text-container">
+            <p class="category-title">Халява</p>
+            <p class="category-description">Знижки, промокоди та спільні підписки на AI-сервіси</p>
         </div>
-    </div>
+        <div class="counter-badge">4</div> </div>
 
-    <div id="ai-section" class="hidden">
-        <div class="header">
-            <button class="back-btn" onclick="showMain()">← Назад</button>
-            <h3>AI Инструменты</h3>
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #ffe0f9;">🎓</div> <div class="text-container">
+            <p class="category-title">Gайди по YouTube</p>
+            <p class="category-description">Покрокові інструкції: монетизація, просування, оптимізація каналу</p>
         </div>
-        <p style="color: #888; text-align: center;">Тут скоро будут твои AI сервисы...</p>
-    </div>
+        <div class="counter-badge">3</div> </div>
 
-    <script>
-        const tele = window.Telegram.WebApp;
-        tele.ready();
-        tele.expand(); // Разворачивает приложение на весь экран
+    <div class="category-card">
+        <div class="icon-container" style="background-color: #e0f2ff;">📖</div> <div class="text-container">
+            <p class="category-title">Gайди по AI</p>
+            <p class="category-description">Покрокові гайди як безкоштовно юзати AI-сервіси</p>
+        </div>
+        <div class="counter-badge">3</div> </div>
 
-        // Функция переключения разделов
-        function showSection(sectionId) {
-            document.getElementById('main-screen').classList.add('hidden');
-            document.getElementById(sectionId).classList.remove('hidden');
-        }
-
-        // Функция возврата на главную
-        function showMain() {
-            document.getElementById('music-section').classList.add('hidden');
-            document.getElementById('ai-section').classList.add('hidden');
-            document.getElementById('main-screen').classList.remove('hidden');
-        }
-
-        // Функция открытия внешних ссылок в браузере
-        function openExternal(url) {
-            tele.openLink(url);
-        }
-    </script>
-</body>
+    </body>
 </html>
