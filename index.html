@@ -36,7 +36,8 @@
         .tag-voice { background: #242d3d; color: #7bafff; }
         .tag-image { background: #3d2438; color: #ff7be3; }
         .tag-video { background: #243d3d; color: #7bffff; }
-        .tag-avatars { background: #2d243d; color: #b37bff; } /* Новий колір для Аватарів */
+        .tag-avatars { background: #2d243d; color: #b37bff; }
+        .tag-api { background: #243d2d; color: #7bff9e; } /* Новий колір для API */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -88,6 +89,12 @@
         <div class="cat-card" onclick="renderList('avatars')">
             <div class="icon-box" style="background: #e07bff33;">👤</div>
             <div style="flex-grow:1"><b>Аватари</b><br><small style="color:#888">АІ-аватари, липсинг та говорячі голови</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">5</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('api')">
+            <div class="icon-box" style="background: #7bff9e33;">🔌</div>
+            <div style="flex-grow:1"><b>API-агрегатори</b><br><small style="color:#888">Доступ до всіх AI-моделей через один кабінет</small></div>
             <div style="color:#6e6eff; font-weight:bold;">5</div>
         </div>
     </div>
@@ -155,13 +162,20 @@
                 { name: "Dreamina", stars: "★★★★☆", desc: "AI-відео від CapCut/ByteDance. Пряма інтеграція з відеоредактором", tags: ["CapCut", "Безкоштовно", "Монтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
                 { name: "Pika", stars: "★★★★☆", desc: "Креативний AI-відеогенератор. Унікальні ефекти, зміна стилю, 3D-трансформації", tags: ["Ефекти", "Креатив", "3D"], price: "Безкоштовно / від $10/міс", url: "https://pika.art", icon: "⚡" }
             ]},
-            // НОВИЙ БЛОК: АВАТАРИ
             avatars: { title: "Аватари", tagClass: "tag-avatars", items: [
                 { name: "Hedra", stars: "★★★★★", desc: "AI-лабораторія для генеративного медіа. Від концепту до продакшну за хвилини", tags: ["Аватар", "Відео", "Fortune 500"], price: "Безкоштовно / платні плани", url: "https://www.hedra.com", icon: "🎭" },
                 { name: "HeyGen", stars: "★★★★★", desc: "AI-аватари для відео. Реалістичні цифрові люди, переклад та дублювання", tags: ["Аватар", "Переклад", "Дублювання"], price: "Безкоштовно / від $24/міс", url: "https://www.heygen.com", icon: "🗣️" },
                 { name: "Dreamina Lip Sync", stars: "★★★★☆", desc: "Lip-sync від CapCut. Синхронізація губ з аудіо, безкоштовно та просто", tags: ["Lip-sync", "CapCut", "Безкоштовно"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "👄" },
                 { name: "Synthesia", stars: "★★★★★", desc: "Платформа #1 для AI-відео з аватарами. 230+ аватарів, 140+ мов, без камери та студії", tags: ["Аватар", "Відео", "Бізнес"], price: "Від $22/міс", url: "https://www.synthesia.io", icon: "🎬" },
                 { name: "Vozo AI", stars: "★★★★★", desc: "AI-платформа для говорячих аватарів, lip-sync та дубляжу. LipREAL™ технологія, 60+ мов", tags: ["Аватар", "Lip-sync", "Дубляж"], price: "Безкоштовно / від $15/міс", url: "https://www.vozo.ai", icon: "🎙️" }
+            ]},
+            // НОВИЙ БЛОК: API-агрегатори
+            api: { title: "API-агрегатори", tagClass: "tag-api", items: [
+                { name: "302.AI", stars: "★★★★★", desc: "Китайський агрегатор з доступом до GPT, Claude, Midjourney, Suno і купи інших моделей. Один акаунт — всі AI. Дешевше ніж купувати підписки окремо", tags: ["Все-в-одному", "Дешево", "200+ моделей"], price: "Pay-as-you-go, дешевше за оригінал", url: "https://302.ai", icon: "🏢" },
+                { name: "WaveSeed", stars: "★★★★☆", desc: "Ще один агрегатор AI-сервісів. Доступ до топових моделей для генерації тексту, зображень та відео через єдиний інтерфейс", tags: ["Агрегатор", "Мульти-AI", "Єдиний доступ"], price: "Pay-as-you-go", url: "https://waveseed.ai", icon: "🌊" },
+                { name: "OpenRouter", stars: "★★★★★", desc: "Найпопулярніший API-агрегатор. Claude, GPT-4, Llama, Gemini і 200+ моделей через один API. Платиш за токени, без підписок", tags: ["200+ моделей", "API", "Популярний"], price: "Pay-per-token, ціни від моделі", url: "https://openrouter.ai", icon: "🔀" },
+                { name: "Together AI", stars: "★★★★☆", desc: "Швидкий та дешевий агрегатор з фокусом на open-source моделі. Llama, Mistral, FLUX — все летить. Є безкоштовні кредити на старт", tags: ["Open Source", "Швидкий", "Дешевий"], price: "Безкоштовний старт / pay-per-token", url: "https://www.together.ai", icon: "⚡" },
+                { name: "Suno API (unofficial)", stars: "★★★★☆", desc: "Open-source API для генерації музики через Suno. Деплоїш на Vercel — отримуєш свій ендпоінт для автоматизації створення треків", tags: ["Suno", "Self-hosted", "Open Source", "Vercel"], price: "Безкоштовно (потрібен Suno акаунт)", url: "https://github.com/gcui-art/suno-api", icon: "🎵" }
             ]}
         };
 
