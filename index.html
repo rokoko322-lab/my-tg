@@ -35,7 +35,7 @@
         .tag-music { background: #3d2424; color: #ff7b7b; }
         .tag-voice { background: #242d3d; color: #7bafff; }
         .tag-image { background: #3d2438; color: #ff7be3; }
-        .tag-video { background: #243d3d; color: #7bffff; } /* Новий колір для відео */
+        .tag-video { background: #243d3d; color: #7bffff; }
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -81,7 +81,7 @@
         <div class="cat-card" onclick="renderList('video')">
             <div class="icon-box" style="background: #7bffff33;">🎬</div>
             <div style="flex-grow:1"><b>Відео</b><br><small style="color:#888">AI для створення та редагування</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">7</div>
+            <div style="color:#6e6eff; font-weight:bold;">15</div>
         </div>
     </div>
 
@@ -131,15 +131,22 @@
                 { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
                 { name: "Nana Banana", stars: "★★★★☆", desc: "Google AI Studio. Генерація через Gemini", tags: ["Google", "Gemini", "Безкоштовно"], price: "Безкоштовно", url: "https://aistudio.google.com", icon: "🍌" }
             ]},
-            // НОВА БАЗА ДАНИХ ДЛЯ ВІДЕО
             video: { title: "Відео", tagClass: "tag-video", items: [
-                { name: "Grok", stars: "★★★★★", desc: "Генерація відео з тексту та зображень, генерація зображень.", tags: ["X (Twitter)", "Мультимодальний", "Швидкий"], price: "30$/міс", url: "https://x.com/", icon: "🚀" },
-                { name: "Sora", stars: "★★★★★", desc: "Від OpenAI. Створення реалістичних та складних сцен з тексту", tags: ["Фотореалізм", "OpenAI", "Текст у відео"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
-                { name: "Kling AI", stars: "★★★★★", desc: "Китайський аналог Sora. Генерація кінематографічного відео", tags: ["Кіноякість", "Швидкий", "Текст у відео"], price: "Безкоштовно / від $0.007 за ген", url: "https://klingai.com", icon: "🎯" },
-                { name: "Luma Dream Machine", stars: "★★★★★", desc: "Створення реалістичних відео з тексту та статичних зображень", tags: ["Реалізм", "Текст/Фото у відео", "3D"], price: "Безкоштовно / від $10/міс", url: "https://lumalabs.ai/dream-machine", icon: "💡" },
-                { name: "RunWay Gen-3 Alpha", stars: "★★★★★", desc: "Професійний інструмент для генерації та редагування відео", tags: ["Професійний", "Багато інструментів", "Контроль"], price: "від $12/міс", url: "https://runwayml.com/", icon: "🚀" },
-                { name: "Hedra", stars: "★★★★☆", desc: "Створення говорячих голів та lip-sync анімації", tags: ["Lip-sync", "Аватари", "Швидко"], price: "Безкоштовно / платні плани", url: "https://www.hedra.com/", icon: "👤" },
-                { name: "Higgsfield", stars: "★★★★☆", desc: "Генерація реалістичних людей та персонажів у русі", tags: ["Персонажі", "Рух", "Геймдев"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai/", icon: "🧬" }
+                { name: "Grok", stars: "★★★★★", desc: "Генерація відео з тексту та зображень, генерація зображень.", tags: ["X (Twitter)", "Мультимодальний", "Швидкий"], price: "30$/міс", url: "https://grok.com/", icon: "🚀" },
+                { name: "Runway", stars: "★★★★★", desc: "Генерація відео з тексту та зображень. Лідер ринку AI-відео", tags: ["Text-to-Video", "Image-to-Video"], price: "Безкоштовно / від $12/міс", url: "https://runwayml.com", icon: "🎥" },
+                { name: "Sora (OpenAI)", stars: "★★★★★", desc: "AI-відео від OpenAI. Кінематографічна якість, довгі кліпи", tags: ["Кінематограф", "Реалізм", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
+                { name: "Fast-Gen AI", stars: "★★★★☆", desc: "Зручний софт для швидкої генерації відеоконтенту", tags: ["Швидкий", "Зручний"], price: "Безкоштовно", url: "https://fastgen.com", icon: "⚡" },
+                { name: "Swing", stars: "★★★★☆", desc: "Напишіть. Анімуйте. За лічені секунди. Текст → анімація", tags: ["Анімація", "Motion Graphics"], price: "Безкоштовно / від $10/міс", url: "https://swing.ai", icon: "✨" },
+                { name: "Kling", stars: "★★★★★", desc: "Кінематографічне AI-відео. Text-to-video, image-to-video, lip-sync, ефекти", tags: ["Кіно-якість", "Lip-sync", "Ефекти"], price: "Безкоштовно / від $0.007 за генерацію", url: "https://klingai.com", icon: "🎯" },
+                { name: "Pixverse", stars: "★★★★☆", desc: "AI-генератор відео з тексту та зображень. Стильні ефекти та анімації", tags: ["Стильне", "Ефекти", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://pixverse.ai", icon: "🌈" },
+                { name: "Google Veo 3", stars: "★★★★★", desc: "Від Google DeepMind. Кінематографічне відео з вбудованим звуком та діалогами", tags: ["Google", "Звук", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://deepmind.google/technologies/veo/", icon: "▶️" },
+                { name: "Minimax Hailuo", stars: "★★★★★", desc: "Потужний AI-відеогенератор від MiniMax. Реалістичний рух та фізика", tags: ["Реалізм", "Фізика", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://hailuoai.video", icon: "🐟" },
+                { name: "Higgsfield", stars: "★★★★☆", desc: "Реалістична анімація людей з одного фото. Соціальні відео за секунди", tags: ["Персонажі", "Соцмережі", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
+                { name: "Midjourney", stars: "★★★★★", desc: "Midjourney тепер і для відео. Той самий фотореалізм, але в русі", tags: ["Фотореалізм", "Нове", "Преміум"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
+                { name: "Luma Dream Machine", stars: "★★★★★", desc: "Швидка генерація відео від Luma AI. Реалістичні сцени з тексту та фото", tags: ["Швидкий", "Реалізм", "Dream Machine"], price: "Безкоштовно / від $9.99/міс", url: "https://lumalabs.ai/dream-machine", icon: "🌙" },
+                { name: "Wan 2.2", stars: "★★★★☆", desc: "Open-source відеомодель від Alibaba. Високоякісне відео, доступне локально", tags: ["Open Source", "Безкоштовно", "Локально"], price: "Безкоштовно", url: "https://github.com/Wan-Video/Wan2.1", icon: "🌊" },
+                { name: "Dreamina", stars: "★★★★☆", desc: "AI-відео від CapCut/ByteDance. Пряма інтеграція з відеоредактором", tags: ["CapCut", "Безкоштовно", "Монтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
+                { name: "Pika", stars: "★★★★☆", desc: "Креативний AI-відеогенератор. Унікальні ефекти, зміна стилю, 3D-трансформації", tags: ["Ефекти", "Креатив", "3D"], price: "Безкоштовно / від $10/міс", url: "https://pika.art", icon: "⚡" }
             ]}
         };
 
