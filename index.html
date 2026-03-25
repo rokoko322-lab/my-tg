@@ -303,7 +303,6 @@
                 { name: "Cursor", stars: "★★★★★", desc: "Редактор коду на базі VS Code, але з AI всередині. Розуміє весь проєкт, автокомплітить, пише функції і цілі файли прямо з чату", tags: ["VS Code", "Автокомпліт", "Чат"], price: "Безкоштовно / від $20/міс", url: "https://cursor.com", icon: "📝" },
                 { name: "Windsurf", stars: "★★★★★", desc: "AI-редактор коду від Codeium з технологією Cascade — розуміє весь проєкт цілком. Краще за Cursor працює з великими кодовими базами та складними проєктами", tags: ["VS Code", "Cascade", "Великі проєкти"], price: "Безкоштовно (25 кредитів) / Pro $15/міс", url: "https://windsurf.com/", icon: "🏄" }
             ]},
-            // НОВИЙ БЛОК: AI-платформи та ресурси
             coding_platforms: { title: "AI-платформи та ресурси", tagClass: "tag-platforms", parent: "screen-vibecoding", items: [
                 { name: "Dify", stars: "★★★★★", desc: "Open-source платформа для створення AI-додатків без коду. Візуальний drag-and-drop конструктор воркфлоу, вбудований RAG, підтримка сотень LLM-моделей та автономних агентів", tags: ["No-code", "Open-source", "Воркфлоу"], price: "Безкоштовно (self-hosted) / Cloud від $59/міс", url: "https://dify.ai", icon: "🔧" },
                 { name: "Supermemory", stars: "★★★★☆", desc: "API безлімітної пам'яті для AI-агентів. Приймає будь-які дані (PDF, чати, email, відео) і автоматично будує граф зв'язків між ними. Латенсі до 400мс", tags: ["Memory API", "Агенти", "Граф"], price: "Безкоштовно (1M токенів) / Pro $19/міс", url: "https://supermemory.ai", icon: "🧠" },
@@ -311,7 +310,13 @@
                 { name: "SkillsMP", stars: "★★★★★", desc: "Маркетплейс з 66 000+ готових скілів для AI-кодинг асистентів. Встановлюєш скіл в один клік — і Claude Code, Codex або ChatGPT отримує нову суперсилу: рев'ю коду, генерація тестів, деплой, безпека та інше", tags: ["Claude Code", "Codex", "66K+ скілів"], price: "Безкоштовно (open-source скіли)", url: "https://skillsmp.com", icon: "🛒" },
                 { name: "Smithery", stars: "★★★★★", desc: "Реєстр 7 300+ MCP серверів для AI-агентів. MCP — це протокол що дозволяє Claude Code, Cursor та іншим AI підключатись до зовнішніх сервісів: GitHub, Figma, Slack, бази даних, API. Smithery — місце де всі ці підключення зібрані", tags: ["MCP", "7300+ серверів", "Claude Code"], price: "Безкоштовно (Hobby) / Pro для розробників", url: "https://smithery.ai", icon: "⚒️" }
             ]},
-            coding_github: { title: "Корисні GitHub'и", tagClass: "tag-github", parent: "screen-vibecoding", items: []}
+            // НОВИЙ БЛОК: Корисні GitHub'и
+            coding_github: { title: "Корисні GitHub'и", tagClass: "tag-github", parent: "screen-vibecoding", items: [
+                { name: "Claude Cookbooks", stars: "★★★★★", desc: "Офіційні рецепти від Anthropic для роботи з Claude API. Готові Jupyter-ноутбуки: RAG, класифікація, агенти з тулами, мультимодальність, prompt caching та багато іншого", tags: ["Claude", "API", "Гайди"], price: "Безкоштовно (open-source)", url: "https://github.com/anthropics/claude-cookbooks", icon: "📚" },
+                { name: "RTK", stars: "★★★★★", desc: "CLI-проксі на Rust, який стискає вивід команд перед відправкою в LLM — економить 60-90% токенів. Працює з git, npm, docker, тест-раннерами та іншими. Один бінарник, zero dependencies, <10ms overhead", tags: ["CLI", "Токени", "Rust", "Claude Code", "Vibe Coding"], price: "Безкоштовно (MIT, open-source)", url: "https://github.com/rtk-ai/rtk", icon: "⚡" },
+                { name: "Blader Humanizer", stars: "★★★★★", desc: "Claude Code скіл, який прибирає ознаки AI-генерованого тексту та робить його природнішим. Виявляє та виправляє типові AI-патерни: промо-мову, надлишкові em-dash, правило трьох, AI-словник та інші. 9.6K+ зірок", tags: ["Claude Code", "Скіл", "Текст", "Humanizer", "Контент"], price: "Безкоштовно (open-source)", url: "https://github.com/blader/humanizer", icon: "✍️" },
+                { name: "Agency Agents", stars: "★★★★★", desc: "100+ AI-агентів для Claude Code, Cursor, Gemini CLI та інших. Кожен агент — спеціаліст з унікальною експертизою: фронтенд, бекенд, дизайн, маркетинг, SEO, DevOps, QA. Готові воркфлоу та реальні приклади коду. 50K+ зірок", tags: ["Агенти", "Claude Code", "Cursor", "Промпти", "Вайбкодинг"], price: "Безкоштовно (open-source)", url: "https://github.com/msitarzewski/agency-agents", icon: "🎭" }
+            ]}
         };
 
         function showScreen(id) {
