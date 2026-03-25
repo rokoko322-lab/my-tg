@@ -148,7 +148,7 @@
 
         <div class="cat-card" onclick="renderList('nsfw')">
             <div class="icon-box" style="background: #ff4b4b33;">🔞</div>
-            <div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту, вдруг уйдём на онли фанс и нам понадобится создать девчёнку))</small></div>
+            <div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту</small></div>
             <div style="color:#ff5c5c; font-weight:bold;">4</div>
         </div>
     </div>
@@ -294,9 +294,15 @@
                 { name: "Candy AI", stars: "★★★★☆", desc: "AI-компаньйон з генерацією фото та чатом без цензури. Створюєш віртуального персонажа, спілкуєшся та генеруєш зображення. Реалістик та аніме стилі.", tags: ["AI Компаньйон", "Чат", "Фото", "NSFW"], price: "Від $12.99/міс", url: "https://candy.ai", icon: "🍬" },
                 { name: "DreamGF.ai", stars: "★★★★☆", desc: "Платформа для створення AI-подруги з генерацією фото та голосовими повідомленнями. Повна кастомізація зовнішності, NSFW-чат та фото-генерація.", tags: ["AI Подруга", "Фото", "Голос", "NSFW"], price: "Від $9.99/міс", url: "https://dreamgf.ai", icon: "💕" }
             ]},
-            
+
             // ==================== ВАЙБКОДИНГ ====================
-            coding_ai: { title: "AI для кодингу", tagClass: "tag-coding", parent: "screen-vibecoding", items: []},
+            coding_ai: { title: "AI для кодингу", tagClass: "tag-coding", parent: "screen-vibecoding", items: [
+                { name: "Antigravity", stars: "★★★★☆", desc: "No-code платформа — описуєш словами що хочеш і отримуєш готовий додаток з бекендом, базою і деплоєм. Кодити не треба взагалі", tags: ["No-code", "Full-stack", "Деплой"], price: "Безкоштовно / платні плани", url: "https://antigravity.ai", icon: "🚀" },
+                { name: "Codex (GPT)", stars: "★★★★★", desc: "AI-агент від OpenAI що сидить прямо в ChatGPT. Даєш задачу — він сам пише код, запускає тести і показує результат. Тобі тільки перевірити", tags: ["OpenAI", "Агент", "Автономний"], price: "В ChatGPT Pro ($200/міс) / Plus ($20/міс)", url: "https://chatgpt.com", icon: "🤖" },
+                { name: "Claude Code", stars: "★★★★★", desc: "AI-агент від Anthropic що живе в терміналі. Бачить весь проєкт, пише код, дебажить, комітить і деплоїть — все сам. Реально сам", tags: ["Термінал", "Агент", "Full-stack"], price: "В Claude Max ($100/міс) / Pro ($20/міс)", url: "https://anthropic.com", icon: "🧠" },
+                { name: "Cursor", stars: "★★★★★", desc: "Редактор коду на базі VS Code, але з AI всередині. Розуміє весь проєкт, автокомплітить, пише функції і цілі файли прямо з чату", tags: ["VS Code", "Автокомпліт", "Чат"], price: "Безкоштовно / від $20/міс", url: "https://cursor.com", icon: "📝" },
+                { name: "Windsurf", stars: "★★★★★", desc: "AI-редактор коду від Codeium з технологією Cascade — розуміє весь проєкт цілком. Краще за Cursor працює з великими кодовими базами та складними проєктами", tags: ["VS Code", "Cascade", "Великі проєкти"], price: "Безкоштовно (25 кредитів) / Pro $15/міс", url: "https://codeium.com/windsurf", icon: "🏄" }
+            ]},
             coding_platforms: { title: "AI-платформи та ресурси", tagClass: "tag-platforms", parent: "screen-vibecoding", items: []},
             coding_github: { title: "Корисні GitHub'и", tagClass: "tag-github", parent: "screen-vibecoding", items: []}
         };
@@ -307,7 +313,7 @@
         }
 
         function renderList(key) {
-            currentSection = key; // Запам'ятовуємо поточний розділ для кнопки "Назад"
+            currentSection = key;
             const section = data[key];
             document.getElementById('items-title').innerText = section.title;
             const container = document.getElementById('items-container');
@@ -341,7 +347,6 @@
         }
 
         function goBack() {
-            // Розумна кнопка "Назад", яка знає з якого меню ми прийшли
             if (currentSection && data[currentSection] && data[currentSection].parent) {
                 showScreen(data[currentSection].parent);
             } else {
