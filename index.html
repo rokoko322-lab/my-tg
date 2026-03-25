@@ -45,10 +45,19 @@
         .tag-aimontage { background: #2b1f3d; color: #d97bff; }
         .tag-nsfw { background: #3d1f1f; color: #ff5c5c; }
         
-        /* Кольори тегів для Вайбкодингу */
         .tag-coding { background: #1f3d3a; color: #4ef0d3; }
         .tag-platforms { background: #2a1f3d; color: #9d4eff; }
         .tag-github { background: #3d1f2b; color: #ff4e8a; }
+
+        /* Кольори тегів для Софтів */
+        .tag-soft-antidetect { background: #3d2a1f; color: #ff9d2e; }
+        .tag-soft-auto { background: #1f3d2a; color: #7bff9e; }
+        .tag-soft-utils { background: #3d331f; color: #ffd37b; }
+        .tag-soft-remove { background: #3d1f1f; color: #ff7b7b; }
+        .tag-soft-proxy { background: #1f383d; color: #7be3ff; }
+        .tag-soft-mail { background: #1f2d3d; color: #7bafff; }
+        .tag-soft-montage { background: #2b1f3d; color: #d97bff; }
+        .tag-soft-trans { background: #201f3d; color: #9d4eff; }
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -72,6 +81,12 @@
             <div style="flex-grow:1"><b>Вайбкодинг</b><br><small style="color:#888">Пишеш що хочеш — AI кодить за тебе. Без досвіду, без болі</small></div>
             <div style="color:#4ef0d3; font-weight:bold;">14</div>
         </div>
+
+        <div class="cat-card" onclick="showScreen('screen-softs')">
+            <div class="icon-box" style="background: #ff9d2e33; color: #ff9d2e;">🛠️</div>
+            <div style="flex-grow:1"><b>Софти</b><br><small style="color:#888">Інструменти для масштабування та абузу сервісів</small></div>
+            <div style="color:#ff9d2e; font-weight:bold;">32</div>
+        </div>
     </div>
 
     <div id="screen-ai-tools" class="hidden">
@@ -80,77 +95,18 @@
             <h2>AI Інструменти</h2>
         </div>
         
-        <div class="cat-card" onclick="renderList('music')">
-            <div class="icon-box" style="background: #ff7b7b33;">🎵</div>
-            <div style="flex-grow:1"><b>Музика</b><br><small style="color:#888">AI для звуку та треків</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('voice')">
-            <div class="icon-box" style="background: #ffd37b33;">🗣️</div>
-            <div style="flex-grow:1"><b>Озвучка</b><br><small style="color:#888">AI для голосу</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('images')">
-            <div class="icon-box" style="background: #ff7bea33;">🎨</div>
-            <div style="flex-grow:1"><b>Зображення</b><br><small style="color:#888">Генерація та редагування</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">16</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('video')">
-            <div class="icon-box" style="background: #7bffff33;">🎬</div>
-            <div style="flex-grow:1"><b>Відео</b><br><small style="color:#888">AI для створення та редагування</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">15</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('avatars')">
-            <div class="icon-box" style="background: #e07bff33;">👤</div>
-            <div style="flex-grow:1"><b>Аватари</b><br><small style="color:#888">АІ-аватари, липсинг та говорячі голови</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('api')">
-            <div class="icon-box" style="background: #7bff9e33;">🔌</div>
-            <div style="flex-grow:1"><b>API-агрегатори</b><br><small style="color:#888">Доступ до всіх AI-моделей через один кабінет</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('upscale')">
-            <div class="icon-box" style="background: #7be3ff33;">✨</div>
-            <div style="flex-grow:1"><b>Апскейлери</b><br><small style="color:#888">AI-програми для покращення якості відео та зображень</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('textai')">
-            <div class="icon-box" style="background: #ff7ba433;">💬</div>
-            <div style="flex-grow:1"><b>Текстові AI</b><br><small style="color:#888">Чат-боти для сценаріїв, текстів та креативу</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('blender')">
-            <div class="icon-box" style="background: #ff9d2e33;">🎭</div>
-            <div style="flex-grow:1"><b>Blender AI</b><br><small style="color:#888">AI-плагіни для автоматичної анімації в Blender</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('videoprompt')">
-            <div class="icon-box" style="background: #7bffc433;">🔍</div>
-            <div style="flex-grow:1"><b>Video-to-Prompt</b><br><small style="color:#888">AI аналізує відео і пише промпт для відтворення</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">5</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('aimontage')">
-            <div class="icon-box" style="background: #d97bff33;">✂️</div>
-            <div style="flex-grow:1"><b>AI Монтаж</b><br><small style="color:#888">AI-інструменти для відеомонтажу — аналіз, субтитри, автомонтаж</small></div>
-            <div style="color:#6e6eff; font-weight:bold;">1</div>
-        </div>
-
-        <div class="cat-card" onclick="renderList('nsfw')">
-            <div class="icon-box" style="background: #ff4b4b33;">🔞</div>
-            <div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту</small></div>
-            <div style="color:#ff5c5c; font-weight:bold;">4</div>
-        </div>
+        <div class="cat-card" onclick="renderList('music')"><div class="icon-box" style="background: #ff7b7b33;">🎵</div><div style="flex-grow:1"><b>Музика</b><br><small style="color:#888">AI для звуку та треків</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('voice')"><div class="icon-box" style="background: #ffd37b33;">🗣️</div><div style="flex-grow:1"><b>Озвучка</b><br><small style="color:#888">AI для голосу</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('images')"><div class="icon-box" style="background: #ff7bea33;">🎨</div><div style="flex-grow:1"><b>Зображення</b><br><small style="color:#888">Генерація та редагування</small></div><div style="color:#6e6eff; font-weight:bold;">16</div></div>
+        <div class="cat-card" onclick="renderList('video')"><div class="icon-box" style="background: #7bffff33;">🎬</div><div style="flex-grow:1"><b>Відео</b><br><small style="color:#888">AI для створення та редагування</small></div><div style="color:#6e6eff; font-weight:bold;">15</div></div>
+        <div class="cat-card" onclick="renderList('avatars')"><div class="icon-box" style="background: #e07bff33;">👤</div><div style="flex-grow:1"><b>Аватари</b><br><small style="color:#888">АІ-аватари, липсинг та говорячі голови</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('api')"><div class="icon-box" style="background: #7bff9e33;">🔌</div><div style="flex-grow:1"><b>API-агрегатори</b><br><small style="color:#888">Доступ до всіх моделей через один кабінет</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('upscale')"><div class="icon-box" style="background: #7be3ff33;">✨</div><div style="flex-grow:1"><b>Апскейлери</b><br><small style="color:#888">AI-програми для покращення якості</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('textai')"><div class="icon-box" style="background: #ff7ba433;">💬</div><div style="flex-grow:1"><b>Текстові AI</b><br><small style="color:#888">Чат-боти для сценаріїв та креативу</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('blender')"><div class="icon-box" style="background: #ff9d2e33;">🎭</div><div style="flex-grow:1"><b>Blender AI</b><br><small style="color:#888">AI-плагіни для анімації в Blender</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('videoprompt')"><div class="icon-box" style="background: #7bffc433;">🔍</div><div style="flex-grow:1"><b>Video-to-Prompt</b><br><small style="color:#888">AI аналізує відео і пише промпт</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('aimontage')"><div class="icon-box" style="background: #d97bff33;">✂️</div><div style="flex-grow:1"><b>AI Монтаж</b><br><small style="color:#888">AI-інструменти для відеомонтажу</small></div><div style="color:#6e6eff; font-weight:bold;">1</div></div>
+        <div class="cat-card" onclick="renderList('nsfw')"><div class="icon-box" style="background: #ff4b4b33;">🔞</div><div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту</small></div><div style="color:#ff5c5c; font-weight:bold;">4</div></div>
     </div>
 
     <div id="screen-vibecoding" class="hidden">
@@ -158,23 +114,63 @@
             <button class="back-btn" onclick="showScreen('screen-main')">←</button>
             <h2>Вайбкодинг</h2>
         </div>
+        <div class="cat-card" onclick="renderList('coding_ai')"><div class="icon-box" style="background: #4ef0d333; color: #4ef0d3;">💻</div><div style="flex-grow:1"><b>AI для кодингу</b><br><small style="color:#888">Ці штуки реально пишуть код за тебе</small></div><div style="color:#4ef0d3; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('coding_platforms')"><div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">🧩</div><div style="flex-grow:1"><b>AI-платформи та ресурси</b><br><small style="color:#888">Платформи, API та гайди</small></div><div style="color:#9d4eff; font-weight:bold;">5</div></div>
+        <div class="cat-card" onclick="renderList('coding_github')"><div class="icon-box" style="background: #ff4e8a33; color: #ff4e8a;">🐙</div><div style="flex-grow:1"><b>Корисні GitHub'и</b><br><small style="color:#888">GitHub-репозиторії для вайбкодінгу</small></div><div style="color:#ff4e8a; font-weight:bold;">4</div></div>
+    </div>
+
+    <div id="screen-softs" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-main')">←</button>
+            <h2>Софти</h2>
+        </div>
         
-        <div class="cat-card" onclick="renderList('coding_ai')">
-            <div class="icon-box" style="background: #4ef0d333; color: #4ef0d3;">💻</div>
-            <div style="flex-grow:1"><b>AI для кодингу</b><br><small style="color:#888">Ці штуки реально пишуть код за тебе — від ідеї до готового продукту</small></div>
-            <div style="color:#4ef0d3; font-weight:bold;">5</div>
+        <div class="cat-card" onclick="renderList('soft_antidetect')">
+            <div class="icon-box" style="background: #ff9d2e33; color: #ff9d2e;">👓</div>
+            <div style="flex-grow:1"><b>Антидетект браузери</b><br><small style="color:#888">Мультиакаунтинг, маскування та масштабування без банів</small></div>
+            <div style="color:#ff9d2e; font-weight:bold;">4</div>
         </div>
 
-        <div class="cat-card" onclick="renderList('coding_platforms')">
-            <div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">🧩</div>
-            <div style="flex-grow:1"><b>AI-платформи та ресурси</b><br><small style="color:#888">Платформи, API та гайди для створення AI-додатків</small></div>
-            <div style="color:#9d4eff; font-weight:bold;">5</div>
+        <div class="cat-card" onclick="renderList('soft_auto')">
+            <div class="icon-box" style="background: #4ef0d333; color: #4ef0d3;">🤖</div>
+            <div style="flex-grow:1"><b>Автоматизація</b><br><small style="color:#888">Програми та розширення для масової генерації контенту</small></div>
+            <div style="color:#4ef0d3; font-weight:bold;">8</div>
         </div>
 
-        <div class="cat-card" onclick="renderList('coding_github')">
-            <div class="icon-box" style="background: #ff4e8a33; color: #ff4e8a;">🐙</div>
-            <div style="flex-grow:1"><b>Корисні GitHub'и</b><br><small style="color:#888">GitHub-репозиторії для вайбкодінгу та AI</small></div>
-            <div style="color:#ff4e8a; font-weight:bold;">4</div>
+        <div class="cat-card" onclick="renderList('soft_utils')">
+            <div class="icon-box" style="background: #ffd37b33; color: #ffd37b;">🧰</div>
+            <div style="flex-grow:1"><b>Утиліти</b><br><small style="color:#888">Корисні штуки для роботи з контентом</small></div>
+            <div style="color:#ffd37b; font-weight:bold;">2</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('soft_remove')">
+            <div class="icon-box" style="background: #ff7b7b33; color: #ff7b7b;">🛡️</div>
+            <div style="flex-grow:1"><b>Видалення AI-мітки</b><br><small style="color:#888">C2PA метадані та SynthID — як зняти бирку з AI-контенту</small></div>
+            <div style="color:#ff7b7b; font-weight:bold;">7</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('soft_proxy')">
+            <div class="icon-box" style="background: #7be3ff33; color: #7be3ff;">🌐</div>
+            <div style="flex-grow:1"><b>Проксі</b><br><small style="color:#888">Резидентні, мобільні та датацентр проксі для роботи</small></div>
+            <div style="color:#7be3ff; font-weight:bold;">2</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('soft_mail')">
+            <div class="icon-box" style="background: #7bafff33; color: #7bafff;">📧</div>
+            <div style="flex-grow:1"><b>Одноразові пошти</b><br><small style="color:#888">Тимчасові email-адреси для реєстрації без спаму</small></div>
+            <div style="color:#7bafff; font-weight:bold;">3</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('soft_montage')">
+            <div class="icon-box" style="background: #d97bff33; color: #d97bff;">✂️</div>
+            <div style="flex-grow:1"><b>Монтаж</b><br><small style="color:#888">Програми для відеомонтажу — від безкоштовних до про</small></div>
+            <div style="color:#d97bff; font-weight:bold;">4</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('soft_trans')">
+            <div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">📝</div>
+            <div style="flex-grow:1"><b>Транскрибація</b><br><small style="color:#888">Інструменти для транскрибації та субтитрів YouTube відео</small></div>
+            <div style="color:#9d4eff; font-weight:bold;">2</div>
         </div>
     </div>
 
@@ -194,6 +190,7 @@
         let currentSection = '';
 
         const data = {
+            // === AI ІНСТРУМЕНТИ ===
             music: { title: "Музика", tagClass: "tag-music", parent: "screen-ai-tools", items: [
                 { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
                 { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
@@ -295,7 +292,7 @@
                 { name: "DreamGF.ai", stars: "★★★★☆", desc: "Платформа для створення AI-подруги з генерацією фото та голосовими повідомленнями. Повна кастомізація зовнішності, NSFW-чат та фото-генерація.", tags: ["AI Подруга", "Фото", "Голос", "NSFW"], price: "Від $9.99/міс", url: "https://dreamgf.ai", icon: "💕" }
             ]},
 
-            // ==================== ВАЙБКОДИНГ ====================
+            // === ВАЙБКОДИНГ ===
             coding_ai: { title: "AI для кодингу", tagClass: "tag-coding", parent: "screen-vibecoding", items: [
                 { name: "Antigravity", stars: "★★★★☆", desc: "No-code платформа — описуєш словами що хочеш і отримуєш готовий додаток з бекендом, базою і деплоєм. Кодити не треба взагалі", tags: ["No-code", "Full-stack", "Деплой"], price: "Безкоштовно / платні плани", url: "https://antigravity.dev/", icon: "🚀" },
                 { name: "Codex (GPT)", stars: "★★★★★", desc: "AI-агент від OpenAI що сидить прямо в ChatGPT. Даєш задачу — він сам пише код, запускає тести і показує результат. Тобі тільки перевірити", tags: ["OpenAI", "Агент", "Автономний"], price: "В ChatGPT Pro ($200/міс) / Plus ($20/міс)", url: "https://chatgpt.com", icon: "🤖" },
@@ -310,13 +307,22 @@
                 { name: "SkillsMP", stars: "★★★★★", desc: "Маркетплейс з 66 000+ готових скілів для AI-кодинг асистентів. Встановлюєш скіл в один клік — і Claude Code, Codex або ChatGPT отримує нову суперсилу: рев'ю коду, генерація тестів, деплой, безпека та інше", tags: ["Claude Code", "Codex", "66K+ скілів"], price: "Безкоштовно (open-source скіли)", url: "https://skillsmp.com", icon: "🛒" },
                 { name: "Smithery", stars: "★★★★★", desc: "Реєстр 7 300+ MCP серверів для AI-агентів. MCP — це протокол що дозволяє Claude Code, Cursor та іншим AI підключатись до зовнішніх сервісів: GitHub, Figma, Slack, бази даних, API. Smithery — місце де всі ці підключення зібрані", tags: ["MCP", "7300+ серверів", "Claude Code"], price: "Безкоштовно (Hobby) / Pro для розробників", url: "https://smithery.ai", icon: "⚒️" }
             ]},
-            // НОВИЙ БЛОК: Корисні GitHub'и
             coding_github: { title: "Корисні GitHub'и", tagClass: "tag-github", parent: "screen-vibecoding", items: [
                 { name: "Claude Cookbooks", stars: "★★★★★", desc: "Офіційні рецепти від Anthropic для роботи з Claude API. Готові Jupyter-ноутбуки: RAG, класифікація, агенти з тулами, мультимодальність, prompt caching та багато іншого", tags: ["Claude", "API", "Гайди"], price: "Безкоштовно (open-source)", url: "https://github.com/anthropics/claude-cookbooks", icon: "📚" },
                 { name: "RTK", stars: "★★★★★", desc: "CLI-проксі на Rust, який стискає вивід команд перед відправкою в LLM — економить 60-90% токенів. Працює з git, npm, docker, тест-раннерами та іншими. Один бінарник, zero dependencies, <10ms overhead", tags: ["CLI", "Токени", "Rust", "Claude Code", "Vibe Coding"], price: "Безкоштовно (MIT, open-source)", url: "https://github.com/rtk-ai/rtk", icon: "⚡" },
                 { name: "Blader Humanizer", stars: "★★★★★", desc: "Claude Code скіл, який прибирає ознаки AI-генерованого тексту та робить його природнішим. Виявляє та виправляє типові AI-патерни: промо-мову, надлишкові em-dash, правило трьох, AI-словник та інші. 9.6K+ зірок", tags: ["Claude Code", "Скіл", "Текст", "Humanizer", "Контент"], price: "Безкоштовно (open-source)", url: "https://github.com/blader/humanizer", icon: "✍️" },
                 { name: "Agency Agents", stars: "★★★★★", desc: "100+ AI-агентів для Claude Code, Cursor, Gemini CLI та інших. Кожен агент — спеціаліст з унікальною експертизою: фронтенд, бекенд, дизайн, маркетинг, SEO, DevOps, QA. Готові воркфлоу та реальні приклади коду. 50K+ зірок", tags: ["Агенти", "Claude Code", "Cursor", "Промпти", "Вайбкодинг"], price: "Безкоштовно (open-source)", url: "https://github.com/msitarzewski/agency-agents", icon: "🎭" }
-            ]}
+            ]},
+
+            // === СОФТИ (ПОКИ ПОРОЖНІ ЗАГЛУШКИ) ===
+            soft_antidetect: { title: "Антидетект браузери", tagClass: "tag-soft-antidetect", parent: "screen-softs", items: []},
+            soft_auto: { title: "Автоматизація", tagClass: "tag-soft-auto", parent: "screen-softs", items: []},
+            soft_utils: { title: "Утиліти", tagClass: "tag-soft-utils", parent: "screen-softs", items: []},
+            soft_remove: { title: "Видалення AI-мітки", tagClass: "tag-soft-remove", parent: "screen-softs", items: []},
+            soft_proxy: { title: "Проксі", tagClass: "tag-soft-proxy", parent: "screen-softs", items: []},
+            soft_mail: { title: "Одноразові пошти", tagClass: "tag-soft-mail", parent: "screen-softs", items: []},
+            soft_montage: { title: "Монтаж", tagClass: "tag-soft-montage", parent: "screen-softs", items: []},
+            soft_trans: { title: "Транскрибація", tagClass: "tag-soft-trans", parent: "screen-softs", items: []}
         };
 
         function showScreen(id) {
