@@ -39,7 +39,8 @@
         .tag-avatars { background: #2d243d; color: #b37bff; }
         .tag-api { background: #243d2d; color: #7bff9e; }
         .tag-upscale { background: #24383d; color: #7be3ff; }
-        .tag-textai { background: #3d242c; color: #ff7ba4; } /* Новий колір для Текстових AI */
+        .tag-textai { background: #3d242c; color: #ff7ba4; }
+        .tag-blender { background: #3d2a1f; color: #ff9d2e; } /* Новий колір для Blender AI */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -109,6 +110,12 @@
         <div class="cat-card" onclick="renderList('textai')">
             <div class="icon-box" style="background: #ff7ba433;">💬</div>
             <div style="flex-grow:1"><b>Текстові AI</b><br><small style="color:#888">Чат-боти для сценаріїв, текстів та креативу</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">5</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('blender')">
+            <div class="icon-box" style="background: #ff9d2e33;">🎭</div>
+            <div style="flex-grow:1"><b>Blender AI</b><br><small style="color:#888">AI-плагіни для автоматичної анімації в Blender</small></div>
             <div style="color:#6e6eff; font-weight:bold;">5</div>
         </div>
     </div>
@@ -197,13 +204,20 @@
                 { name: "Topaz Video AI 7.0.3", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Windows", "Апскейл", "Стабілізація"], price: "Windows | 195 MB", url: "https://mega.nz/file/qpgWjJ5R#623DVjxHoEfu1VefSyWZ8f8CLy_Jj4kjZ6x5IbIiv0Y", icon: "🪟" },
                 { name: "Topaz Video AI 7.0.0", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Mac", "Апскейл", "Стабілізація"], price: "Mac | 605.2 MB", url: "https://mega.nz/file/KgoxiAKT#nQBvFd1BObzz5TBCoduHnefXEgYUZeRM6eyEsGyTFC4", icon: "🍎" }
             ]},
-            // НОВИЙ БЛОК: Текстові AI
             textai: { title: "Текстові AI", tagClass: "tag-textai", items: [
                 { name: "Claude", stars: "★★★★★", desc: "Від Anthropic. Найкращий для довгих текстів і сценаріїв — тримає контекст як ніхто інший. Пишеш сценарій на 20 хвилин — він не забуде що було на першій. Для YouTube-сценаріїв це must-have", tags: ["Сценарії", "Довгі тексти", "Контекст"], price: "Безкоштовно / Pro $20/міс / Max $100/міс", url: "https://claude.ai", icon: "🧠" },
                 { name: "ChatGPT", stars: "★★★★★", desc: "Від OpenAI. Найкреативніший з усіх — добре генерує ідеї, заголовки, гачки для відео. Має DALL-E, Codex, пошук в інтернеті і купу плагінів всередині", tags: ["Креатив", "Ідеї", "Все-в-одному"], price: "Безкоштовно / Plus $20/міс / Pro $200/міс", url: "https://chatgpt.com", icon: "🤖" },
                 { name: "Gemini", stars: "★★★★☆", desc: "Від Google. Має доступ до свіжої інфи з пошуку, розуміє відео та картинки. Безкоштовний і досить потужний — для ресьорчу тем під відео саме те", tags: ["Google", "Пошук", "Безкоштовно"], price: "Безкоштовно / AI Pro $19.99/міс", url: "https://gemini.google.com", icon: "💎" },
                 { name: "Grok", stars: "★★★★☆", desc: "Від xAI (Ілон Маск). Без цензури, з гумором і доступом до X/Twitter в реальному часі. Для трендів та вірального контенту — непоганий варіант", tags: ["Без цензури", "Тренди", "X/Twitter"], price: "Безкоштовно / Premium в X", url: "https://grok.com", icon: "🚀" },
                 { name: "Sudowrite", stars: "★★★★☆", desc: "AI-модель створена спеціально для художньої літератури. Допомагає писати романи, сценарії та оповідання — розуміє структуру сюжету, персонажів, діалоги та наратив краще за загальні чат-боти", tags: ["Книги", "Сценарії", "Fiction"], price: "Hobby $19/міс / Pro $29/міс", url: "https://www.sudowrite.com", icon: "✍️" }
+            ]},
+            // НОВИЙ БЛОК: Blender AI
+            blender: { title: "Blender AI", tagClass: "tag-blender", items: [
+                { name: "Text2Motion", stars: "★★★★★", desc: "Blender-аддон для генерації анімації з тексту. Пишеш промпт — отримуєш keyframes прямо в Blender. Автоматичний ріг, скінінг та анімація будь-якого 3D-меша з натуральної мови", tags: ["Blender Addon", "Text-to-Motion", "Open Source"], price: "Безкоштовно / Open Source", url: "https://github.com/IlmiraTarim/Text2Motion", icon: "🧠" },
+                { name: "HY-Motion", stars: "★★★★★", desc: "AI motion-генератор від Tencent на базі Diffusion Transformer. 200+ типів рухів: біг, бійки, танці. Експорт у FBX/BVH/GLTF для імпорту в Blender. Автоматичний retarget на будь-якого персонажа", tags: ["Motion Gen", "FBX/BVH", "Tencent"], price: "Безкоштовно / Open Source", url: "https://github.com/Tencent/HY-Motion", icon: "⚡" },
+                { name: "DeepMotion", stars: "★★★★★", desc: "AI motion capture без костюма та сенсорів. Записав відео на телефон — отримав 3D-анімацію. Експорт у FBX/BVH/GLB для Blender. Foot locking, згладжування, масштабування скелету", tags: ["Motion Capture", "Відео→3D", "Без сенсорів"], price: "Безкоштовно / платні плани", url: "https://www.deepmotion.com", icon: "🎥" },
+                { name: "Animatric AI", stars: "★★★★★", desc: "AI-копілот для анімації. Text-to-animation з нативним плагіном для Blender та Unreal Engine. Сотні тисяч motion capture кліпів — від повсякденних рухів до танців та бойових мистецтв", tags: ["AI Copilot", "Blender Plugin", "Unreal"], price: "SaaS (перевір на сайті)", url: "https://animatric.ai", icon: "🤖" },
+                { name: "Motion Animate", stars: "★★★★☆", desc: "Процедурний аддон для Blender на базі Geometry Nodes. 40 пресетів анімації тексту, 65 демо-файлів, 17 кастомних нод-груп. Keyframe-free анімації: лупи, трейли, шум, пульс", tags: ["Процедурний", "Geometry Nodes", "Пресети"], price: "Платний (Gumroad)", url: "https://gumroad.com", icon: "➕" }
             ]}
         };
 
