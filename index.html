@@ -1,132 +1,160 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="uk">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>База знаний | Лисий Prime</title>
+    <title>Моя База</title>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
     <style>
-        /* Глобальные стили для темной темы приложения */
-        body {
-            font-family: sans-serif;
-            background-color: #121217; /* Очень темный фон приложения */
-            color: #ffffff; /* Белый текст */
-            margin: 0;
-            padding: 20px;
-        }
+        body { font-family: sans-serif; background-color: #121217; color: white; margin: 0; padding: 15px; -webkit-tap-highlight-color: transparent; }
+        .hidden { display: none !important; }
+        
+        /* Заголовок */
+        .header { display: flex; align-items: center; margin-bottom: 20px; padding-top: 10px; }
+        .header h2 { margin: 0; font-size: 22px; }
+        .back-btn { background: none; border: none; color: #6e6eff; font-size: 16px; cursor: pointer; padding: 0; margin-right: 15px; }
 
-        /* Стиль для каждой карточки категории */
-        .category-card {
-            background-color: #1f1f26; /* Более светлый фон карточки */
-            border-radius: 12px; /* Скругленные углы */
-            padding: 15px;
-            margin-bottom: 10px; /* Отступ между карточками */
-            display: flex; /* Flexbox для выравнивания */
-            align-items: center; /* Вертикальное выравнивание */
-            border: 1px solid #2d2d3a; /* Тонкая рамка для четкости */
+        /* Стили карточек */
+        .card { 
+            background: #1f1f26; border-radius: 12px; padding: 12px 15px; 
+            margin-bottom: 10px; display: flex; align-items: center; 
+            cursor: pointer; border: 1px solid #2d2d3a; transition: background 0.2s;
         }
+        .card:active { background: #2d2d3a; }
+        
+        .icon-box { width: 42px; height: 42px; border-radius: 10px; margin-right: 15px; display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+        .info { flex-grow: 1; }
+        .title { font-weight: bold; font-size: 15px; margin-bottom: 3px; }
+        .desc { font-size: 11px; color: #888; line-height: 1.2; }
+        .badge { background: #2d2d3a; padding: 4px 10px; border-radius: 12px; font-size: 11px; color: #6e6eff; font-weight: bold; margin-left: 10px; }
 
-        /* Стиль для круглой иконки слева */
-        .icon-container {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%; /* Сделать иконку круглой */
-            display: flex;
-            justify-content: center; /* Горизонтальное выравнивание эмодзи */
-            align-items: center; /* Вертикальное выравнивание эмодзи */
-            margin-right: 15px; /* Отступ от иконки до текста */
-            font-size: 22px; /* Размер эмодзи */
-        }
-
-        /* Стиль для текстовой части (заголовок и описание) */
-        .text-container {
-            flex-grow: 1; /* Занимает все доступное пространство */
-        }
-
-        .category-title {
-            font-weight: bold; /* Жирный заголовок */
-            font-size: 16px;
-            margin: 0 0 4px 0; /* Убираем отступы, оставляем небольшой снизу */
-        }
-
-        .category-description {
-            font-size: 13px;
-            color: #b0b0bc; /* Светло-серый цвет для описания */
-            margin: 0; /* Убираем все отступы */
-        }
-
-        /* Стиль для круглого счетчика справа */
-        .counter-badge {
-            width: 28px;
-            height: 28px;
-            border-radius: 50%; /* Сделать счетчик круглым */
-            background-color: #2d2d3a; /* Более темный фон для счетчика */
-            color: #9a9aff; /* Фиолетовый цвет текста, как на скриншоте */
-            font-size: 12px;
-            font-weight: bold;
-            display: flex;
-            justify-content: center; /* Горизонтальное выравнивание числа */
-            align-items: center; /* Вертикальное выравнивание числа */
-            margin-left: auto; /* Выравнивание по правому краю карточки */
-        }
+        /* Кнопка ссылки внутри категории */
+        .link-item { background: #252533; padding: 15px; border-radius: 10px; margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; text-decoration: none; color: white; border-left: 4px solid #6e6eff; }
     </style>
 </head>
 <body>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #e6e6ff;">🤖</div> <div class="text-container">
-            <p class="category-title">AI Інструменты</p>
-            <p class="category-description">Найкращі AI-сервіси по категоріях</p>
+    <div id="screen-main">
+        <div class="header"><h2>Привет, Роман! 👋</h2></div>
+        
+        <div class="card" onclick="showScreen('screen-ai-tools')">
+            <div class="icon-box" style="background: #e6e6ff;">🤖</div>
+            <div class="info">
+                <div class="title">AI Інструменти</div>
+                <div class="desc">Найкращі AI-сервіси по категоріях</div>
+            </div>
+            <div class="badge">75</div>
         </div>
-        <div class="counter-badge">75</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #e0f7ff;">⚡</div> <div class="text-container">
-            <p class="category-title">Вайбкодинг</p>
-            <p class="category-description">Пишеш що хочеш — AI кодить за тебе. Без досвіду, без болі</p>
         </div>
-        <div class="counter-badge">14</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #fff2e0;">🛠️</div> <div class="text-container">
-            <p class="category-title">Софти</p>
-            <p class="category-description">Інструменты для масштабування та абузу сервісів</p>
+    <div id="screen-ai-tools" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-main')">← Назад</button>
+            <h2>AI Інструменти</h2>
         </div>
-        <div class="counter-badge">32</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #e0f9f0;">🛒</div> <div class="text-container">
-            <p class="category-title">Магазини</p>
-            <p class="category-description">Маркетплейси акаунтів, підписок та цифрових товарів</p>
+        <div class="card" onclick="showLinks('Музика', 'AI для створення музики та звуку')">
+            <div class="icon-box" style="background: #ff7b7b33;">🎵</div>
+            <div class="info"><div class="title">Музика</div><div class="desc">AI для створення музики та звуку</div></div>
+            <div class="badge">5</div>
         </div>
-        <div class="counter-badge">5</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #ffeaea;">📹</div> <div class="text-container">
-            <p class="category-title">Для YouTube</p>
-            <p class="category-description">Аналітика, пошук ніш та інструменти для росту каналу</p>
+        <div class="card" onclick="showLinks('Озвучка', 'AI для озвучки та клонування голосу')">
+            <div class="icon-box" style="background: #ffd37b33;">🗣️</div>
+            <div class="info"><div class="title">Озвучка</div><div class="desc">AI для озвучки та клонування голосу</div></div>
+            <div class="badge">5</div>
         </div>
-        <div class="counter-badge">13</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #fff9e0;">🎁</div> <div class="text-container">
-            <p class="category-title">Халява</p>
-            <p class="category-description">Знижки, промокоди та спільні підписки на AI-сервіси</p>
+        <div class="card" onclick="showLinks('Зображення', 'AI для генерації та редагування зображень')">
+            <div class="icon-box" style="background: #ff7bea33;">🎨</div>
+            <div class="info"><div class="title">Зображення</div><div class="desc">AI для генерації та редагування зображень</div></div>
+            <div class="badge">16</div>
         </div>
-        <div class="counter-badge">4</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #ffe0f9;">🎓</div> <div class="text-container">
-            <p class="category-title">Gайди по YouTube</p>
-            <p class="category-description">Покрокові інструкції: монетизація, просування, оптимізація каналу</p>
+        <div class="card" onclick="showLinks('Відео', 'AI для створення та редагування відео')">
+            <div class="icon-box" style="background: #7b99ff33;">🎬</div>
+            <div class="info"><div class="title">Відео</div><div class="desc">AI для створення та редагування відео</div></div>
+            <div class="badge">14</div>
         </div>
-        <div class="counter-badge">3</div> </div>
 
-    <div class="category-card">
-        <div class="icon-container" style="background-color: #e0f2ff;">📖</div> <div class="text-container">
-            <p class="category-title">Gайди по AI</p>
-            <p class="category-description">Покрокові гайди як безкоштовно юзати AI-сервіси</p>
+        <div class="card" onclick="showLinks('Аватари', 'AI-аватари, lip-sync та говорячі голови')">
+            <div class="icon-box" style="background: #e07bff33;">👤</div>
+            <div class="info"><div class="title">Аватари</div><div class="desc">AI-аватари, lip-sync та говорячі голови</div></div>
+            <div class="badge">5</div>
         </div>
-        <div class="counter-badge">3</div> </div>
 
-    </body>
+        <div class="card" onclick="showLinks('API-агрегатори', 'Доступ до всіх AI-моделей через один кабінет')">
+            <div class="icon-box" style="background: #7fff7b33;">🔌</div>
+            <div class="info"><div class="title">API-агрегатори</div><div class="desc">Доступ до всіх AI-моделей через один кабінет</div></div>
+            <div class="badge">5</div>
+        </div>
+
+        <div class="card" onclick="showLinks('Апскейлери', 'AI-програми для покращення якості')">
+            <div class="icon-box" style="background: #7bdfff33;">💎</div>
+            <div class="info"><div class="title">Апскейлери</div><div class="desc">AI-програми для покращення якості відео та зображень</div></div>
+            <div class="badge">5</div>
+        </div>
+
+        <div class="card" onclick="showLinks('Текстові AI', 'Чат-боти для сценаріїв та текстів')">
+            <div class="icon-box" style="background: #ff7ba433;">💬</div>
+            <div class="info"><div class="title">Текстові AI</div><div class="desc">Чат-боти для сценаріїв, текстів та креативу</div></div>
+            <div class="badge">5</div>
+        </div>
+
+        <div class="card" onclick="showLinks('18+ AI', 'AI-сервіси для генерації дорослого контенту')">
+            <div class="icon-box" style="background: #ff4b4b33;">🔞</div>
+            <div class="info"><div class="title">18+ AI</div><div class="desc">AI-сервіси для генерації дорослого контенту</div></div>
+            <div class="badge">4</div>
+        </div>
+    </div>
+
+    <div id="screen-links" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-ai-tools')">← Назад</button>
+            <h2 id="cat-title">Категория</h2>
+        </div>
+        <div id="links-container">
+            </div>
+    </div>
+
+    <script>
+        const tg = window.Telegram.WebApp;
+        tg.ready();
+        tg.expand();
+
+        function showScreen(screenId) {
+            document.getElementById('screen-main').classList.add('hidden');
+            document.getElementById('screen-ai-tools').classList.add('hidden');
+            document.getElementById('screen-links').classList.add('hidden');
+            document.getElementById(screenId).classList.remove('hidden');
+        }
+
+        function showLinks(title, desc) {
+            document.getElementById('cat-title').innerText = title;
+            const container = document.getElementById('links-container');
+            container.innerHTML = ''; // Очищаем старое
+
+            // ПРИМЕР: Здесь ты будешь добавлять свои ссылки для каждой категории
+            if (title === 'Музика') {
+                addLink(container, 'Suno AI', 'Генерация песен с вокалом', 'https://suno.com');
+                addLink(container, 'Udio', 'Конкурент Suno с высоким качеством', 'https://udio.com');
+            } else if (title === 'Зображення') {
+                addLink(container, 'Midjourney', 'Лучшая генерация артов', 'https://midjourney.com');
+            } else {
+                container.innerHTML = '<p style="color:#888; text-align:center;">Тут пока пусто, добавь ссылки в коде!</p>';
+            }
+
+            showScreen('screen-links');
+        }
+
+        function addLink(container, name, desc, url) {
+            const div = document.createElement('div');
+            div.className = 'link-item';
+            div.innerHTML = `<div><b>${name}</b><br><small style="color:#888">${desc}</small></div> <span>→</span>`;
+            div.onclick = () => tg.openLink(url);
+            container.appendChild(div);
+        }
+    </script>
+</body>
 </html>
