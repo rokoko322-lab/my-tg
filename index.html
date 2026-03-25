@@ -190,6 +190,7 @@
         let currentSection = '';
 
         const data = {
+            // === AI ІНСТРУМЕНТИ ===
             music: { title: "Музика", tagClass: "tag-music", parent: "screen-ai-tools", items: [
                 { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
                 { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
@@ -330,7 +331,11 @@
                 { name: "Grok Automation", stars: "★★★★☆", desc: "🧩 Chrome · Перетворює Grok на batch-движок. Автоматично відправляє промпти, генерує зображення та відео, апскейлить та зберігає результати", tags: ["Grok", "Chrome", "Batch"], price: "Безкоштовно / є Pro", url: "https://chromewebstore.google.com/detail/grok-automation-auto-grok/kpeloeongamilgpjaibcdmldenfmdngp", icon: "🧠" },
                 { name: "Grok Imagine Loop", stars: "★★★★☆", desc: "🧩 Chrome · Зациклює генерацію зображень у Grok — ідеально для створення loop-відео та музичного контенту. Генерує серію кадрів, які безшовно зациклюються", tags: ["Grok", "Chrome", "Loop", "Музика"], price: "Безкоштовно", url: "https://chromewebstore.google.com/detail/grok-imagine-loop/dmpkdeohcmnpcmapnkjdndfeggakmggn", icon: "🔄" }
             ]},
-            soft_utils: { title: "Утиліти", tagClass: "tag-soft-utils", parent: "screen-softs", items: []},
+            // НОВИЙ БЛОК: Утиліти
+            soft_utils: { title: "Утиліти", tagClass: "tag-soft-utils", parent: "screen-softs", items: [
+                { name: "Magic Eraser", stars: "★★★★★", desc: "Видаляє вотермарки з відео через AI — прямо в браузері, без реєстрації. Підтримує MP4, MOV, AVI до 4K. Повністю безкоштовний", tags: ["Вотермарки", "Безкоштовно", "Браузер"], price: "Безкоштовно", url: "https://magicstudio.com/magiceraser", icon: "🧹" },
+                { name: "ClearVPN", stars: "★★★★★", desc: "Швидкий та зручний VPN від MacPaw. Для всіх українців, зареєстрованих через Дію — повністю безкоштовний. Просто підтверджуєш громадянство через Дію і отримуєш преміум без оплати", tags: ["VPN", "Безкоштовно", "Дія", "Україна"], price: "Безкоштовно для українців (через Дію)", url: "https://clearvpn.com/", icon: "🛡️" }
+            ]},
             soft_remove: { title: "Видалення AI-мітки", tagClass: "tag-soft-remove", parent: "screen-softs", items: []},
             soft_proxy: { title: "Проксі", tagClass: "tag-soft-proxy", parent: "screen-softs", items: []},
             soft_mail: { title: "Одноразові пошти", tagClass: "tag-soft-mail", parent: "screen-softs", items: []},
