@@ -59,6 +59,9 @@
         .tag-soft-montage { background: #2b1f3d; color: #d97bff; }
         .tag-soft-trans { background: #201f3d; color: #9d4eff; }
         
+        /* Колір тегів для Магазинів */
+        .tag-markets { background: #1f3d2e; color: #4effa1; }
+        
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
 
@@ -86,6 +89,12 @@
             <div class="icon-box" style="background: #ff9d2e33; color: #ff9d2e;">🛠️</div>
             <div style="flex-grow:1"><b>Софти</b><br><small style="color:#888">Інструменти для масштабування та абузу сервісів</small></div>
             <div style="color:#ff9d2e; font-weight:bold;">32</div>
+        </div>
+        
+        <div class="cat-card" onclick="renderList('markets')">
+            <div class="icon-box" style="background: #4effa133; color: #4effa1;">🛒</div>
+            <div style="flex-grow:1"><b>Магазини</b><br><small style="color:#888">Маркетплейси акаунтів, підписок та цифрових товарів</small></div>
+            <div style="color:#4effa1; font-weight:bold;">5</div>
         </div>
     </div>
 
@@ -217,7 +226,7 @@
                 { name: "Flow", stars: "★★★★★", desc: "AI-кінематограф від Google на базі Veo 3.1", tags: ["Google", "Veo 3.1", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://flow.google", icon: "🎬" },
                 { name: "Higgsfield", stars: "★★★★☆", desc: "Анімація персонажів та людей з одного фото", tags: ["Персонажі", "Анімація", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
                 { name: "Leonardo", stars: "★★★★★", desc: "Потужна платформа, Canvas-редактор, контроль стилю", tags: ["Canvas", "Контроль стилю", "Безкоштовно"], price: "150 кредитів/день безкоштовно", url: "https://leonardo.ai", icon: "🎨" },
-                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні плани", url: "https://app.reve.com/", icon: "💎" },
+                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні plans", url: "https://app.reve.com/", icon: "💎" },
                 { name: "Dreamina", stars: "★★★★★", desc: "AI-генератор від CapCut. Інтеграція з відео", tags: ["CapCut", "Безкоштовно", "Відеомонтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
                 { name: "Ideogram", stars: "★★★★★", desc: "Найкращий AI для тексту на фото. Логотипи", tags: ["Текст", "Логотипи", "Типографіка"], price: "Безкоштовно / від $8/міс", url: "https://ideogram.ai", icon: "🔡" },
                 { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
@@ -338,7 +347,7 @@
             soft_remove: { title: "Видалення AI-мітки", tagClass: "tag-soft-remove", parent: "screen-softs", items: [
                 { name: "ExifCleaner", stars: "★★★★★", desc: "Класика для стрипання метаданих. Перетягнув файли — всі метадані знищені. Працює локально, без інтернету. Стрипає C2PA-бирки з будь-яких файлів", tags: ["C2PA", "Метадані", "Локально"], price: "Безкоштовно", url: "https://exifcleaner.com/", icon: "🗑️" },
                 { name: "UnC2PA", stars: "★★★★★", desc: "Безкоштовний онлайн тул для видалення C2PA метаданих. Працює прямо в браузері — завантажив, почистив, забрав", tags: ["C2PA", "Браузер", "Безкоштовно"], price: "Безкоштовно", url: "https://unc2pa.com/", icon: "🔓" },
-                { name: "C2PA Studio", stars: "★★★★★", desc: "Тут можна і подивитись що вшито в файл, і видалити. Корисно щоб спочатку глянути які мітки чіпляється, а потім зняти", tags: ["C2PA", "Аналіз", "Видалення"], price: "Безкоштовно", url: "https://c2pa.studio/", icon: "🔍" },
+                { name: "C2PA Studio", stars: "★★★★★", desc: "Тут можна і подивитись що вшито в файл, і видалити. Корисно щоб спочатку глянути які мітки чіпляються, а потім зняти", tags: ["C2PA", "Аналіз", "Видалення"], price: "Безкоштовно", url: "https://c2pa.studio/", icon: "🔍" },
                 { name: "ChromaStudio", stars: "★★★★☆", desc: "Видаляє SynthID з зображень. SynthID — це вже серйозніше, мітка вбита прямо в пікселі. Просто стрипнути метадані не допоможе", tags: ["SynthID", "Зображення", "Пікселі"], price: "Безкоштовно / платні плани", url: "https://www.chromastudio.ai/synthid-remover-image", icon: "🎨" },
                 { name: "AISEO SynthID Remover", stars: "★★★★☆", desc: "Ще один варіант для зняття SynthID з картинок. Працює онлайн, без встановлення", tags: ["SynthID", "Онлайн", "Зображення"], price: "Безкоштовно / платні плани", url: "https://aiseo.ai/synthid-remover", icon: "🧬" },
                 { name: "RemoveMySynthID", stars: "★★★★☆", desc: "Безкоштовний ремувер SynthID прямо в браузері. Простий як двері — завантажив, почистив, забрав", tags: ["SynthID", "Безкоштовно", "Браузер"], price: "Безкоштовно", url: "https://removemysynthid.com/", icon: "🚫" },
@@ -357,12 +366,20 @@
                 { name: "YouTube Summary with ChatGPT", stars: "★★★★★", desc: "Розширення для Chrome яке дозволяє отримати транскрипцію та саммарі будь-якого YouTube відео за допомогою ChatGPT. Одним кліком отримуєте повний текст відео.", tags: ["Chrome", "Розширення", "Транскрипція", "ChatGPT"], price: "Безкоштовно", url: "https://glasp.co/youtube-summary", icon: "💬" },
                 { name: "Whisper YouTube Subtitles", stars: "★★★★★", desc: "Безкоштовний інструмент на базі Whisper від OpenAI для автоматичної транскрибації YouTube відео з підтримкою крос-мовних субтитрів. Працює прямо в браузері через Hugging Face.", tags: ["Whisper", "Субтитри", "Hugging Face", "OpenAI"], price: "Безкоштовно", url: "https://huggingface.co/spaces", icon: "🗣️" }
             ]},
-            // НОВИЙ БЛОК: Монтаж (Софти)
             soft_montage: { title: "Монтаж", tagClass: "tag-soft-montage", parent: "screen-softs", items: [
                 { name: "CapCut", stars: "★★★★★", desc: "Безкоштовний редактор від ByteDance (творці TikTok). Є десктоп, мобільна і веб-версія. AI-субтитри, автомонтаж, купа ефектів. Для Shorts та TikTok — ідеальний вибір", tags: ["Безкоштовно", "AI-субтитри", "Shorts"], price: "Безкоштовно / Pro від $7.99/міс", url: "https://www.capcut.com/", icon: "🎬" },
                 { name: "DaVinci Resolve", stars: "★★★★★", desc: "Безкоштовний професійний редактор від Blackmagic. Найкращий кольорокорекцією серед усіх. Fusion для VFX, Fairlight для аудіо. Голівуд юзає — і це безкоштовно", tags: ["Безкоштовно", "Кольорокорекція", "Професійний"], price: "Безкоштовно / Studio $295 одноразово", url: "https://www.blackmagicdesign.com/products/davinciresolve", icon: "🎨" },
                 { name: "Adobe Premiere Pro", stars: "★★★★★", desc: "Індустріальний стандарт відеомонтажу. Більшість YouTube-креаторів сидять саме тут. Інтеграція з After Effects, Photoshop та всім пакетом Adobe", tags: ["Стандарт індустрії", "Adobe", "Плагіни"], price: "від $22.99/міс", url: "https://www.adobe.com/products/premiere.html", icon: "🅿️" },
                 { name: "Final Cut Pro", stars: "★★★★☆", desc: "Від Apple, тільки для Mac. Максимально оптимізований під Apple Silicon — летить навіть на MacBook Air. Magnetic Timeline та мультикам монтаж з коробки", tags: ["Mac", "Швидкий", "Apple Silicon"], price: "$299 одноразово / від $4.99/міс", url: "https://www.apple.com/final-cut-pro/", icon: "🍎" }
+            ]},
+
+            // === МАГАЗИНИ ===
+            markets: { title: "Магазини", tagClass: "tag-markets", parent: "screen-main", items: [
+                { name: "AccsMarket", stars: "★★★★★", desc: "Найбільший маркетплейс акаунтів. Gmail, YouTube, Facebook, Instagram, Twitter, Reddit — все що потрібно для масштабування. Автоматична видача, від $0.01 за акаунт. Є фільтри по віку, країні, верифікації", tags: ["Найбільший", "Автовидача", "Всі соцмережі"], price: "від $0.01 за акаунт", url: "https://accsmarket.com/", icon: "🏪" },
+                { name: "Install Shop", stars: "★★★★☆", desc: "Магазин акаунтів та софту. Gmail, Outlook, соцмережі, крипто-акаунти. Автоматична видача, працює 24/7. Регулярно оновлюють асортимент", tags: ["Автовидача", "24/7", "Крипто"], price: "від $0.05 за акаунт", url: "https://install-shop.com/", icon: "📦" },
+                { name: "SMM-World", stars: "★★★★☆", desc: "Маркетплейс для SMM — акаунти Instagram, TikTok, YouTube, Telegram. Фокус на соцмережі для маркетингу та просування. Зрозумілий прайс, швидка видача", tags: ["SMM", "Соцмережі", "Маркетинг"], price: "Від ціни акаунту", url: "https://smm-world.com/", icon: "🌍" },
+                { name: "FunPay", stars: "★★★★☆", desc: "Біржа цифрових товарів. Крім ігрових акаунтів тут продають підписки ChatGPT, Adobe, Discord Nitro, Game Pass. P2P маркетплейс — купуєш у реальних людей з відгуками та рейтингом", tags: ["P2P", "Підписки", "Ігри"], price: "Від ціни продавця", url: "https://funpay.com/", icon: "🎮" },
+                { name: "Lolz.live / LZT Market", stars: "★★★★★", desc: "Популярний маркетплейс + форум. Купівля/продаж акаунтів, підписок, софту. Великий форум з гарантом угод, репутацією продавців та відгуками. Одна з найбільших CIS-платформ", tags: ["Маркет", "Форум", "Гарант"], price: "Від ціни продавця", url: "https://lzt.market/", icon: "🦊" }
             ]}
         };
 
