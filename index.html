@@ -41,7 +41,8 @@
         .tag-upscale { background: #24383d; color: #7be3ff; }
         .tag-textai { background: #3d242c; color: #ff7ba4; }
         .tag-blender { background: #3d2a1f; color: #ff9d2e; }
-        .tag-videoprompt { background: #243d35; color: #7bffc4; } /* Колір для Video-to-Prompt */
+        .tag-videoprompt { background: #243d35; color: #7bffc4; }
+        .tag-aimontage { background: #2b1f3d; color: #d97bff; } /* Колір для AI Монтаж */
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -124,6 +125,12 @@
             <div class="icon-box" style="background: #7bffc433;">🔍</div>
             <div style="flex-grow:1"><b>Video-to-Prompt</b><br><small style="color:#888">AI аналізує відео і пише промпт для відтворення</small></div>
             <div style="color:#6e6eff; font-weight:bold;">5</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('aimontage')">
+            <div class="icon-box" style="background: #d97bff33;">✂️</div>
+            <div style="flex-grow:1"><b>AI Монтаж</b><br><small style="color:#888">AI-інструменти для відеомонтажу — аналіз, субтитри, автомонтаж</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">1</div>
         </div>
     </div>
 
@@ -225,13 +232,16 @@
                 { name: "Animatric AI", stars: "★★★★★", desc: "AI-копілот для анімації. Text-to-animation з нативним плагіном для Blender та Unreal Engine. Сотні тисяч motion capture кліпів — від повсякденних рухів до танців та бойових мистецтв", tags: ["AI Copilot", "Blender Plugin", "Unreal"], price: "SaaS (перевір на сайті)", url: "https://animatric.ai", icon: "🤖" },
                 { name: "Motion Animate", stars: "★★★★☆", desc: "Процедурний аддон для Blender на базі Geometry Nodes. 40 пресетів анімації тексту, 65 демо-файлів, 17 кастомних нод-груп. Keyframe-free анімації: лупи, трейли, шум, пульс", tags: ["Процедурний", "Geometry Nodes", "Пресети"], price: "Платний (Gumroad)", url: "https://gumroad.com", icon: "➕" }
             ]},
-            // НОВИЙ БЛОК: Video-to-Prompt
             videoprompt: { title: "Video-to-Prompt", tagClass: "tag-videoprompt", items: [
                 { name: "TubePrompter", stars: "★★★★★", desc: "Вставляєш посилання з YouTube, TikTok або Instagram — AI аналізує відео і видає 3-5 промптів по сценах за 30 секунд. Оптимізовані під Sora, Veo, Runway, Kling, Midjourney", tags: ["Безкоштовно", "YouTube", "TikTok"], price: "Безкоштовно", url: "https://tubeprompter.com", icon: "🎬" },
                 { name: "TopYappers Video to Prompt", stars: "★★★★☆", desc: "Покадровий аналіз відео: освітлення, рух камери, кольори, композиція, стиль. Експорт промптів в JSON або Markdown. Підтримує Sora, Veo, Runway, Pika", tags: ["Покадровий", "JSON", "Детальний"], price: "1 аналіз/день безкоштовно / 2 з реєстрацією", url: "https://topyappers.com", icon: "🔬" },
                 { name: "VideoToPrompt.org", stars: "★★★★☆", desc: "Завантажуєш відеофайл (MP4, MOV, AVI, до 20MB) — AI описує сцени, персонажів, дії та діалоги. 15+ мов, можна задавати уточнюючі питання по відео", tags: ["Файл", "15+ мов", "Інтерактивний"], price: "Безкоштовно (без карти)", url: "https://videotoprompt.org", icon: "📝" },
                 { name: "Short.ai Video to Prompt", stars: "★★★★☆", desc: "Вставляєш YouTube або TikTok лінк (до 5 хвилин) — отримуєш покадрові промпти. Швидко і просто, без реєстрації", tags: ["Швидкий", "YouTube", "TikTok"], price: "Безкоштовно", url: "https://short.ai", icon: "⚡" },
                 { name: "PromptAI Videos", stars: "★★★★☆", desc: "Аналізує композицію, освітлення та стиль відео. Генерує промпти оптимізовані спеціально під Sora, Runway, Kling та Veo. 5 безкоштовних аналізів", tags: ["Sora", "Kling", "Runway"], price: "5 безкоштовних аналізів", url: "https://promptai.co", icon: "🎯" }
+            ]},
+            // НОВИЙ БЛОК: AI Монтаж
+            aimontage: { title: "AI Монтаж", tagClass: "tag-aimontage", items: [
+                { name: "Molmo 2", stars: "★★★★☆", desc: "Open-source vision-language модель від Allen AI. Розуміє відео та зображення, аналізує сцени, допомагає з монтажем", tags: ["Open Source", "Vision", "Аналіз відео"], price: "Безкоштовно (Open Source)", url: "https://playground.allenai.org/", icon: "👁️" }
             ]}
         };
 
