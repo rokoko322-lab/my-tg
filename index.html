@@ -190,7 +190,6 @@
         let currentSection = '';
 
         const data = {
-            // === AI ІНСТРУМЕНТИ ===
             music: { title: "Музика", tagClass: "tag-music", parent: "screen-ai-tools", items: [
                 { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
                 { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
@@ -314,8 +313,13 @@
                 { name: "Agency Agents", stars: "★★★★★", desc: "100+ AI-агентів для Claude Code, Cursor, Gemini CLI та інших. Кожен агент — спеціаліст з унікальною експертизою: фронтенд, бекенд, дизайн, маркетинг, SEO, DevOps, QA. Готові воркфлоу та реальні приклади коду. 50K+ зірок", tags: ["Агенти", "Claude Code", "Cursor", "Промпти", "Вайбкодинг"], price: "Безкоштовно (open-source)", url: "https://github.com/msitarzewski/agency-agents", icon: "🎭" }
             ]},
 
-            // === СОФТИ (ПОКИ ПОРОЖНІ ЗАГЛУШКИ) ===
-            soft_antidetect: { title: "Антидетект браузери", tagClass: "tag-soft-antidetect", parent: "screen-softs", items: []},
+            // === СОФТИ ===
+            soft_antidetect: { title: "Антидетект браузери", tagClass: "tag-soft-antidetect", parent: "screen-softs", items: [
+                { name: "Octo Browser", stars: "★★★★★", desc: "Найкращий антидетект на ринку. Використовую з 2021 року — тримав 200+ профілів і жодних проблем. Топи в арбітражі, крипті і YouTube сидять саме тут", tags: ["Топ-1", "200+ профілів", "Стабільний"], price: "від $21/міс (з промо MrBald30 — мінус 30%)", url: "https://octobrowser.net/", icon: "🐙" },
+                { name: "AdsPower", stars: "★★★★☆", desc: "Бюджетний антидетект з купою фішок. Автоматизація через RPA, локальний API, командна робота. Для старту підходить, але під навантаженням бувають проблеми", tags: ["Бюджетно", "RPA", "Команда"], price: "Безкоштовно (5 профілів) / від $9/міс", url: "https://www.adspower.com/", icon: "⚡" },
+                { name: "Dolphin Anty", stars: "★★★★☆", desc: "Популярний серед арбітражників. Зручний інтерфейс, командна робота, інтеграція з проксі. Але маскування слабше за Octo", tags: ["Арбітраж", "Команда", "Інтеграції"], price: "Безкоштовно (10 профілів) / від $89/міс", url: "https://dolphin-anty.com/", icon: "🐬" },
+                { name: "GoLogin", stars: "★★★★☆", desc: "Ще один бюджетний варіант. Є хмарний режим — можна працювати прямо з браузера без встановлення. Але під навантаженням не тримає", tags: ["Хмарний", "Бюджетно", "Веб-версія"], price: "Безкоштовно (3 профілі) / від $24/міс", url: "https://gologin.com/", icon: "🌐" }
+            ]},
             soft_auto: { title: "Автоматизація", tagClass: "tag-soft-auto", parent: "screen-softs", items: []},
             soft_utils: { title: "Утиліти", tagClass: "tag-soft-utils", parent: "screen-softs", items: []},
             soft_remove: { title: "Видалення AI-мітки", tagClass: "tag-soft-remove", parent: "screen-softs", items: []},
