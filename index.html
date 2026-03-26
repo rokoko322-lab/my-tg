@@ -67,6 +67,10 @@
         .tag-youtube-niche { background: #3d331f; color: #ffd37b; }
         .tag-youtube-stream { background: #2a1f3d; color: #9d4eff; }
         .tag-youtube-stock { background: #1f3d2a; color: #7bff9e; }
+
+        /* Колір тегів для Халяви */
+        .tag-shared { background: #3d2a1f; color: #ff9d2e; }
+        .tag-promo { background: #1f3d2e; color: #4effa1; }
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -107,6 +111,12 @@
             <div class="icon-box" style="background: #ff4b4b33; color: #ff4b4b;">🎬</div>
             <div style="flex-grow:1"><b>Для YouTube</b><br><small style="color:#888">Аналітика, пошук ніш та інструменти для росту каналу</small></div>
             <div style="color:#ff4b4b; font-weight:bold;">13</div>
+        </div>
+
+        <div class="cat-card" onclick="showScreen('screen-freebies')">
+            <div class="icon-box" style="background: #ffd37b33; color: #ffd37b;">🎁</div>
+            <div style="flex-grow:1"><b>Халява</b><br><small style="color:#888">Знижки, промокоди та спільні підписки на AI-сервіси</small></div>
+            <div style="color:#ffd37b; font-weight:bold;">4</div>
         </div>
     </div>
 
@@ -223,6 +233,25 @@
             <div class="icon-box" style="background: #7bff9e33; color: #7bff9e;">📦</div>
             <div style="flex-grow:1"><b>Стоки</b><br><small style="color:#888">Фото, відео, графіка та шаблони для контенту</small></div>
             <div style="color:#7bff9e; font-weight:bold;">5</div>
+        </div>
+    </div>
+
+    <div id="screen-freebies" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-main')">←</button>
+            <h2>Халява</h2>
+        </div>
+        
+        <div class="cat-card" onclick="renderList('freebies_shared')">
+            <div class="icon-box" style="background: #ff9d2e33; color: #ff9d2e;">👥</div>
+            <div style="flex-grow:1"><b>Спільні підписки</b><br><small style="color:#888">Доступ до преміум AI за копійки через шерінг</small></div>
+            <div style="color:#ff9d2e; font-weight:bold;">1</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('freebies_promo')">
+            <div class="icon-box" style="background: #4effa133; color: #4effa1;">🏷️</div>
+            <div style="flex-grow:1"><b>Промокоди</b><br><small style="color:#888">Агрегатори знижок та промокодів для AI і SaaS</small></div>
+            <div style="color:#4effa1; font-weight:bold;">3</div>
         </div>
     </div>
 
@@ -428,7 +457,7 @@
             // === ДЛЯ YOUTUBE ===
             yt_analytics: { title: "Аналітика", tagClass: "tag-youtube-analytics", parent: "screen-youtube", items: [
                 { name: "VidiQ", stars: "★★★★★", desc: "Топ-1 інструмент для YouTube SEO. Підбір ключових слів, аналіз конкурентів, AI-генератор тайтлів та обкладинок. 20M+ креаторів юзають. Є браузерне розширення що показує статистику прямо на YouTube", tags: ["SEO", "Ключові слова", "20M+ юзерів"], price: "Безкоштовно / Boost від $16.58/міс / Max від $39/міс", url: "https://vidiq.com", icon: "📈" },
-                { name: "VidAI", stars: "★★★★☆", desc: "Chrome-розширення від українського розробника. AI прямо в YouTube Studio — генерує тайтли, описи, теги через GPT. Автопереклад контенту на інші мови для міжнародної аудиторії", tags: ["Chrome", "GPT", "Автопереклад"], price: "3 дні безкоштовно / платні плани", url: "https://vidai.app", icon: "🤖" }
+                { name: "VidAI", stars: "★★★★☆", desc: "Chrome-розширення від українського розробника. AI прямо в YouTube Studio — генерує тайтли, описи, теги через GPT. Автопереклад контенту на інші мови для міжнародної аудиторії", tags: ["Chrome", "GPT", "Автопереклад"], price: "3 дні безкоштовно / платні плани", url: "https://chromewebstore.google.com/detail/vidai/hphfliggkgombflhagnibkclkllpbkpk", icon: "🤖" }
             ]},
             yt_niche: { title: "Пошук ніш", tagClass: "tag-youtube-niche", parent: "screen-youtube", items: [
                 { name: "Blackquery", stars: "★★★★★", desc: "Професійний софт для ресьорчу YouTube. Автоматизує 90% пошуку — фільтри, сортування, аналіз ключових слів з конкуренцією та об'ємом пошуку. Збираєш колекції каналів і відео, аналізуєш розклад публікацій конкурентів", tags: ["Ресьорч", "Одноразова оплата", "Ніші"], price: "$58 одноразово (назавжди)", url: "https://blackquery.com", icon: "🔍" },
@@ -438,7 +467,7 @@
                 { name: "Upstream", stars: "★★★★★", desc: "Найзручніший сервіс для 24/7 стрімів. Завантажуєш відео — вони крутяться нон-стоп. Drag-and-drop дизайнер оверлеїв, мультистрімінг на 10 платформ, вбудована монетизація через YouTube-рекламу", tags: ["24/7", "Мультистрімінг", "Монетизація"], price: "від $24/міс (1 стрім) / від $40/міс (2 стріми)", url: "https://upstreamapp.com", icon: "🔴" },
                 { name: "Live247", stars: "★★★★☆", desc: "Простий сервіс для запуску 24/7 трансляцій на YouTube. Без зайвих складнощів — завантажив відео, натиснув старт, стрім працює", tags: ["24/7", "YouTube", "Простий"], price: "Безкоштовно / платні плани", url: "https://live247.ai", icon: "📺" },
                 { name: "Gyre", stars: "★★★★☆", desc: "Хмарна платформа для безперервних стрімів. До 8 одночасних трансляцій, підтримка 4K@60fps, мультиплатформа — YouTube, Twitch, Instagram, Facebook. Плейлисти автоматично перезапускаються", tags: ["4K", "8 стрімів", "Мультиплатформа"], price: "7 днів безкоштовно / від $49/міс", url: "https://gyre.pro", icon: "🔄" },
-                { name: "Runnel", stars: "★★★★☆", desc: "Бюджетний сервіс для 24/7 стрімів на YouTube. Завантажуєш плейлист відео — вони крутяться безперервно. Shuffle-режим, підтримка 4K@60fps, мультиплатформа, погодинна тарифікація", tags: ["Бюджетний", "4K", "Мультиплатформа"], price: "від $6/міс за стрім", url: "https://runnel.tv", icon: "📡" }
+                { name: "Runnel", stars: "★★★★☆", desc: "Бюджетний сервіс для 24/7 стрімів на YouTube. Завантажуєш плейлист відео — вони крутяться безперервно. Shuffle-режим, підтримка 4K@60fps, мультиплатформа, погодинна тарифікація", tags: ["Бюджетний", "4K", "Мультиплатформа"], price: "від $6/міс за стрім", url: "https://runnel.live/", icon: "📡" }
             ]},
             yt_stock: { title: "Стоки", tagClass: "tag-youtube-stock", parent: "screen-youtube", items: [
                 { name: "Freepik", stars: "★★★★★", desc: "Найбільший сток для дизайнерів та креаторів. Мільйони фото, ілюстрацій, іконок, шаблонів і PSD. Є AI-генератор зображень. Купа безкоштовного контенту", tags: ["Безкоштовно", "Шаблони", "Ілюстрації"], price: "Безкоштовно / від €9/міс", url: "https://freepik.com", icon: "🎨" },
@@ -446,7 +475,11 @@
                 { name: "Pexels", stars: "★★★★★", desc: "Повністю безкоштовний сток фото та відео. 120K+ відеокліпів в HD та 4K. Без атрибуції, без реєстрації. Куплений Canva — якість зростає", tags: ["Безкоштовно", "4K відео", "Без атрибуції"], price: "Безкоштовно", url: "https://pexels.com", icon: "📷" },
                 { name: "Pixabay", stars: "★★★★☆", desc: "150K+ безкоштовних відео та мільйони фото, ілюстрацій, аудіо. Все без копірайту і без атрибуції. Для комерційного використання — теж безкоштовно", tags: ["Безкоштовно", "Без копірайту", "Аудіо"], price: "Безкоштовно", url: "https://pixabay.com", icon: "🖼️" },
                 { name: "Storyblocks", stars: "★★★★☆", desc: "Популярний серед ютуберів сток відео. Безлімітні завантаження футажів, After Effects та Premiere шаблонів, музики та SFX. Якість контенту вища за Pexels", tags: ["Безлімітно", "Відео", "Шаблони AE"], price: "від $15/міс", url: "https://storyblocks.com", icon: "🎬" }
-            ]}
+            ]},
+
+            // === ХАЛЯВА ===
+            freebies_shared: { title: "Спільні підписки", tagClass: "tag-shared", parent: "screen-freebies", items: [] },
+            freebies_promo: { title: "Промокоди", tagClass: "tag-promo", parent: "screen-freebies", items: [] }
         };
 
         function showScreen(id) {
