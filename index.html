@@ -117,6 +117,7 @@
         .bottom-back-btn { display: block; width: calc(100% - 30px); background: #1a1a23; border: 1px solid #2d2d3a; color: #ff4b8b; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 20px; }
         .bottom-back-btn:active { background: #252530; }
 
+        .footer-text { text-align: center; color: #888; font-size: 13px; margin-top: 30px; margin-bottom: 20px; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -170,6 +171,10 @@
             <div class="icon-box" style="background: #6e6eff33; color: #6e6eff;">📘</div>
             <div style="flex-grow:1"><b>Гайди по AI</b><br><small style="color:#888">Покрокові гайди як безкоштовно юзати AI-сервіси</small></div>
             <div style="color:#6e6eff; font-weight:bold;">0</div>
+        </div>
+
+        <div class="footer-text">
+            Материалы/информация будут обновляться .
         </div>
     </div>
 
@@ -713,7 +718,7 @@ Thank you for your time.</div>
             }
         }
 
-        // Функція для копіювання тексту шаблонів (з безпечним фолбеком)
+        // Функція для копіювання тексту шаблонів
         function copyTemplateText(elementId, btn) {
             const text = document.getElementById(elementId).innerText;
             
