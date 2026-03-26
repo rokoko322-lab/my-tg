@@ -28,6 +28,12 @@
         
         .service-desc { font-size: 13px; color: #b0b0bc; line-height: 1.4; margin-bottom: 12px; }
         
+        /* Поради всередині карток сервісів */
+        .item-tip { background: rgba(255, 157, 46, 0.08); border-left: 3px solid #ff9d2e; padding: 10px 12px; border-radius: 4px 8px 8px 4px; margin-bottom: 12px; }
+        .item-tip-title { color: #ff9d2e; font-weight: bold; font-size: 11px; margin-bottom: 4px; text-transform: uppercase; display: flex; align-items: center; }
+        .item-tip-title::before { content: '💡'; margin-right: 6px; font-size: 13px; }
+        .item-tip-text { color: #e0e0e0; font-size: 12px; line-height: 1.4; margin: 0; }
+
         .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
         .tag { font-size: 11px; padding: 3px 10px; border-radius: 6px; font-weight: 500; }
         
@@ -174,7 +180,7 @@
         </div>
 
         <div class="footer-text">
-            Материалы/информация будут обновляться .
+            Материалы/информация будут обновляться.
         </div>
     </div>
 
@@ -388,7 +394,7 @@
             <div class="step-content">
                 <h3>Живий чат підтримки</h3>
                 <p>Залежно від часу працюють чати підтримки різними мовами. Спробуй достукатись до живої людини — це часто ефективніше за форми.</p>
-                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=ru&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
+                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=uk&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
             </div>
         </div>
 
@@ -449,53 +455,53 @@ Thank you for your time.</div>
         const data = {
             // === AI ІНСТРУМЕНТИ ===
             music: { title: "Музика", tagClass: "tag-music", parent: "screen-ai-tools", items: [
-                { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
-                { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
-                { name: "Epidemic Sound", stars: "★★★★★", desc: "Бібліотека музики без копірайту для YouTube", tags: ["Без копірайту", "YouTube-safe"], price: "від $15/міс", url: "https://www.epidemicsound.com", icon: "🔊" },
-                { name: "iLoveSong", stars: "★★★★☆", desc: "AI-генератор музики з вокалом. MP3 та MP4", tags: ["Вокал", "MP3/MP4"], price: "Безкоштовно / від $7/міс", url: "https://ilovesong.ai", icon: "💖" },
-                { name: "Sonauto", stars: "★★★★☆", desc: "Безлімітний безкоштовний AI-генератор музики", tags: ["Безкоштовно", "4.5 хв треки"], price: "Безкоштовно (безлім)", url: "https://sonauto.ai", icon: "🎹" }
+                { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tip: "Пиши промпт англійською для кращої якості. Додавай стиль: 'lo-fi hip hop, female vocals, chill vibes'", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
+                { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tip: "Краще для інструментальної музики та фонових треків для відео", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
+                { name: "Epidemic Sound", stars: "★★★★★", desc: "Бібліотека музики без копірайту для YouTube", tip: "Є безкоштовний тріал 30 днів — можна завантажити все що потрібно", tags: ["Без копірайту", "YouTube-safe"], price: "від $15/міс", url: "https://www.epidemicsound.com", icon: "🔊" },
+                { name: "iLoveSong", stars: "★★★★☆", desc: "AI-генератор музики з вокалом. MP3 та MP4", tip: "Річна підписка вдвічі дешевша — до 2400 треків на рік з безлімітним завантаженням", tags: ["Вокал", "MP3/MP4"], price: "Безкоштовно / від $7/міс", url: "https://ilovesong.ai", icon: "💖" },
+                { name: "Sonauto", stars: "★★★★☆", desc: "Безлімітний безкоштовний AI-генератор музики", tip: "Повністю безкоштовний і без лімітів — ідеально для фонової музики на відео. Є API для автоматизації генерацій", tags: ["Безкоштовно", "4.5 хв треки"], price: "Безкоштовно (безлім)", url: "https://sonauto.ai", icon: "🎹" }
             ]},
             voice: { title: "Озвучка", tagClass: "tag-voice", parent: "screen-ai-tools", items: [
-                { name: "ElevenLabs", stars: "★★★★★", desc: "Найреалістичніший AI-голос. 30+ мов", tags: ["Клон голосу", "Українська"], price: "Безкоштовно / від $5/міс", url: "https://elevenlabs.io", icon: "🎙️" },
-                { name: "Fish Audio", stars: "★★★★★", desc: "AI-озвучка з контролем емоцій", tags: ["Емоції", "2M+ голосів"], price: "Безкоштовно / платні плани", url: "https://fish.audio", icon: "🐟" },
+                { name: "ElevenLabs", stars: "★★★★★", desc: "Найреалістичніший AI-голос. 30+ мов", tip: "Клонуй свій голос → використовуй для Shorts. Підписники не відрізнять від реального", tags: ["Клон голосу", "Українська"], price: "Безкоштовно / від $5/міс", url: "https://elevenlabs.io", icon: "🎙️" },
+                { name: "Fish Audio", stars: "★★★★★", desc: "AI-озвучка з контролем емоцій", tip: "Безкоштовні генерації щомісяця для особистого використання. Для комерції потрібен платний план", tags: ["Емоції", "2M+ голосів"], price: "Безкоштовно / платні плани", url: "https://fish.audio", icon: "🐟" },
                 { name: "Murf.ai", stars: "★★★★☆", desc: "Професійна озвучка для реклами та подкастів", tags: ["Бізнес", "120+ голосів"], price: "Безкоштовно / від $19/міс", url: "https://murf.ai", icon: "📢" },
-                { name: "MiniMax", stars: "★★★★★", desc: "Потужний TTS. Клонування з 5-сек зразка", tags: ["Real-time", "Мультимодальний"], price: "Безкоштовно / платні плани", url: "https://www.minimaxi.com", icon: "🔮" },
-                { name: "Free TTS", stars: "★★★★☆", desc: "Безкоштовний TTS без лімітів на слова", tags: ["Без лімітів", "Браузер"], price: "Безкоштовно", url: "https://freetts.com", icon: "🆓" }
+                { name: "MiniMax", stars: "★★★★★", desc: "Потужний TTS. Клонування з 5-сек зразка", tip: "Клонування голосу працює навіть з 5-секундного аудіо — ідеально для швидких тестів", tags: ["Real-time", "Мультимодальний"], price: "Безкоштовно / платні плани", url: "https://www.minimaxi.com", icon: "🔮" },
+                { name: "Free TTS", stars: "★★★★☆", desc: "Безкоштовний TTS без лімітів на слова", tip: "Повністю безкоштовний — ідеально для тестування озвучки перед покупкою платних сервісів", tags: ["Без лімітів", "Браузер"], price: "Безкоштовно", url: "https://freetts.com", icon: "🆓" }
             ]},
             images: { title: "Зображення", tagClass: "tag-image", parent: "screen-ai-tools", items: [
-                { name: "Midjourney", stars: "★★★★★", desc: "Найкращий генератор зображень. Фотореалізм та арт", tags: ["Фотореалізм", "Арт", "Стилі"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
-                { name: "DALL-E 3", stars: "★★★★☆", desc: "Від OpenAI. Вбудований в ChatGPT", tags: ["Текст в зображенні", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/dall-e-3", icon: "🤖" },
-                { name: "Flux", stars: "★★★★★", desc: "Новий генератор від авторів Stable Diffusion. Швидкий", tags: ["Безкоштовно", "Швидкий", "Open Source"], price: "Безкоштовно / від $10/міс", url: "https://www.flux.ai/p", icon: "⚡" },
-                { name: "Krea", stars: "★★★★★", desc: "Генерація в реальному часі. 64+ моделей, апскейл", tags: ["Real-time", "64+ моделей", "Апскейл"], price: "Безкоштовно / платні плани", url: "https://www.krea.ai", icon: "🎭" },
-                { name: "Sora", stars: "★★★★★", desc: "Від OpenAI. Фотореалістичні зображення та відео", tags: ["Фотореалізм", "ChatGPT", "Кінематограф"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
-                { name: "Kling AI", stars: "★★★★★", desc: "Кінематографічна якість. Генерація з тексту", tags: ["60+ стилів", "Кіно-якість", "Доступно"], price: "Безкоштовно / від $0.007 за ген", url: "https://klingai.com", icon: "🎯" },
-                { name: "Recraft", stars: "★★★★☆", desc: "AI для дизайнерів. Ілюстрації, іконки та брендинг", tags: ["Дизайн", "Ілюстрації", "Брендинг"], price: "Безкоштовно / платні плани", url: "https://www.recraft.ai", icon: "🖋️" },
-                { name: "Whisk", stars: "★★★★★", desc: "Від Google. Генерація зображень через картинки", tags: ["Google", "Imagen 4", "Без промптів"], price: "180 кредитів/міс безкоштовно", url: "https://labs.google/fx/tools/whisk", icon: "🪄" },
-                { name: "Flow", stars: "★★★★★", desc: "AI-кінематограф від Google на базі Veo 3.1", tags: ["Google", "Veo 3.1", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://flow.google", icon: "🎬" },
-                { name: "Higgsfield", stars: "★★★★☆", desc: "Анімація персонажів та людей з одного фото", tags: ["Персонажі", "Анімація", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
-                { name: "Leonardo", stars: "★★★★★", desc: "Потужна платформа, Canvas-редактор, контроль стилю", tags: ["Canvas", "Контроль стилю", "Безкоштовно"], price: "150 кредитів/день безкоштовно", url: "https://leonardo.ai", icon: "🎨" },
-                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні plans", url: "https://app.reve.com/", icon: "💎" },
-                { name: "Dreamina", stars: "★★★★★", desc: "AI-генератор від CapCut. Інтеграція з відео", tags: ["CapCut", "Безкоштовно", "Відеомонтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
-                { name: "Ideogram", stars: "★★★★★", desc: "Найкращий AI для тексту на фото. Логотипи", tags: ["Текст", "Логотипи", "Типографіка"], price: "Безкоштовно / від $8/міс", url: "https://ideogram.ai", icon: "🔡" },
-                { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
-                { name: "Nana Banana", stars: "★★★★☆", desc: "Google AI Studio. Генерація через Gemini", tags: ["Google", "Gemini", "Безкоштовно"], price: "Безкоштовно", url: "https://aistudio.google.com", icon: "🍌" }
+                { name: "Midjourney", stars: "★★★★★", desc: "Найкращий генератор зображень. Фотореалізм та арт", tip: "Додавай '--ar 9:16' для Shorts та '--ar 16:9' для YouTube обкладинок", tags: ["Фотореалізм", "Арт", "Стилі"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
+                { name: "DALL-E 3", stars: "★★★★☆", desc: "Від OpenAI. Вбудований в ChatGPT", tip: "Найкращий для зображень з текстом — логотипи, постери, обкладинки", tags: ["Текст в зображенні", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/dall-e-3", icon: "🤖" },
+                { name: "Flux", stars: "★★★★★", desc: "Новий генератор від авторів Stable Diffusion. Швидкий", tip: "Забрати вотермарку можна через img2img в ComfyUI", tags: ["Безкоштовно", "Швидкий", "Open Source"], price: "Безкоштовно / від $10/міс", url: "https://www.flux.ai/p", icon: "⚡" },
+                { name: "Krea", stars: "★★★★★", desc: "Генерація в реальному часі. 64+ моделей, апскейл", tip: "Real-time режим генерує зображення за 50мс — малюй скетч і бач результат миттєво", tags: ["Real-time", "64+ моделей", "Апскейл"], price: "Безкоштовно / платні плани", url: "https://www.krea.ai", icon: "🎭" },
+                { name: "Sora", stars: "★★★★★", desc: "Від OpenAI. Фотореалістичні зображення та відео", tip: "Використовуй для створення обкладинок та превʼю до відео — якість на рівні фотостоку", tags: ["Фотореалізм", "ChatGPT", "Кінематограф"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
+                { name: "Kling AI", stars: "★★★★★", desc: "Кінематографічна якість. Генерація з тексту", tip: "Є безкоштовні генерації щодня — можна тестувати без підписки", tags: ["60+ стилів", "Кіно-якість", "Доступно"], price: "Безкоштовно / від $0.007 за ген", url: "https://klingai.com", icon: "🎯" },
+                { name: "Recraft", stars: "★★★★☆", desc: "AI для дизайнерів. Ілюстрації, іконки та брендинг", tip: "Найкращий для створення іконок, логотипів та ілюстрацій в єдиному стилі", tags: ["Дизайн", "Ілюстрації", "Брендинг"], price: "Безкоштовно / платні плани", url: "https://www.recraft.ai", icon: "🖋️" },
+                { name: "Whisk", stars: "★★★★★", desc: "Від Google. Генерація зображень через картинки", tip: "Завантаж фото обличчя + стиль + сцену — Whisk змікшує все в одне зображення", tags: ["Google", "Imagen 4", "Без промптів"], price: "180 кредитів/міс безкоштовно", url: "https://labs.google/fx/tools/whisk", icon: "🪄" },
+                { name: "Flow", stars: "★★★★★", desc: "AI-кінематограф від Google на базі Veo 3.1", tip: "SceneBuilder дозволяє зʼєднувати кліпи в повноцінні сцени з контролем камери", tags: ["Google", "Veo 3.1", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://flow.google", icon: "🎬" },
+                { name: "Higgsfield", stars: "★★★★☆", desc: "Анімація персонажів та людей з одного фото", tip: "Завантаж своє фото і отримай реалістичну анімацію — ідеально для соцмереж", tags: ["Персонажі", "Анімація", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
+                { name: "Leonardo", stars: "★★★★★", desc: "Потужна платформа, Canvas-редактор, контроль стилю", tip: "150 безкоштовних кредитів щодня — вистачить на 30+ зображень", tags: ["Canvas", "Контроль стилю", "Безкоштовно"], price: "150 кредитів/день безкоштовно", url: "https://leonardo.ai", icon: "🎨" },
+                { name: "Reve", stars: "★★★★☆", desc: "Акцент на високу якість та детальну деталізацію", tip: "Один з найновіших генераторів — варто протестувати та порівняти з Midjourney", tags: ["Деталізація", "Якість", "Новий"], price: "Безкоштовно / платні plans", url: "https://app.reve.com/", icon: "💎" },
+                { name: "Dreamina", stars: "★★★★★", desc: "AI-генератор від CapCut. Інтеграція з відео", tip: "Згенерований контент можна одразу використати в CapCut для відеомонтажу", tags: ["CapCut", "Безкоштовно", "Відеомонтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
+                { name: "Ideogram", stars: "★★★★★", desc: "Найкращий AI для тексту на фото. Логотипи", tip: "Єдиний генератор що ідеально рендерить текст — must-have для обкладинок та лого", tags: ["Текст", "Логотипи", "Типографіка"], price: "Безкоштовно / від $8/міс", url: "https://ideogram.ai", icon: "🔡" },
+                { name: "Seedream 4", stars: "★★★★★", desc: "Від ByteDance. 2K за 1.8 сек", tip: "Один з найшвидших генераторів — 2K зображення за 1.8 секунди. Підтримує до 6 референсів", tags: ["ByteDance", "2K", "Швидкий"], price: "Безкоштовно / від $9.90/рік", url: "https://seedream.ai", icon: "🌱" },
+                { name: "Nana Banana", stars: "★★★★☆", desc: "Google AI Studio. Генерація через Gemini", tip: "Безкоштовний доступ до генерації через Gemini — просто опиши що хочеш в чаті", tags: ["Google", "Gemini", "Безкоштовно"], price: "Безкоштовно", url: "https://aistudio.google.com", icon: "🍌" }
             ]},
             video: { title: "Відео", tagClass: "tag-video", parent: "screen-ai-tools", items: [
                 { name: "Grok", stars: "★★★★★", desc: "Генерація відео з тексту та зображень, генерація зображень.", tags: ["X (Twitter)", "Мультимодальний", "Швидкий"], price: "30$/міс", url: "https://grok.com/", icon: "🚀" },
-                { name: "Runway", stars: "★★★★★", desc: "Генерація відео з тексту та зображень. Лідер ринку AI-відео", tags: ["Text-to-Video", "Image-to-Video"], price: "Безкоштовно / від $12/міс", url: "https://runwayml.com", icon: "🎥" },
-                { name: "Sora (OpenAI)", stars: "★★★★★", desc: "AI-відео від OpenAI. Кінематографічна якість, довгі кліпи", tags: ["Кінематограф", "Реалізм", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
+                { name: "Runway", stars: "★★★★★", desc: "Генерація відео з тексту та зображень. Лідер ринку AI-відео", tip: "Генеруй зображення в Midjourney → анімуй в Runway для найкращого результату", tags: ["Text-to-Video", "Image-to-Video"], price: "Безкоштовно / від $12/міс", url: "https://runwayml.com", icon: "🎥" },
+                { name: "Sora (OpenAI)", stars: "★★★★★", desc: "AI-відео від OpenAI. Кінематографічна якість, довгі кліпи", tip: "Використовуй для створення обкладинок та превʼю до відео — якість на рівні фотостоку", tags: ["Кінематограф", "Реалізм", "ChatGPT"], price: "В ChatGPT Plus ($20/міс)", url: "https://openai.com/sora", icon: "🌀" },
                 { name: "Fast-Gen AI", stars: "★★★★☆", desc: "Зручний софт для швидкої генерації відеоконтенту", tags: ["Швидкий", "Зручний"], price: "Безкоштовно", url: "https://fastgen.com", icon: "⚡" },
-                { name: "Swing", stars: "★★★★☆", desc: "Напишіть. Анімуйте. За лічені секунди. Текст → анімація", tags: ["Анімація", "Motion Graphics"], price: "Безкоштовно / від $10/міс", url: "https://swing.ai", icon: "✨" },
-                { name: "Kling", stars: "★★★★★", desc: "Кінематографічне AI-відео. Text-to-video, image-to-video, lip-sync, ефекти", tags: ["Кіно-якість", "Lip-sync", "Ефекти"], price: "Безкоштовно / від $0.007 за генерацію", url: "https://klingai.com", icon: "🎯" },
-                { name: "Pixverse", stars: "★★★★☆", desc: "AI-генератор відео з тексту та зображень. Стильні ефекти та анімації", tags: ["Стильне", "Ефекти", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://pixverse.ai", icon: "🌈" },
+                { name: "Swing", stars: "★★★★☆", desc: "Напишіть. Анімуйте. За лічені секунди. Текст → анімація", tip: "Ідеально для анімованих текстів та титрів у Shorts", tags: ["Анімація", "Motion Graphics"], price: "Безкоштовно / від $10/міс", url: "https://swing.ai", icon: "✨" },
+                { name: "Kling", stars: "★★★★★", desc: "Кінематографічне AI-відео. Text-to-video, image-to-video, lip-sync, ефекти", tip: "Є безкоштовні генерації щодня — тестуй без підписки", tags: ["Кіно-якість", "Lip-sync", "Ефекти"], price: "Безкоштовно / від $0.007 за генерацію", url: "https://klingai.com", icon: "🎯" },
+                { name: "Pixverse", stars: "★★★★☆", desc: "AI-генератор відео з тексту та зображень. Стильні ефекти та анімації", tip: "Чудово підходить для стилізованих відео — аніме, 3D, кіберпанк тощо", tags: ["Стильне", "Ефекти", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://pixverse.ai", icon: "🌈" },
                 { name: "Google Veo 3", stars: "★★★★★", desc: "Від Google DeepMind. Кінематографічне відео з вбудованим звуком та діалогами", tags: ["Google", "Звук", "Кінематограф"], price: "Безкоштовно / від $19.99/міс", url: "https://deepmind.google/technologies/veo/", icon: "▶️" },
-                { name: "Minimax Hailuo", stars: "★★★★★", desc: "Потужний AI-відеогенератор від MiniMax. Реалістичний рух та фізика", tags: ["Реалізм", "Фізика", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://hailuoai.video", icon: "🐟" },
+                { name: "Minimax Hailuo", stars: "★★★★★", desc: "Потужний AI-відеогенератор від MiniMax. Реалістичний рух та фізика", tip: "Один з найкращих безкоштовних варіантів — реалістичний рух на рівні Runway", tags: ["Реалізм", "Фізика", "Безкоштовно"], price: "Безкоштовно / платні плани", url: "https://hailuoai.video", icon: "🐟" },
                 { name: "Higgsfield", stars: "★★★★☆", desc: "Реалістична анімація людей з одного фото. Соціальні відео за секунди", tags: ["Персонажі", "Соцмережі", "Фото в відео"], price: "Безкоштовно / платні плани", url: "https://higgsfield.ai", icon: "🧬" },
                 { name: "Midjourney", stars: "★★★★★", desc: "Midjourney тепер і для відео. Той самий фотореалізм, але в русі", tags: ["Фотореалізм", "Нове", "Преміум"], price: "від $10/міс", url: "https://www.midjourney.com", icon: "🖼️" },
                 { name: "Luma Dream Machine", stars: "★★★★★", desc: "Швидка генерація відео від Luma AI. Реалістичні сцени з тексту та фото", tags: ["Швидкий", "Реалізм", "Dream Machine"], price: "Безкоштовно / від $9.99/міс", url: "https://lumalabs.ai/dream-machine", icon: "🌙" },
-                { name: "Wan 2.2", stars: "★★★★☆", desc: "Open-source відеомодель від Alibaba. Високоякісне відео, доступне локально", tags: ["Open Source", "Безкоштовно", "Локально"], price: "Безкоштовно", url: "https://create.wan.video/generate", icon: "🌊" },
+                { name: "Wan 2.2", stars: "★★★★☆", desc: "Open-source відеомодель від Alibaba. Високоякісне відео, доступне локально", tip: "Можна запускати локально без лімітів — ідеально для масової генерації", tags: ["Open Source", "Безкоштовно", "Локально"], price: "Безкоштовно", url: "https://create.wan.video/generate", icon: "🌊" },
                 { name: "Dreamina", stars: "★★★★☆", desc: "AI-відео від CapCut/ByteDance. Пряма інтеграція з відеоредактором", tags: ["CapCut", "Безкоштовно", "Монтаж"], price: "Безкоштовно", url: "https://dreamina.capcut.com", icon: "☁️" },
-                { name: "Pika", stars: "★★★★☆", desc: "Креативний AI-відеогенератор. Унікальні ефекти, зміна стилю, 3D-трансформації", tags: ["Ефекти", "Креатив", "3D"], price: "Безкоштовно / від $10/міс", url: "https://pika.art", icon: "⚡" }
+                { name: "Pika", stars: "★★★★☆", desc: "Креативний AI-відеогенератор. Унікальні ефекти, зміна стилю, 3D-трансформації", tip: "Спробуй ефект 'Inflate' — перетворює будь-яке фото в 3D-анімацію", tags: ["Ефекти", "Креатив", "3D"], price: "Безкоштовно / від $10/міс", url: "https://pika.art", icon: "⚡" }
             ]},
             avatars: { title: "Аватари", tagClass: "tag-avatars", parent: "screen-ai-tools", items: [
                 { name: "Hedra", stars: "★★★★★", desc: "AI-лабораторія для генеративного медіа. Від концепту до продакшну за хвилини", tags: ["Аватар", "Відео", "Fortune 500"], price: "Безкоштовно / платні плани", url: "https://www.hedra.com", icon: "🎭" },
@@ -519,11 +525,11 @@ Thank you for your time.</div>
                 { name: "Topaz Video AI 7.0.0", stars: "★★★★★", desc: "Програма для покращення якості відео за допомогою ШІ. Вона дозволяє підвищувати роздільну здатність, стабілізувати відео, покращувати якість та конвертувати формати", tags: ["Mac", "Апскейл", "Стабілізація"], price: "Mac | 605.2 MB", url: "https://mega.nz/file/KgoxiAKT#nQBvFd1BObzz5TBCoduHnefXEgYUZeRM6eyEsGyTFC4", icon: "🍎" }
             ]},
             textai: { title: "Текстові AI", tagClass: "tag-textai", parent: "screen-ai-tools", items: [
-                { name: "Claude", stars: "★★★★★", desc: "Від Anthropic. Найкращий для довгих текстів і сценаріїв — тримає контекст як ніхто інший. Пишеш сценарій на 20 хвилин — він не забуде що було на першій. Для YouTube-сценаріїв це must-have", tags: ["Сценарії", "Довгі тексти", "Контекст"], price: "Безкоштовно / Pro $20/міс / Max $100/міс", url: "https://claude.ai", icon: "🧠" },
-                { name: "ChatGPT", stars: "★★★★★", desc: "Від OpenAI. Найкреативніший з усіх — добре генерує ідеї, заголовки, гачки для відео. Має DALL-E, Codex, пошук в інтернеті і купу плагінів всередині", tags: ["Креатив", "Ідеї", "Все-в-одному"], price: "Безкоштовно / Plus $20/міс / Pro $200/міс", url: "https://chatgpt.com", icon: "🤖" },
-                { name: "Gemini", stars: "★★★★☆", desc: "Від Google. Має доступ до свіжої інфи з пошуку, розуміє відео та картинки. Безкоштовний і досить потужний — для ресьорчу тем під відео саме те", tags: ["Google", "Пошук", "Безкоштовно"], price: "Безкоштовно / AI Pro $19.99/міс", url: "https://gemini.google.com", icon: "💎" },
-                { name: "Grok", stars: "★★★★☆", desc: "Від xAI (Ілон Маск). Без цензури, з гумором і доступом до X/Twitter в реальному часі. Для трендів та вірального контенту — непоганий варіант", tags: ["Без цензури", "Тренди", "X/Twitter"], price: "Безкоштовно / Premium в X", url: "https://grok.com", icon: "🚀" },
-                { name: "Sudowrite", stars: "★★★★☆", desc: "AI-модель створена спеціально для художньої літератури. Допомагає писати романи, сценарії та оповідання — розуміє структуру сюжету, персонажів, діалоги та наратив краще за загальні чат-боти", tags: ["Книги", "Сценарії", "Fiction"], price: "Hobby $19/міс / Pro $29/міс", url: "https://www.sudowrite.com", icon: "✍️" }
+                { name: "Claude", stars: "★★★★★", desc: "Від Anthropic. Найкращий для довгих текстів і сценаріїв — тримає контекст як ніхто інший. Пишеш сценарій на 20 хвилин — він не забуде що було на першій. Для YouTube-сценаріїв це must-have", tip: "Для YouTube-сценаріїв Claude — це номер один. Кидаєш структуру, описуєш стиль — і він видає готовий текст який реально можна читати. Плюс не втрачає нитку навіть на 10 000+ слів", tags: ["Сценарії", "Довгі тексти", "Контекст"], price: "Безкоштовно / Pro $20/міс / Max $100/міс", url: "https://claude.ai", icon: "🧠" },
+                { name: "ChatGPT", stars: "★★★★★", desc: "Від OpenAI. Найкреативніший з усіх — добре генерує ідеї, заголовки, гачки для відео. Має DALL-E, Codex, пошук в інтернеті і купу плагінів всередині", tip: "GPT більше для креативу — кидаєш тему і він нагенерує 20 варіантів заголовків, гачків, ідей для Shorts. Для брейнштормів він топ", tags: ["Креатив", "Ідеї", "Все-в-одному"], price: "Безкоштовно / Plus $20/міс / Pro $200/міс", url: "https://chatgpt.com", icon: "🤖" },
+                { name: "Gemini", stars: "★★★★☆", desc: "Від Google. Має доступ до свіжої інфи з пошуку, розуміє відео та картинки. Безкоштовний і досить потужний — для ресьорчу тем під відео саме те", tip: "Gemini бачить YouTube-відео — кинь посилання і він зробить summary. Ідеально для аналізу конкурентів та пошуку трендових тем", tags: ["Google", "Пошук", "Безкоштовно"], price: "Безкоштовно / AI Pro $19.99/міс", url: "https://gemini.google.com", icon: "💎" },
+                { name: "Grok", stars: "★★★★☆", desc: "Від xAI (Ілон Маск). Без цензури, з гумором і доступом до X/Twitter в реальному часі. Для трендів та вірального контенту — непоганий варіант", tip: "Grok не має фільтрів як інші — може писати про те що Claude чи GPT відмовляться. Плюс бачить тренди X в реальному часі", tags: ["Без цензури", "Тренди", "X/Twitter"], price: "Безкоштовно / Premium в X", url: "https://grok.com", icon: "🚀" },
+                { name: "Sudowrite", stars: "★★★★☆", desc: "AI-модель створена спеціально для художньої літератури. Допомагає писати романи, сценарії та оповідання — розуміє структуру сюжету, персонажів, діалоги та наратив краще за загальні чат-боти", tip: "Якщо пишеш книгу або сценарій — Sudowrite набагато краще за ChatGPT для довгих наративів. Модель Muse натренована саме на художній прозі", tags: ["Книги", "Сценарії", "Fiction"], price: "Hobby $19/міс / Pro $29/міс", url: "https://www.sudowrite.com", icon: "✍️" }
             ]},
             blender: { title: "Blender AI", tagClass: "tag-blender", parent: "screen-ai-tools", items: [
                 { name: "Text2Motion", stars: "★★★★★", desc: "Blender-аддон для генерації анімації з тексту. Пишеш промпт — отримуєш keyframes прямо в Blender. Автоматичний ріг, скінінг та анімація будь-якого 3D-меша з натуральної мови", tags: ["Blender Addon", "Text-to-Motion", "Open Source"], price: "Безкоштовно / Open Source", url: "https://github.com/text2motion/blender-integration", icon: "🧠" },
@@ -693,6 +699,13 @@ Thank you for your time.</div>
                     
                     let tagsHTML = item.tags.map(t => `<span class="tag ${section.tagClass}">${t}</span>`).join('');
                     
+                    let tipHTML = item.tip ? `
+                        <div class="item-tip">
+                            <div class="item-tip-title">Порада</div>
+                            <p class="item-tip-text">${item.tip}</p>
+                        </div>
+                    ` : '';
+                    
                     card.innerHTML = `
                         <div class="arrow">›</div>
                         <div class="service-header">
@@ -701,6 +714,7 @@ Thank you for your time.</div>
                             <div class="stars">${item.stars}</div>
                         </div>
                         <div class="service-desc">${item.desc}</div>
+                        ${tipHTML}
                         <div class="tags">${tagsHTML}</div>
                         <div class="price-info">${item.price}</div>
                     `;
