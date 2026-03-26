@@ -405,6 +405,10 @@
                 { name: "SmailPro", stars: "★★★★☆", desc: "Швидка тимчасова пошта без реєстрації. Генерує адресу за секунду, листи приходять миттєво. Є вибір доменів", tags: ["Швидко", "Без реєстрації", "Вибір доменів"], price: "Безкоштовно", url: "https://smailpro.com/", icon: "📬" },
                 { name: "Emailnator", stars: "★★★★★", desc: "Тимчасова пошта з підтримкою Gmail-доменів. Генерує адреси що виглядають як реальні Gmail — менше шансів на блок при реєстрації", tags: ["Gmail-домени", "Без блоків", "Безкоштовно"], price: "Безкоштовно", url: "https://www.emailnator.com/", icon: "📨" }
             ]},
+            soft_trans: { title: "Транскрибація", tagClass: "tag-soft-trans", parent: "screen-softs", items: [
+                { name: "YouTube Summary with ChatGPT", stars: "★★★★★", desc: "Розширення для Chrome яке дозволяє отримати транскрипцію та саммарі будь-якого YouTube відео за допомогою ChatGPT. Одним кліком отримуєте повний текст відео.", tags: ["Chrome", "Розширення", "Транскрипція", "ChatGPT"], price: "Безкоштовно", url: "https://glasp.co/youtube-summary", icon: "💬" },
+                { name: "Whisper YouTube Subtitles", stars: "★★★★★", desc: "Безкоштовний інструмент на базі Whisper від OpenAI для автоматичної транскрибації YouTube відео з підтримкою крос-мовних субтитрів. Працює прямо в браузері через Hugging Face.", tags: ["Whisper", "Субтитри", "Hugging Face", "OpenAI"], price: "Безкоштовно", url: "https://huggingface.co/spaces", icon: "🗣️" }
+            ]},
             soft_montage: { title: "Монтаж", tagClass: "tag-soft-montage", parent: "screen-softs", items: [
                 { name: "CapCut", stars: "★★★★★", desc: "Безкоштовний редактор від ByteDance (творці TikTok). Є десктоп, мобільна і веб-версія. AI-субтитри, автомонтаж, купа ефектів. Для Shorts та TikTok — ідеальний вибір", tags: ["Безкоштовно", "AI-субтитри", "Shorts"], price: "Безкоштовно / Pro від $7.99/міс", url: "https://www.capcut.com/", icon: "🎬" },
                 { name: "DaVinci Resolve", stars: "★★★★★", desc: "Безкоштовний професійний редактор від Blackmagic. Найкращий кольорокорекцією серед усіх. Fusion для VFX, Fairlight для аудіо. Голівуд юзає — і це безкоштовно", tags: ["Безкоштовно", "Кольорокорекція", "Професійний"], price: "Безкоштовно / Studio $295 одноразово", url: "https://www.blackmagicdesign.com/products/davinciresolve", icon: "🎨" },
@@ -422,10 +426,27 @@
             ]},
 
             // === ДЛЯ YOUTUBE ===
-            yt_analytics: { title: "Аналітика", tagClass: "tag-youtube-analytics", parent: "screen-youtube", items: [] },
-            yt_niche: { title: "Пошук ніш", tagClass: "tag-youtube-niche", parent: "screen-youtube", items: [] },
-            yt_stream: { title: "Запуск трансляцій", tagClass: "tag-youtube-stream", parent: "screen-youtube", items: [] },
-            yt_stock: { title: "Стоки", tagClass: "tag-youtube-stock", parent: "screen-youtube", items: [] }
+            yt_analytics: { title: "Аналітика", tagClass: "tag-youtube-analytics", parent: "screen-youtube", items: [
+                { name: "VidiQ", stars: "★★★★★", desc: "Топ-1 інструмент для YouTube SEO. Підбір ключових слів, аналіз конкурентів, AI-генератор тайтлів та обкладинок. 20M+ креаторів юзають. Є браузерне розширення що показує статистику прямо на YouTube", tags: ["SEO", "Ключові слова", "20M+ юзерів"], price: "Безкоштовно / Boost від $16.58/міс / Max від $39/міс", url: "https://vidiq.com", icon: "📈" },
+                { name: "VidAI", stars: "★★★★☆", desc: "Chrome-розширення від українського розробника. AI прямо в YouTube Studio — генерує тайтли, описи, теги через GPT. Автопереклад контенту на інші мови для міжнародної аудиторії", tags: ["Chrome", "GPT", "Автопереклад"], price: "3 дні безкоштовно / платні плани", url: "https://vidai.app", icon: "🤖" }
+            ]},
+            yt_niche: { title: "Пошук ніш", tagClass: "tag-youtube-niche", parent: "screen-youtube", items: [
+                { name: "Blackquery", stars: "★★★★★", desc: "Професійний софт для ресьорчу YouTube. Автоматизує 90% пошуку — фільтри, сортування, аналіз ключових слів з конкуренцією та об'ємом пошуку. Збираєш колекції каналів і відео, аналізуєш розклад публікацій конкурентів", tags: ["Ресьорч", "Одноразова оплата", "Ніші"], price: "$58 одноразово (назавжди)", url: "https://blackquery.com", icon: "🔍" },
+                { name: "1of10", stars: "★★★★☆", desc: "AI-аналітик для YouTube. Аналізує мільйони відео і знаходить недооцінені ніші та теми з високим потенціалом. Показує де мало конкуренції, але багато попиту", tags: ["AI-аналіз", "Тренди", "Низька конкуренція"], price: "Безкоштовно / платні плани", url: "https://1of10.com", icon: "🎯" }
+            ]},
+            yt_stream: { title: "Запуск трансляцій", tagClass: "tag-youtube-stream", parent: "screen-youtube", items: [
+                { name: "Upstream", stars: "★★★★★", desc: "Найзручніший сервіс для 24/7 стрімів. Завантажуєш відео — вони крутяться нон-стоп. Drag-and-drop дизайнер оверлеїв, мультистрімінг на 10 платформ, вбудована монетизація через YouTube-рекламу", tags: ["24/7", "Мультистрімінг", "Монетизація"], price: "від $24/міс (1 стрім) / від $40/міс (2 стріми)", url: "https://upstreamapp.com", icon: "🔴" },
+                { name: "Live247", stars: "★★★★☆", desc: "Простий сервіс для запуску 24/7 трансляцій на YouTube. Без зайвих складнощів — завантажив відео, натиснув старт, стрім працює", tags: ["24/7", "YouTube", "Простий"], price: "Безкоштовно / платні плани", url: "https://live247.ai", icon: "📺" },
+                { name: "Gyre", stars: "★★★★☆", desc: "Хмарна платформа для безперервних стрімів. До 8 одночасних трансляцій, підтримка 4K@60fps, мультиплатформа — YouTube, Twitch, Instagram, Facebook. Плейлисти автоматично перезапускаються", tags: ["4K", "8 стрімів", "Мультиплатформа"], price: "7 днів безкоштовно / від $49/міс", url: "https://gyre.pro", icon: "🔄" },
+                { name: "Runnel", stars: "★★★★☆", desc: "Бюджетний сервіс для 24/7 стрімів на YouTube. Завантажуєш плейлист відео — вони крутяться безперервно. Shuffle-режим, підтримка 4K@60fps, мультиплатформа, погодинна тарифікація", tags: ["Бюджетний", "4K", "Мультиплатформа"], price: "від $6/міс за стрім", url: "https://runnel.tv", icon: "📡" }
+            ]},
+            yt_stock: { title: "Стоки", tagClass: "tag-youtube-stock", parent: "screen-youtube", items: [
+                { name: "Freepik", stars: "★★★★★", desc: "Найбільший сток для дизайнерів та креаторів. Мільйони фото, ілюстрацій, іконок, шаблонів і PSD. Є AI-генератор зображень. Купа безкоштовного контенту", tags: ["Безкоштовно", "Шаблони", "Ілюстрації"], price: "Безкоштовно / від €9/міс", url: "https://freepik.com", icon: "🎨" },
+                { name: "Envato Elements", stars: "★★★★★", desc: "Безлімітні завантаження 26M+ ассетів за одну підписку. Відео, фото, музика, шаблони Premiere та After Effects, графіка. Для YouTube-продакшну — все в одному місці", tags: ["Безлімітно", "26M+ ассетів", "Шаблони відео"], price: "від $16.50/міс", url: "https://elements.envato.com", icon: "🟢" },
+                { name: "Pexels", stars: "★★★★★", desc: "Повністю безкоштовний сток фото та відео. 120K+ відеокліпів в HD та 4K. Без атрибуції, без реєстрації. Куплений Canva — якість зростає", tags: ["Безкоштовно", "4K відео", "Без атрибуції"], price: "Безкоштовно", url: "https://pexels.com", icon: "📷" },
+                { name: "Pixabay", stars: "★★★★☆", desc: "150K+ безкоштовних відео та мільйони фото, ілюстрацій, аудіо. Все без копірайту і без атрибуції. Для комерційного використання — теж безкоштовно", tags: ["Безкоштовно", "Без копірайту", "Аудіо"], price: "Безкоштовно", url: "https://pixabay.com", icon: "🖼️" },
+                { name: "Storyblocks", stars: "★★★★☆", desc: "Популярний серед ютуберів сток відео. Безлімітні завантаження футажів, After Effects та Premiere шаблонів, музики та SFX. Якість контенту вища за Pexels", tags: ["Безлімітно", "Відео", "Шаблони AE"], price: "від $15/міс", url: "https://storyblocks.com", icon: "🎬" }
+            ]}
         };
 
         function showScreen(id) {
