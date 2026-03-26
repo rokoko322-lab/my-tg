@@ -82,6 +82,41 @@
         .price-info::before { content: '💳'; margin-right: 6px; }
 
         .arrow { position: absolute; right: 15px; top: 15px; color: #444; font-size: 14px; }
+
+        /* КАСТОМНІ СТИЛІ ДЛЯ СТОРІНКИ ГАЙДУ "ПОДАЧА АПЕЛЯЦІЙ" */
+        .guide-intro { color: #b0b0bc; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
+        .guide-badge { background: #1f1f26; border: 1px solid #2d2d3a; padding: 10px 15px; border-radius: 8px; display: inline-flex; align-items: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; width: calc(100% - 30px); }
+        .guide-badge::before { content: '💳'; margin-right: 8px; font-size: 16px; color: #888;}
+        
+        .step-card { background: #1a1a23; border: 1px solid #2d2d3a; border-radius: 12px; padding: 15px; margin-bottom: 12px; display: flex; gap: 15px; }
+        .step-number { width: 28px; height: 28px; border-radius: 50%; background: #ff4b8b; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; flex-shrink: 0; }
+        .step-content { flex-grow: 1; }
+        .step-content h3 { margin: 0 0 10px 0; font-size: 15px; color: white; }
+        .step-content p { margin: 0 0 12px 0; font-size: 13px; color: #b0b0bc; line-height: 1.5; }
+        
+        .action-link-btn { display: inline-flex; align-items: center; background: #2d1f26; color: #ff4b8b; text-decoration: none; padding: 8px 15px; border-radius: 8px; font-size: 12px; font-weight: 500; border: none; cursor: pointer; }
+        .action-link-btn:active { background: #3d2a34; }
+        
+        .templates-header { display: flex; align-items: center; margin: 30px 0 15px 0; font-weight: bold; font-size: 16px; border-bottom: 1px solid #2d2d3a; padding-bottom: 10px; }
+        .templates-header::before { content: '📝'; margin-right: 8px; }
+        
+        .template-card { background: #1a1a23; border: 1px solid #2d2d3a; border-radius: 12px; padding: 15px; margin-bottom: 15px; }
+        .template-title { color: #ff4b8b; font-weight: bold; font-size: 13px; margin-bottom: 12px; display: flex; align-items: center; }
+        .template-title::before { content: '🔹'; margin-right: 6px; font-size: 10px;}
+        .template-text { color: #b0b0bc; font-size: 13px; line-height: 1.5; margin-bottom: 15px; white-space: pre-wrap; user-select: text; background: #121217; padding: 12px; border-radius: 8px; border: 1px solid #1f1f26; }
+        
+        .copy-btn { width: 100%; background: #e91e63; color: white; border: none; padding: 12px; border-radius: 8px; font-size: 13px; font-weight: bold; cursor: pointer; display: flex; align-items: center; justify-content: center; transition: background 0.2s;}
+        .copy-btn::before { content: '📋'; margin-right: 6px; }
+        .copy-btn:active { background: #c2185b; }
+        
+        .tip-card { background: #2d1f26; border-left: 4px solid #ff4b8b; padding: 15px; border-radius: 0 12px 12px 0; margin-top: 20px; margin-bottom: 20px; }
+        .tip-title { color: #ff4b8b; font-weight: bold; font-size: 12px; margin-bottom: 6px; text-transform: uppercase; }
+        .tip-title::before { content: '💡'; margin-right: 6px; }
+        .tip-text { color: #e0e0e0; font-size: 13px; line-height: 1.5; margin: 0; }
+        
+        .bottom-back-btn { display: block; width: calc(100% - 30px); background: #1a1a23; border: 1px solid #2d2d3a; color: #ff4b8b; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 20px; }
+        .bottom-back-btn:active { background: #252530; }
+
     </style>
 </head>
 <body>
@@ -126,9 +161,9 @@
         </div>
 
         <div class="cat-card" onclick="showScreen('screen-guides-yt')">
-            <div class="icon-box" style="background: #ff4b4b33; color: #ff4b4b;">📕</div>
+            <div class="icon-box" style="background: #ff4b8b33; color: #ff4b8b;">📕</div>
             <div style="flex-grow:1"><b>Гайди по YouTube</b><br><small style="color:#888">Покрокові інструкції: монетизація, просування, оптимізація каналу</small></div>
-            <div style="color:#ff4b4b; font-weight:bold;">3</div>
+            <div style="color:#ff4b8b; font-weight:bold;">3</div>
         </div>
 
         <div class="cat-card" onclick="renderList('guides_ai')">
@@ -279,7 +314,7 @@
             <h2>Гайди по YouTube</h2>
         </div>
         
-        <div class="cat-card" onclick="renderList('guides_yt_appeals')">
+        <div class="cat-card" onclick="showScreen('screen-guide-appeals')">
             <div class="icon-box" style="background: #ff4b8b33; color: #ff4b8b;">⚖️</div>
             <div style="flex-grow:1"><b>Подача Апеляцій</b><br><small style="color:#888">Як повернути канал після блокування YouTube</small></div>
             <div style="color:#ff4b8b; font-weight:bold;">1</div>
@@ -304,6 +339,99 @@
             <h2 id="items-title">Розділ</h2>
         </div>
         <div id="items-container"></div>
+    </div>
+
+    <div id="screen-guide-appeals" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-guides-yt')">←</button>
+            <h2>Подача Апеляцій</h2>
+        </div>
+        
+        <div class="guide-intro">
+            Покрокова інструкція як повернути YouTube-канал після блокування. Головне правило — не здаватись після першої відмови. YouTube — це бюрократична машина, і іноді потрібно просто стукати в усі двері по черзі.
+        </div>
+        
+        <div class="guide-badge">Гайд</div>
+
+        <div class="step-card">
+            <div class="step-number">1</div>
+            <div class="step-content">
+                <h3>Форма апеляції</h3>
+                <p>Відправляємо повідомлення через офіційну форму. Важливо не просто написати "розблокуйте", а давити на правильні кнопки: контент пізнавальний, підписники чекають, аудиторія сумує, ви несете цінність платформі. Чим переконливіше — тим краще.</p>
+                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/accounts/contact/suspended?p=youtube&visit_id=638884671565978231-3826970836&rd=1')">Відкрити форму апеляції ↗</button>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">2</div>
+            <div class="step-content">
+                <h3>Апеляція через Студію</h3>
+                <p>Якщо через форму прийшла відмова — не панікуємо. Чекаємо мінімум 2-3 тижні, а краще місяць, і подаємось повторно через YouTube Studio. Текст можна залишити той самий або трохи переписати.</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">3</div>
+            <div class="step-content">
+                <h3>Пишемо на пошту</h3>
+                <p>Якщо перші два кроки не спрацювали, б'ємо важкою артилерією. Пишемо на legal@support.youtube.com — по тексту плюс-мінус те саме, що й у форму відправляли. Можна написати розгорнутого листа.</p>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">4</div>
+            <div class="step-content">
+                <h3>Живий чат підтримки</h3>
+                <p>Залежно від часу працюють чати підтримки різними мовами. Спробуй достукатись до живої людини — це часто ефективніше за форми.</p>
+                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=ru&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
+            </div>
+        </div>
+
+        <div class="step-card">
+            <div class="step-number">5</div>
+            <div class="step-content">
+                <h3>Twitter / X</h3>
+                <p>Пишемо у Twitter і тегаємо @TeamYouTube — іноді публічний тиск працює краще за будь-яку форму. Опиши ситуацію коротко і чітко англійською.</p>
+                <button class="action-link-btn" onclick="tg.openLink('https://x.com/TeamYouTube')">Відкрити @TeamYouTube ↗</button>
+            </div>
+        </div>
+
+        <div class="templates-header">Шаблони тексту</div>
+
+        <div class="template-card">
+            <div class="template-title">Шаблон 1 — Акцент на оригінальність</div>
+            <div class="template-text" id="tpl1">I'm writing to appeal the removal of my channel. All content on my channel is 100% original and created by me personally. I've never violated YouTube's policies.
+
+My videos are made with real effort — I adapt them for different audiences through voice-overs, language changes, and cultural adjustments. This is a legitimate way to reach viewers worldwide, not spam or reused content.
+
+I believe the automated system may have mistakenly flagged my channel. There is no copied or re-uploaded material from other creators on it.
+
+I kindly ask for a manual review by a human reviewer. I'm confident a closer look will confirm that my channel fully complies with YouTube's guidelines.
+
+Thank you for your time.</div>
+            <button class="copy-btn" onclick="copyTemplateText('tpl1', this)">Скопіювати текст</button>
+        </div>
+
+        <div class="template-card">
+            <div class="template-title">Шаблон 2 — Акцент на цінність для аудиторії</div>
+            <div class="template-text" id="tpl2">I'm writing to appeal the removal of my channel. My channel is dedicated to educational and research-based content that helps people learn and discover new things. Every video is carefully crafted to bring real value to viewers.
+
+My subscribers actively engage with the content — they leave comments, ask questions, and share videos with others. This shows that the channel serves a genuine purpose and fills a real need on the platform.
+
+I believe YouTube benefits from channels like mine that focus on knowledge sharing and quality education. Removing it means thousands of viewers lose access to content they rely on for learning.
+
+I'm confident this removal was a mistake by the automated system. I kindly ask for a manual review by a human reviewer — I'm sure a closer look will show that my channel fully aligns with YouTube's mission of making knowledge accessible to everyone.
+
+Thank you for your time.</div>
+            <button class="copy-btn" onclick="copyTemplateText('tpl2', this)">Скопіювати текст</button>
+        </div>
+
+        <div class="tip-card">
+            <div class="tip-title">Порада</div>
+            <p class="tip-text">Не панікуй після першої відмови — подавай повторно через 2-3 тижні. Чим переконливіше опишеш цінність свого контенту, тим вищі шанси на відновлення</p>
+        </div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-guides-yt')">← Назад</button>
     </div>
 
     <script>
@@ -531,7 +659,6 @@
             ]},
 
             // === ГАЙДИ ПО YOUTUBE ===
-            guides_yt_appeals: { title: "Подача Апеляцій", tagClass: "tag-guides-appeals", parent: "screen-guides-yt", items: [] },
             guides_yt_generation: { title: "Генерація відео", tagClass: "tag-guides-gen", parent: "screen-guides-yt", items: [] },
             guides_yt_scripts: { title: "Скрипти та інструменти", tagClass: "tag-guides-scripts", parent: "screen-guides-yt", items: [] },
 
@@ -584,6 +711,31 @@
             } else {
                 showScreen('screen-main');
             }
+        }
+
+        // Функція для копіювання тексту шаблонів (з безпечним фолбеком)
+        function copyTemplateText(elementId, btn) {
+            const text = document.getElementById(elementId).innerText;
+            
+            const textArea = document.createElement("textarea");
+            textArea.value = text;
+            textArea.style.position = "absolute";
+            textArea.style.left = "-999999px";
+            document.body.appendChild(textArea);
+            textArea.select();
+            
+            try {
+                document.execCommand('copy');
+                const originalText = btn.innerHTML;
+                btn.innerHTML = '📋 Скопійовано!';
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                }, 2000);
+            } catch (err) {
+                console.error('Не вдалося скопіювати текст', err);
+            }
+            
+            document.body.removeChild(textArea);
         }
     </script>
 </body>
