@@ -89,6 +89,10 @@
 
         .arrow { position: absolute; right: 15px; top: 15px; color: #444; font-size: 14px; }
 
+        /* Нижня кнопка "Назад" (Універсальна) */
+        .bottom-back-btn { display: block; width: 100%; background: #1a1a23; border: 1px solid #2d2d3a; color: #6e6eff; padding: 15px; border-radius: 12px; font-size: 15px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-top: 15px; margin-bottom: 20px; transition: background 0.2s;}
+        .bottom-back-btn:active { background: #252530; }
+
         /* КАСТОМНІ СТИЛІ ДЛЯ СТОРІНКИ ГАЙДУ "ПОДАЧА АПЕЛЯЦІЙ" */
         .guide-intro { color: #b0b0bc; font-size: 13px; line-height: 1.5; margin-bottom: 20px; }
         .guide-badge { background: #1f1f26; border: 1px solid #2d2d3a; padding: 10px 15px; border-radius: 8px; display: inline-flex; align-items: center; margin-bottom: 20px; font-size: 14px; font-weight: bold; width: calc(100% - 30px); }
@@ -119,9 +123,6 @@
         .tip-title { color: #ff4b8b; font-weight: bold; font-size: 12px; margin-bottom: 6px; text-transform: uppercase; }
         .tip-title::before { content: '💡'; margin-right: 6px; }
         .tip-text { color: #e0e0e0; font-size: 13px; line-height: 1.5; margin: 0; }
-        
-        .bottom-back-btn { display: block; width: calc(100% - 30px); background: #1a1a23; border: 1px solid #2d2d3a; color: #ff4b8b; padding: 15px; border-radius: 12px; font-size: 14px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-bottom: 20px; }
-        .bottom-back-btn:active { background: #252530; }
 
         .footer-text { text-align: center; color: #888; font-size: 13px; margin-top: 30px; margin-bottom: 20px; font-weight: 500; }
     </style>
@@ -202,6 +203,8 @@
         <div class="cat-card" onclick="renderList('videoprompt')"><div class="icon-box" style="background: #7bffc433;">🔍</div><div style="flex-grow:1"><b>Video-to-Prompt</b><br><small style="color:#888">AI аналізує відео і пише промпт для відтворення</small></div><div style="color:#6e6eff; font-weight:bold;">5</div></div>
         <div class="cat-card" onclick="renderList('aimontage')"><div class="icon-box" style="background: #d97bff33;">✂️</div><div style="flex-grow:1"><b>AI Монтаж</b><br><small style="color:#888">AI-інструменти для відеомонтажу — аналіз, субтитри, автомонтаж</small></div><div style="color:#6e6eff; font-weight:bold;">1</div></div>
         <div class="cat-card" onclick="renderList('nsfw')"><div class="icon-box" style="background: #ff4b4b33;">🔞</div><div style="flex-grow:1"><b>18+ AI</b><br><small style="color:#888">AI-сервіси для генерації дорослого контенту</small></div><div style="color:#ff5c5c; font-weight:bold;">4</div></div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-vibecoding" class="hidden">
@@ -212,6 +215,8 @@
         <div class="cat-card" onclick="renderList('coding_ai')"><div class="icon-box" style="background: #4ef0d333; color: #4ef0d3;">💻</div><div style="flex-grow:1"><b>AI для кодингу</b><br><small style="color:#888">Ці штуки реально пишуть код за тебе — від ідеї до готового продукту</small></div><div style="color:#4ef0d3; font-weight:bold;">5</div></div>
         <div class="cat-card" onclick="renderList('coding_platforms')"><div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">🧩</div><div style="flex-grow:1"><b>AI-платформи та ресурси</b><br><small style="color:#888">Платформи, API та гайди для створення AI-додатків</small></div><div style="color:#9d4eff; font-weight:bold;">5</div></div>
         <div class="cat-card" onclick="renderList('coding_github')"><div class="icon-box" style="background: #ff4e8a33; color: #ff4e8a;">🐙</div><div style="flex-grow:1"><b>Корисні GitHub'и</b><br><small style="color:#888">GitHub-репозиторії для вайбкодінгу та AI</small></div><div style="color:#ff4e8a; font-weight:bold;">4</div></div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-softs" class="hidden">
@@ -267,6 +272,8 @@
             <div style="flex-grow:1"><b>Транскрибація</b><br><small style="color:#888">Інструменти для транскрибації та субтитрів YouTube відео</small></div>
             <div style="color:#9d4eff; font-weight:bold;">2</div>
         </div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-youtube" class="hidden">
@@ -298,6 +305,8 @@
             <div style="flex-grow:1"><b>Стоки</b><br><small style="color:#888">Фото, відео, графіка та шаблони для контенту</small></div>
             <div style="color:#7bff9e; font-weight:bold;">5</div>
         </div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-freebies" class="hidden">
@@ -317,6 +326,8 @@
             <div style="flex-grow:1"><b>Промокоди</b><br><small style="color:#888">Агрегатори знижок та промокодів для AI і SaaS</small></div>
             <div style="color:#4effa1; font-weight:bold;">3</div>
         </div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-guides-yt" class="hidden">
@@ -342,6 +353,8 @@
             <div style="flex-grow:1"><b>Скрипти та інструменти</b><br><small style="color:#888">Корисні скрипти та файли для автоматизації роботи</small></div>
             <div style="color:#00d2ff; font-weight:bold;">1</div>
         </div>
+
+        <button class="bottom-back-btn" onclick="showScreen('screen-main')">← Назад</button>
     </div>
 
     <div id="screen-items" class="hidden">
@@ -350,6 +363,7 @@
             <h2 id="items-title">Розділ</h2>
         </div>
         <div id="items-container"></div>
+        <button class="bottom-back-btn" onclick="goBack()">← Назад</button>
     </div>
 
     <div id="screen-guide-appeals" class="hidden">
@@ -394,7 +408,7 @@
             <div class="step-content">
                 <h3>Живий чат підтримки</h3>
                 <p>Залежно від часу працюють чати підтримки різними мовами. Спробуй достукатись до живої людини — це часто ефективніше за форми.</p>
-                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=uk&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
+                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=ru&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
             </div>
         </div>
 
