@@ -62,6 +62,12 @@
         /* Колір тегів для Магазинів */
         .tag-markets { background: #1f3d2e; color: #4effa1; }
         
+        /* Колір тегів для YouTube */
+        .tag-youtube-analytics { background: #3d1f2b; color: #ff4e8a; }
+        .tag-youtube-niche { background: #3d331f; color: #ffd37b; }
+        .tag-youtube-stream { background: #2a1f3d; color: #9d4eff; }
+        .tag-youtube-stock { background: #1f3d2a; color: #7bff9e; }
+        
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
 
@@ -95,6 +101,12 @@
             <div class="icon-box" style="background: #4effa133; color: #4effa1;">🛒</div>
             <div style="flex-grow:1"><b>Магазини</b><br><small style="color:#888">Маркетплейси акаунтів, підписок та цифрових товарів</small></div>
             <div style="color:#4effa1; font-weight:bold;">5</div>
+        </div>
+
+        <div class="cat-card" onclick="showScreen('screen-youtube')">
+            <div class="icon-box" style="background: #ff4b4b33; color: #ff4b4b;">🎬</div>
+            <div style="flex-grow:1"><b>Для YouTube</b><br><small style="color:#888">Аналітика, пошук ніш та інструменти для росту каналу</small></div>
+            <div style="color:#ff4b4b; font-weight:bold;">13</div>
         </div>
     </div>
 
@@ -180,6 +192,37 @@
             <div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">📝</div>
             <div style="flex-grow:1"><b>Транскрибація</b><br><small style="color:#888">Інструменти для транскрибації та субтитрів YouTube відео</small></div>
             <div style="color:#9d4eff; font-weight:bold;">2</div>
+        </div>
+    </div>
+
+    <div id="screen-youtube" class="hidden">
+        <div class="header">
+            <button class="back-btn" onclick="showScreen('screen-main')">←</button>
+            <h2>Для YouTube</h2>
+        </div>
+        
+        <div class="cat-card" onclick="renderList('yt_analytics')">
+            <div class="icon-box" style="background: #ff4e8a33; color: #ff4e8a;">📊</div>
+            <div style="flex-grow:1"><b>Аналітика</b><br><small style="color:#888">SEO, оптимізація та аналітика для YouTube-каналу</small></div>
+            <div style="color:#ff4e8a; font-weight:bold;">2</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('yt_niche')">
+            <div class="icon-box" style="background: #ffd37b33; color: #ffd37b;">🔍</div>
+            <div style="flex-grow:1"><b>Пошук ніш</b><br><small style="color:#888">Знаходь прибуткові ніші та теми для YouTube</small></div>
+            <div style="color:#ffd37b; font-weight:bold;">2</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('yt_stream')">
+            <div class="icon-box" style="background: #9d4eff33; color: #9d4eff;">📡</div>
+            <div style="flex-grow:1"><b>Запуск трансляцій</b><br><small style="color:#888">24/7 стріми на YouTube з попередньо записаних відео</small></div>
+            <div style="color:#9d4eff; font-weight:bold;">4</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('yt_stock')">
+            <div class="icon-box" style="background: #7bff9e33; color: #7bff9e;">📦</div>
+            <div style="flex-grow:1"><b>Стоки</b><br><small style="color:#888">Фото, відео, графіка та шаблони для контенту</small></div>
+            <div style="color:#7bff9e; font-weight:bold;">5</div>
         </div>
     </div>
 
@@ -362,25 +405,27 @@
                 { name: "SmailPro", stars: "★★★★☆", desc: "Швидка тимчасова пошта без реєстрації. Генерує адресу за секунду, листи приходять миттєво. Є вибір доменів", tags: ["Швидко", "Без реєстрації", "Вибір доменів"], price: "Безкоштовно", url: "https://smailpro.com/", icon: "📬" },
                 { name: "Emailnator", stars: "★★★★★", desc: "Тимчасова пошта з підтримкою Gmail-доменів. Генерує адреси що виглядають як реальні Gmail — менше шансів на блок при реєстрації", tags: ["Gmail-домени", "Без блоків", "Безкоштовно"], price: "Безкоштовно", url: "https://www.emailnator.com/", icon: "📨" }
             ]},
-            soft_trans: { title: "Транскрибація", tagClass: "tag-soft-trans", parent: "screen-softs", items: [
-                { name: "YouTube Summary with ChatGPT", stars: "★★★★★", desc: "Розширення для Chrome яке дозволяє отримати транскрипцію та саммарі будь-якого YouTube відео за допомогою ChatGPT. Одним кліком отримуєте повний текст відео.", tags: ["Chrome", "Розширення", "Транскрипція", "ChatGPT"], price: "Безкоштовно", url: "https://glasp.co/youtube-summary", icon: "💬" },
-                { name: "Whisper YouTube Subtitles", stars: "★★★★★", desc: "Безкоштовний інструмент на базі Whisper від OpenAI для автоматичної транскрибації YouTube відео з підтримкою крос-мовних субтитрів. Працює прямо в браузері через Hugging Face.", tags: ["Whisper", "Субтитри", "Hugging Face", "OpenAI"], price: "Безкоштовно", url: "https://huggingface.co/spaces", icon: "🗣️" }
-            ]},
             soft_montage: { title: "Монтаж", tagClass: "tag-soft-montage", parent: "screen-softs", items: [
                 { name: "CapCut", stars: "★★★★★", desc: "Безкоштовний редактор від ByteDance (творці TikTok). Є десктоп, мобільна і веб-версія. AI-субтитри, автомонтаж, купа ефектів. Для Shorts та TikTok — ідеальний вибір", tags: ["Безкоштовно", "AI-субтитри", "Shorts"], price: "Безкоштовно / Pro від $7.99/міс", url: "https://www.capcut.com/", icon: "🎬" },
                 { name: "DaVinci Resolve", stars: "★★★★★", desc: "Безкоштовний професійний редактор від Blackmagic. Найкращий кольорокорекцією серед усіх. Fusion для VFX, Fairlight для аудіо. Голівуд юзає — і це безкоштовно", tags: ["Безкоштовно", "Кольорокорекція", "Професійний"], price: "Безкоштовно / Studio $295 одноразово", url: "https://www.blackmagicdesign.com/products/davinciresolve", icon: "🎨" },
-                { name: "Adobe Premiere Pro", stars: "★★★★★", desc: "Індустріальний стандарт відеомонтажу. Більшість YouTube-креаторів сидять саме тут. Інтеграція з After Effects, Photoshop та всім пакетом Adobe", tags: ["Стандарт індустрії", "Adobe", "Плагіни"], price: "від $22.99/міс", url: "https://www.adobe.com/products/premiere.html", icon: "🅿️" },
+                { name: "Adobe Premiere Pro", stars: "★★★★★", desc: "Індустріальний стандарт відеомонтажу. Більшість YouTube-креаторів сидять саме тут. Інтеграція з After Effects, Photoshop та всім пакетом Adobe", tags: ["Стандарт індустрії", "Adobe", "Плагіни"], price: "від $22.99/міс | Для Українців 11.99$", url: "https://www.adobe.com/products/premiere.html", icon: "🅿️" },
                 { name: "Final Cut Pro", stars: "★★★★☆", desc: "Від Apple, тільки для Mac. Максимально оптимізований під Apple Silicon — летить навіть на MacBook Air. Magnetic Timeline та мультикам монтаж з коробки", tags: ["Mac", "Швидкий", "Apple Silicon"], price: "$299 одноразово / від $4.99/міс", url: "https://www.apple.com/final-cut-pro/", icon: "🍎" }
             ]},
 
             // === МАГАЗИНИ ===
             markets: { title: "Магазини", tagClass: "tag-markets", parent: "screen-main", items: [
                 { name: "AccsMarket", stars: "★★★★★", desc: "Найбільший маркетплейс акаунтів. Gmail, YouTube, Facebook, Instagram, Twitter, Reddit — все що потрібно для масштабування. Автоматична видача, від $0.01 за акаунт. Є фільтри по віку, країні, верифікації", tags: ["Найбільший", "Автовидача", "Всі соцмережі"], price: "від $0.01 за акаунт", url: "https://accsmarket.com/", icon: "🏪" },
-                { name: "Install Shop", stars: "★★★★☆", desc: "Магазин акаунтів та софту. Gmail, Outlook, соцмережі, крипто-акаунти. Автоматична видача, працює 24/7. Регулярно оновлюють асортимент", tags: ["Автовидача", "24/7", "Крипто"], price: "від $0.05 за акаунт", url: "https://install-shop.com/", icon: "📦" },
+                { name: "Install Shop", stars: "★★★★☆", desc: "Магазин акаунтів та софту. Gmail, Outlook, соцмережі, крипто-акаунти. Автоматична видача, працює 24/7. Регулярно оновлюють асортимент", tags: ["Автовидача", "24/7", "Крипто"], price: "від $0.05 за акаунт", url: "https://install-shop.org/", icon: "📦" },
                 { name: "SMM-World", stars: "★★★★☆", desc: "Маркетплейс для SMM — акаунти Instagram, TikTok, YouTube, Telegram. Фокус на соцмережі для маркетингу та просування. Зрозумілий прайс, швидка видача", tags: ["SMM", "Соцмережі", "Маркетинг"], price: "Від ціни акаунту", url: "https://smm-world.com/", icon: "🌍" },
                 { name: "FunPay", stars: "★★★★☆", desc: "Біржа цифрових товарів. Крім ігрових акаунтів тут продають підписки ChatGPT, Adobe, Discord Nitro, Game Pass. P2P маркетплейс — купуєш у реальних людей з відгуками та рейтингом", tags: ["P2P", "Підписки", "Ігри"], price: "Від ціни продавця", url: "https://funpay.com/", icon: "🎮" },
                 { name: "Lolz.live / LZT Market", stars: "★★★★★", desc: "Популярний маркетплейс + форум. Купівля/продаж акаунтів, підписок, софту. Великий форум з гарантом угод, репутацією продавців та відгуками. Одна з найбільших CIS-платформ", tags: ["Маркет", "Форум", "Гарант"], price: "Від ціни продавця", url: "https://lzt.market/", icon: "🦊" }
-            ]}
+            ]},
+
+            // === ДЛЯ YOUTUBE ===
+            yt_analytics: { title: "Аналітика", tagClass: "tag-youtube-analytics", parent: "screen-youtube", items: [] },
+            yt_niche: { title: "Пошук ніш", tagClass: "tag-youtube-niche", parent: "screen-youtube", items: [] },
+            yt_stream: { title: "Запуск трансляцій", tagClass: "tag-youtube-stream", parent: "screen-youtube", items: [] },
+            yt_stock: { title: "Стоки", tagClass: "tag-youtube-stock", parent: "screen-youtube", items: [] }
         };
 
         function showScreen(id) {
@@ -395,7 +440,7 @@
             const container = document.getElementById('items-container');
             container.innerHTML = '';
 
-            if (section.items.length === 0) {
+            if (!section.items || section.items.length === 0) {
                 container.innerHTML = '<p style="text-align:center; color:#888; margin-top:30px;">Скоро тут з\'являться інструменти...</p>';
             } else {
                 section.items.forEach(item => {
