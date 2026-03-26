@@ -68,9 +68,11 @@
         .tag-youtube-stream { background: #2a1f3d; color: #9d4eff; }
         .tag-youtube-stock { background: #1f3d2a; color: #7bff9e; }
 
-        /* Колір тегів для Халяви */
+        /* Колір тегів для Халяви та Гайдів */
         .tag-shared { background: #3d2a1f; color: #ff9d2e; }
         .tag-promo { background: #1f3d2e; color: #4effa1; }
+        .tag-guides-yt { background: #3d1f1f; color: #ff4b4b; }
+        .tag-guides-ai { background: #1f1f3d; color: #6e6eff; }
         
         .price-info { font-size: 12px; color: #888; display: flex; align-items: center; }
         .price-info::before { content: '💳'; margin-right: 6px; }
@@ -117,6 +119,18 @@
             <div class="icon-box" style="background: #ffd37b33; color: #ffd37b;">🎁</div>
             <div style="flex-grow:1"><b>Халява</b><br><small style="color:#888">Знижки, промокоди та спільні підписки на AI-сервіси</small></div>
             <div style="color:#ffd37b; font-weight:bold;">4</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('guides_yt')">
+            <div class="icon-box" style="background: #ff4b4b33; color: #ff4b4b;">📕</div>
+            <div style="flex-grow:1"><b>Гайди по YouTube</b><br><small style="color:#888">Покрокові інструкції: монетизація, просування, оптимізація каналу</small></div>
+            <div style="color:#ff4b4b; font-weight:bold;">0</div>
+        </div>
+
+        <div class="cat-card" onclick="renderList('guides_ai')">
+            <div class="icon-box" style="background: #6e6eff33; color: #6e6eff;">📘</div>
+            <div style="flex-grow:1"><b>Гайди по AI</b><br><small style="color:#888">Покрокові гайди як безкоштовно юзати AI-сервіси</small></div>
+            <div style="color:#6e6eff; font-weight:bold;">0</div>
         </div>
     </div>
 
@@ -478,8 +492,18 @@
             ]},
 
             // === ХАЛЯВА ===
-            freebies_shared: { title: "Спільні підписки", tagClass: "tag-shared", parent: "screen-freebies", items: [] },
-            freebies_promo: { title: "Промокоди", tagClass: "tag-promo", parent: "screen-freebies", items: [] }
+            freebies_shared: { title: "Спільні підписки", tagClass: "tag-shared", parent: "screen-freebies", items: [
+                { name: "WhiteTools", stars: "★★★★★", desc: "Перший український браузер для економії на сервісах. ChatGPT, Midjourney, AdHeart та 15+ інших AI — все зі знижкою до 90%. Працює через шерінг: на один акаунт 4-5 людей, тому дешево. Запускаєш через їх браузер — без проксі, без антидетекта", tags: ["Українське", "Шерінг", "До -90%"], price: "До -90% від ціни оригіналу", url: "https://whitetools.io/", icon: "🤍" }
+            ]},
+            freebies_promo: { title: "Промокоди", tagClass: "tag-promo", parent: "screen-freebies", items: [
+                { name: "SimplyCodes", stars: "★★★★★", desc: "Найбільший агрегатор промокодів. Спільнота трекає мільйони кодів — є окремий розділ для AI-сервісів. Коди перевіряються в реальному часі, видно відсоток успішності кожного", tags: ["Промокоди", "AI-розділ", "Перевірені"], price: "Безкоштовно", url: "https://simplycodes.com", icon: "🔖" },
+                { name: "Secret", stars: "★★★★☆", desc: "570+ SaaS та AI-сервісів зі знижками. Ексклюзивні промокоди для стартапів та креаторів. ChatGPT, Midjourney, Notion, Canva — знижки від 20% до 50%", tags: ["SaaS знижки", "570+ сервісів", "Ексклюзив"], price: "Безкоштовно", url: "https://www.joinsecret.com", icon: "🤫" },
+                { name: "CyberNews Coupons", stars: "★★★★☆", desc: "Розділ промокодів від CyberNews — перевіряють і оновлюють щодня. Фокус на AI та кіберсек сервісах. Часто мають ексклюзивні знижки від партнерів", tags: ["Щоденне оновлення", "AI", "Ексклюзив"], price: "Безкоштовно", url: "https://cybernews.com/coupons/", icon: "📰" }
+            ]},
+
+            // === ГАЙДИ ===
+            guides_yt: { title: "Гайди по YouTube", tagClass: "tag-guides-yt", parent: "screen-main", items: [] },
+            guides_ai: { title: "Гайди по AI", tagClass: "tag-guides-ai", parent: "screen-main", items: [] }
         };
 
         function showScreen(id) {
