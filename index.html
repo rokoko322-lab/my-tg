@@ -89,7 +89,7 @@
 
         .arrow { position: absolute; right: 15px; top: 15px; color: #444; font-size: 14px; }
 
-        /* Нижня кнопка "Назад" (Універсальна) */
+        /* Нижня кнопка "Назад" */
         .bottom-back-btn { display: block; width: 100%; background: #1a1a23; border: 1px solid #2d2d3a; color: #6e6eff; padding: 15px; border-radius: 12px; font-size: 15px; font-weight: bold; cursor: pointer; text-align: center; text-decoration: none; margin-top: 15px; margin-bottom: 20px; transition: background 0.2s;}
         .bottom-back-btn:active { background: #252530; }
 
@@ -428,7 +428,7 @@
             <div class="step-content">
                 <h3>Живий чат підтримки</h3>
                 <p>Залежно від часу працюють чати підтримки різними мовами. Спробуй достукатись до живої людини — це часто ефективніше за форми.</p>
-                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=en&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
+                <button class="action-link-btn" onclick="tg.openLink('https://support.google.com/youtube/?hl=ru&ec=partner_chat&cfsi=partner_email_1&cfnti=6058750&cft=1&sjid=1499452848406323695-EU&visit_id=639101101765589875-2397532983&rd=1#topic=9257498')">Відкрити чат підтримки ↗</button>
             </div>
         </div>
 
@@ -499,6 +499,11 @@ Thank you for your time.</div>
 
         <div class="guide-section-title">Посилання</div>
         <div class="template-card" style="padding: 5px 15px; margin-bottom: 20px;">
+            <div style="display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #2d2d3a; cursor: pointer;" onclick="tg.openLink('https://drive.google.com/file/d/15QbcmA-Gqm9tDUReJtZzy3v2LkNANFIZ/view?usp=sharing')">
+                <div style="margin-right: 12px; font-size: 16px;">🎬</div>
+                <div style="flex-grow: 1; color: #b37bff; font-weight: bold; font-size: 14px;">Відеоурок</div>
+                <div style="color: #444;">›</div>
+            </div>
             <div style="display: flex; align-items: center; padding: 12px 0; border-bottom: 1px solid #2d2d3a; cursor: pointer;" onclick="tg.openLink('https://business.gemini.google/')">
                 <div style="margin-right: 12px; font-size: 16px;">🌐</div>
                 <div style="flex-grow: 1; color: #b37bff; font-weight: bold; font-size: 14px;">Gemini Enterprise (реєстрація)</div>
@@ -559,7 +564,6 @@ Thank you for your time.</div>
         let currentSection = '';
 
         const data = {
-            // === AI ІНСТРУМЕНТИ ===
             music: { title: "Музика", tagClass: "tag-music", parent: "screen-ai-tools", items: [
                 { name: "Suno", stars: "★★★★★", desc: "Генерація треків з вокалом по текстовому опису", tip: "Пиши промпт англійською для кращої якості. Додавай стиль: 'lo-fi hip hop, female vocals, chill vibes'", tags: ["Вокал", "Інструментал"], price: "Безкоштовно / від $10/міс", url: "https://suno.com", icon: "🎵" },
                 { name: "Udio", stars: "★★★★☆", desc: "Конкурент Suno з фокусом на якість звучання", tip: "Краще для інструментальної музики та фонових треків для відео", tags: ["Висока якість", "Інструментали"], price: "Безкоштовно / від $10/міс", url: "https://udio.com", icon: "🎧" },
@@ -711,7 +715,7 @@ Thank you for your time.</div>
                 { name: "ChromaStudio", stars: "★★★★☆", desc: "Видаляє SynthID з зображень. SynthID — це вже серйозніше, мітка вбита прямо в пікселі. Просто стрипнути метадані не допоможе", tags: ["SynthID", "Зображення", "Пікселі"], price: "Безкоштовно / платні плани", url: "https://www.chromastudio.ai/synthid-remover-image", icon: "🎨" },
                 { name: "AISEO SynthID Remover", stars: "★★★★☆", desc: "Ще один варіант для зняття SynthID з картинок. Працює онлайн, без встановлення", tags: ["SynthID", "Онлайн", "Зображення"], price: "Безкоштовно / платні плани", url: "https://aiseo.ai/synthid-remover", icon: "🧬" },
                 { name: "RemoveMySynthID", stars: "★★★★☆", desc: "Безкоштовний ремувер SynthID прямо в браузері. Простий як двері — завантажив, почистив, забрав", tags: ["SynthID", "Безкоштовно", "Браузер"], price: "Безкоштовно", url: "https://removemysynthid.com/", icon: "🚫" },
-                { name: "GPT Cleanup", stars: "★★★★★", desc: "Окремі ремувери під Gemini, Imagen, Stable Diffusion. Знає особливості кожної моделі і чистить під конкретний генератор", tags: ["Gemini", "Imagen", "Stable Diffusion"], price: "Безкоштовно / платні плани", url: "https://www.gptcleanup.com/", icon: "🧹" }
+                { name: "GPT Cleanup", stars: "★★★★★", desc: "Окремі ремувери под Gemini, Imagen, Stable Diffusion. Знає особливості кожної моделі і чистить під конкретний генератор", tags: ["Gemini", "Imagen", "Stable Diffusion"], price: "Безкоштовно / платні плани", url: "https://www.gptcleanup.com/", icon: "🧹" }
             ]},
             soft_proxy: { title: "Проксі", tagClass: "tag-soft-proxy", parent: "screen-softs", items: [
                 { name: "Proxy-Seller", stars: "★★★★★", desc: "На ринку з 2014, 500K+ клієнтів. Резидентні, ISP, датацентр та мобільні 5G проксі. 220+ країн, швидкість до 1 Gbps, аптайм 99%", tags: ["220+ країн", "Резидентні", "Мобільні"], price: "від $0.08/IP (IPv6) / від $0.90/IP (IPv4)", url: "https://proxy-seller.com/", icon: "🔒" },
@@ -753,7 +757,7 @@ Thank you for your time.</div>
             ]},
             yt_stream: { title: "Запуск трансляцій", tagClass: "tag-youtube-stream", parent: "screen-youtube", items: [
                 { name: "Upstream", stars: "★★★★★", desc: "Найзручніший сервіс для 24/7 стрімів. Завантажуєш відео — вони крутяться нон-стоп. Drag-and-drop дизайнер оверлеїв, мультистрімінг на 10 платформ, вбудована монетизація через YouTube-рекламу", tags: ["24/7", "Мультистрімінг", "Монетизація"], price: "від $24/міс (1 стрім) / від $40/міс (2 стріми)", url: "https://upstreamapp.com", icon: "🔴" },
-                { name: "Live247", stars: "★★★★☆", desc: "Простий сервіс для запуску 24/7 трансляцій на YouTube. Без зайвих складнощів — завантажив відео, натиснув старт, стрім працює", tags: ["24/7", "YouTube", "Простий"], price: "Безкоштовно / платні plans", url: "https://live247.ai", icon: "📺" },
+                { name: "Live247", stars: "★★★★☆", desc: "Простий сервіс для запуску 24/7 трансляцій на YouTube. Без зайвих складнощів — завантажив відео, натиснув старт, стрім працює", tags: ["24/7", "YouTube", "Простий"], price: "Безкоштовно / платні плани", url: "https://live247.ai", icon: "📺" },
                 { name: "Gyre", stars: "★★★★☆", desc: "Хмарна платформа для безперервних стрімів. До 8 одночасних трансляцій, підтримка 4K@60fps, мультиплатформа — YouTube, Twitch, Instagram, Facebook. Плейлисти автоматично перезапускаються", tags: ["4K", "8 стрімів", "Мультиплатформа"], price: "7 днів безкоштовно / від $49/міс", url: "https://gyre.pro", icon: "🔄" },
                 { name: "Runnel", stars: "★★★★☆", desc: "Бюджетний сервіс для 24/7 стрімів на YouTube. Завантажуєш плейлист відео — вони крутяться безперервно. Shuffle-режим, підтримка 4K@60fps, мультиплатформа, погодинна тарифікація", tags: ["Бюджетний", "4K", "Мультиплатформа"], price: "від $6/міс за стрім", url: "https://runnel.live/", icon: "📡" }
             ]},
@@ -786,7 +790,7 @@ Thank you for your time.</div>
         function showScreen(id) {
             document.querySelectorAll('body > div').forEach(div => div.classList.add('hidden'));
             document.getElementById(id).classList.remove('hidden');
-            window.scrollTo(0, 0); // Прокрутка вгору при зміні екрану
+            window.scrollTo(0, 0); 
         }
 
         function renderList(key) {
@@ -794,9 +798,6 @@ Thank you for your time.</div>
             const section = data[key];
             document.getElementById('items-title').innerText = section.title;
             const container = document.getElementById('items-container');
-            
-            // Зберігаємо кнопку "Назад", очищаємо решту
-            const backBtnHTML = '<button class="bottom-back-btn" onclick="goBack()">← Назад</button>';
             container.innerHTML = '';
 
             if (!section.items || section.items.length === 0) {
@@ -842,17 +843,14 @@ Thank you for your time.</div>
             }
         }
 
-        // Функція для копіювання тексту шаблонів
         function copyTemplateText(elementId, btn) {
             const text = document.getElementById(elementId).innerText;
-            
             const textArea = document.createElement("textarea");
             textArea.value = text;
             textArea.style.position = "absolute";
             textArea.style.left = "-999999px";
             document.body.appendChild(textArea);
             textArea.select();
-            
             try {
                 document.execCommand('copy');
                 const originalText = btn.innerHTML;
@@ -863,7 +861,6 @@ Thank you for your time.</div>
             } catch (err) {
                 console.error('Не вдалося скопіювати текст', err);
             }
-            
             document.body.removeChild(textArea);
         }
     </script>
